@@ -1,11 +1,11 @@
 class User < ApplicationRecord
     attr_reader :password
-    validates :username, presence: true, uniqueness: true 
+    validates :username, presence: true
     validates :email, presence: true, uniqueness: true 
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :profile_picture_id, presence: true 
     validates :session_token, presence: true, uniqueness: true 
-    after_initialize :ensure_session_token, :ensure_profile_picture
+    after_initialize :ensure_session_token, :ensure_profile_picture, :ensure_user_name
 
     def password=(password)
         @password = password
@@ -34,6 +34,10 @@ class User < ApplicationRecord
 
     def ensure_profile_picture
         self.profile_picture_id ||= 1 
+    end
+
+     def ensure_user_name
+        self.username ||= self.email.split("@")[0]
     end
 
 end

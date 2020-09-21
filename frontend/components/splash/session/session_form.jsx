@@ -8,8 +8,9 @@ class SessionForm extends React.Component {
             email: "",
             password: ""
         }
+    this.handleSubmit = this.handleSubmit.bind(this); 
     }
-    handleSubmit(e) {
+    handleSubmit(e) { 
         e.preventDefault(); 
         this.props.processForm(this.state); 
     }
@@ -35,7 +36,7 @@ class SessionForm extends React.Component {
             <div>
                 <h1>Shack</h1>
                 {signinOrSignout}
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Email adress
                         <input 
                         type="text"
@@ -52,7 +53,7 @@ class SessionForm extends React.Component {
                         <button type="submit">{this.props.formType}</button>
                     </label>
                 </form>
-                <p>{this.props.errors}</p>
+
             </div>
         )
     }

@@ -1,6 +1,5 @@
 import { connect } from "react-redux"
 import { signupAction } from "../../../actions/session_actions";
-import { connect } from 'react-redux';
 import SessionForm from './session_form';
 
 const mSTP = (state) => ({
