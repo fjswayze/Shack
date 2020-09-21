@@ -11,6 +11,8 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
@@ -23,7 +25,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -35,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/fjswayze/Shack/issues"
   },
-  "homepage": "https://github.com/fjswayze/Shack#readme"
+  "homepage": "https://github.com/fjswayze/Shack#readme",
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
+  }
 }
