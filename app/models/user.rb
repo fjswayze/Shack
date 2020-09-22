@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     attr_reader :password
-    # validates :username, presence: true
+    validates :username, presence: true
     validates :email, presence: true, uniqueness: true 
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :profile_picture_id, presence: true 
@@ -36,9 +36,9 @@ class User < ApplicationRecord
         self.profile_picture_id ||= 1 
     end
 
-    #  def ensure_user_name
-    #     debugger 
-    #     self.username ||= self.email.split("@")[0]
-    # end
+     def ensure_user_name
+        debugger 
+        self.username ||= self.email.split("@")[0]
+    end
 
 end
