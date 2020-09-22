@@ -11,6 +11,10 @@
 width: 200px;
 }
 
+.errors{
+    color: #d02424; 
+
+}
 
 .session-form label{
      /* margin-left: 25%;

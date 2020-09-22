@@ -66,6 +66,9 @@ class SessionForm extends React.Component {
                         <button type="submit">{this.props.formType}</button>
                     </label>
                 </form>
+                <div>{this.props.errors.map(error => (
+                    <p className="errors">{error}</p>
+                ))}</div>
             </div>
             </div>
         )

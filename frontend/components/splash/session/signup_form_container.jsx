@@ -3,7 +3,7 @@ import { signupAction } from "../../../actions/session_actions";
 import SessionForm from './session_form';
 
 const mSTP = (state) => ({
-    errors: state.errors,
+    errors: Object.values(state.errors),
     formType: 'Sign Up'
 })
 
