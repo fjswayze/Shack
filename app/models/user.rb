@@ -36,8 +36,7 @@ class User < ApplicationRecord
         self.profile_picture_id ||= 1 
     end
 
-     def ensure_user_name
-        debugger 
+     def ensure_user_name 
         self.username ||= self.email.split("@")[0]
     end
 
