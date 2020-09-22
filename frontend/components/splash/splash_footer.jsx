@@ -2,7 +2,7 @@ import React from 'react';
 
 const SplashFooter = () => (
     <div className="footer">
-        {/* <img  src={window.shackURL} />    */}
+        <img  src={window.shackURL} />   
 
      
       
