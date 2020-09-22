@@ -5794,3 +5794,13 @@ Processing by Api::SessionsController#create as */*
 Completed 200 OK in 350ms (Views: 45.6ms | ActiveRecord: 21.6ms)
 
 
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (21.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1997@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "B4PjGO2ZLCVE0Bni5XbW2i26DFjjAAOWRCltj2hsVuU/FDKBeUmCzhJchVNYpEH6+/sSVGT9jrEsN5z7dloLTg=="], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
