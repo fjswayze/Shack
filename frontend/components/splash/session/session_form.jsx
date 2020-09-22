@@ -26,21 +26,26 @@ class SessionForm extends React.Component {
                 <h1>Sign in to Shack</h1>
 
         const signinOrSignout = this.props.formType === 'Sign Up' ? 
-        <div>
-            <p>Already have an account?</p>
-            <Link to="/signin">Sign in instead</Link>
+        <div className="signin-or-signout-div">
+            <p className="signin-or-signout">Already have an account?</p>
+                <br></br>
+                <Link className="signin-or-signout-link" to="/signin">Sign in instead</Link>
         </div> 
         : 
-        <div>
-                <p>Don't have an account yet?</p>
-                <Link to="/signup">Create an account</Link>
+        <div className="signin-or-signout-div">
+                <p className="signin-or-signout">Don't have an account yet?</p>
+                <br></br>
+                <Link className="signin-or-signout-link" to="/signup">Create an account</Link>
         </div>
 
 
         return(
             <div>
                 <div className="session-form-header">
-                    <img className="shack-title" src={window.shack_titleURL} />
+                    <div></div>
+                    <Link className="shack-title-link" to="/">
+                    <img className="shack-title-session" src={window.shack_titleURL} />
+                    </Link>
                     {signinOrSignout}
                 </div>
             <div className="session-form">

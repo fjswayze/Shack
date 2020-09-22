@@ -4,8 +4,8 @@ import SplashAnimation from './splash_animation';
 
 const mSTP = state => ({
     user: {
-        email: 'test1997@gmail.com',
-        password: 'hello1997'
+        email: '',
+        password: ''
     }
 })
 

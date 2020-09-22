@@ -11,14 +11,32 @@
 width: 200px;
 }
 
+ .signin-or-signout-div{
+     display: block;
+     padding-right: 10px;
+
+ }
+
+
+.signin-or-signout-link {
+    color: #076482;
+    border-bottom: none;
+    text-decoration: none;
+    font-size: 12px;
+    float: right;
+}
+.signin-or-signout{
+    color: gray;
+    font-size: 11px;
+    float: right;
+}
+
 .errors{
     color: #d02424; 
 
 }
 
 .session-form label{
-     /* margin-left: 25%;
-    margin-right: 40%; */
     font-weight: bold;
     font-size: 14px;
     padding-top: 10px;
@@ -39,10 +57,9 @@ width: 200px;
 
 }
 
-.session-form-header img{
-    width: 200px;
-    align-self: center;
-    margin-left: 40%;
+.shack-title-session {
+    width: 150px;
+    padding-left: 40%;
 }
 
 .session-form input{
