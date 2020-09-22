@@ -14,4 +14,13 @@ const Auth = ({loggedIn, path, component: Component}) => (
     )}/> 
 )
 
+const Channel = ({ loggedIn, path, component: Component }) => (
+    <Route
+        path={path}
+        render={props => (
+            loggedIn ? <Component {...props}/> : <Redirect to="/" />
+        )} />
+)
+
 export const AuthRoute = withRouter(connect(mSTP)(Auth)); 
+export const ChannelRoute = withRouter(connect(mSTP)(Channel)); 

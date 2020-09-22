@@ -23,10 +23,11 @@ export const loginAction = (user) => dispatch => (
         .then(user => dispatch(receiveCurrentUser(user)))
 )
 
-export const logoutAction = () => dispatch => (
-    SessionApiUtil.logout()
+export const logoutAction = () => dispatch => {
+
+ return(  SessionApiUtil.logout()
         .then(() => dispatch(logoutCurrentUser()))
-)
+);}
 
 export const signupAction = (user) => dispatch => {
     

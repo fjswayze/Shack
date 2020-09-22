@@ -1,0 +1,25 @@
+.footer{   
+     display: block
+ }
+
+ .footer img{
+     float: left;
+     height: 130px;
+    width: 130px;
+ }
+
+ .footer div {
+     font-family: sans-serif;
+     font-size: 14px;
+     color: #888383;
+     float: right;
+     margin: 10px;
+ }
+
+  .footer div h3 { 
+     color: #393333;;
+ }
+
+ .footer-col-3{
+     padding-right: 60px;
+ }

@@ -1,9 +1,11 @@
 import React from 'react';
-import {logoutAction} from "../../actions/session_actions";
-const Placeholder = () => (
+
+const Placeholder = (props) => (
     <div>
         <h1>Placeholder</h1>
-        <button onClick={() => logoutAction()}>Log Out</button>
+        <img src={window.shackURL} />        
+        <button onClick={() => props.action()}>Log Out</button>
+
     </div>
 )
 
