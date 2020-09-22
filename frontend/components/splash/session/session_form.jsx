@@ -20,6 +20,11 @@ class SessionForm extends React.Component {
     }
 
     render(){
+        const headerCommand = this.props.formType === 'Sign Up' ?
+                <h1>Sign up for Shack</h1> 
+            :
+                <h1>Sign in to Shack</h1>
+
         const signinOrSignout = this.props.formType === 'Sign Up' ? 
         <div>
             <p>Already have an account?</p>
@@ -27,33 +32,41 @@ class SessionForm extends React.Component {
         </div> 
         : 
         <div>
-            <p>Don't have an account yet?</p>
-            <Link to="/signup">Create an account</Link>
+                <p>Don't have an account yet?</p>
+                <Link to="/signup">Create an account</Link>
         </div>
 
 
         return(
             <div>
-                <h1>Shack</h1>
-                {signinOrSignout}
+                <div className="session-form-header">
+                    <img className="shack-title" src={window.shack_titleURL} />
+                    {signinOrSignout}
+                </div>
+            <div className="session-form">
+                {headerCommand}
                 <form onSubmit={this.handleSubmit}>
                     <label>Email adress
+                        <br></br>
                         <input 
                         type="text"
                         value={this.state.email}
                         onChange={this.update('email')}
                         />
                     </label>
+                        <br></br>
                     <label>Password
+                         <br></br>
                         <input
                         type="text"
                         value={this.state.password}
                         onChange={this.update('password')}
                         />
+                            <br></br>
                         <button type="submit">{this.props.formType}</button>
                     </label>
                 </form>
-
+            </div>
             </div>
         )
     }

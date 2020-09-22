@@ -8,8 +8,8 @@ import { AuthRoute, ChannelRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        <AuthRoute path="/signin" component={SigninFormContainer}/>
-        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/signin" component={SigninFormContainer}/>
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ChannelRoute path="/placeholder" component={PlaceholderContainer} />
         <AuthRoute exact path="/" component={Splash} />
     </div>

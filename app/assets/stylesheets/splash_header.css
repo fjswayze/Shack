@@ -16,7 +16,9 @@
      width: 100%;
      height: 50px;
  } 
-
+.shack-title{
+    height: 100%;
+}
  .splash-header button{
     background-color:#561163;
     font-weight: bold;

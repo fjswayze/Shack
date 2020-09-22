@@ -8,7 +8,7 @@ const mSTP = state => ({
 
 const Auth = ({loggedIn, path, component: Component}) => (
     <Route
-    path={path}
+    exact path={path}
     render={props => (
         loggedIn ? <Redirect to ="/placeholder" /> : <Component {...props}/>
     )}/> 

@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
     end
 
     def log_in!(user)
-        debugger
         session[:session_token] = user.reset_session_token
     end
 

@@ -4,5 +4,42 @@
      background-color: #e6e1d6;
      overflow: hidden;
      width: 100%;
+     font-size: 18px;
+     font-family: sans-serif;
+ }
+
+ .animation-row-1{
+   display: flex;
+ }
+ .animation-row-1 p{
+  width: 350px;
+ }
+ .splash-shack{
+   width: 300px;
+ }
+ .animation h1{
+  padding-top: 100px;
+  padding-left: 20px;
+   font-size: 50px;
+   width: 350px;
+  
+ }
+
+ .animation p{
+     padding-left: 20px;
+ }
+
+  .animation button{
+    background-color:#561163;
+    font-weight: bold;
+    width: 350px;
+    margin: 20px;
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    height: 60px; 
+    align-self: center;
+    padding-left: 10px;
+    font-size: 16px;
  }
  

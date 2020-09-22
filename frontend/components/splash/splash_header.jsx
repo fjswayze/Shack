@@ -4,8 +4,8 @@ import React from 'react';
 const SplashHeader = () => (
         <div className="splash-header">
             
-            <img className="shack-logo" src={window.shackURL} />
-            <p className="shack-title">shack</p>  
+            <img className="shack-title" src={window.shack_titleURL} />
+           
        
        
             <div>
