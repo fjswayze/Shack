@@ -3,9 +3,11 @@
  }
 
  .footer img{
+     margin-top: 40px;
+     margin-left: 20px;
      float: left;
-     height: 130px;
-    width: 130px;
+     height: 70px;
+    width: 70px;
  }
 
  .footer div {
@@ -17,7 +19,16 @@
  }
 
   .footer div h3 { 
-     color: #393333;;
+      margin-top: 40px;
+      font-size: 14px;
+     color: #423f3f;
+ }
+
+ .personal-links{
+     color: #888383;
+     text-decoration: none;
+     margin-bottom: 5px;
+
  }
 
  .footer-col-3{

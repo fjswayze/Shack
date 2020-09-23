@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ApplicationRecord 
     attr_reader :password
     validates :username, presence: true
     validates :email, presence: true, uniqueness: true 
@@ -6,6 +6,15 @@ class User < ApplicationRecord
     validates :profile_picture_id, presence: true 
     validates :session_token, presence: true, uniqueness: true 
     after_initialize :ensure_session_token, :ensure_profile_picture, :ensure_user_name
+
+    has_many :user_channel_joins,
+        foreign_key: :user_id, 
+        class_name: :UserChannelJoin 
+
+    has_many :channels, 
+        through: :user_channel_joins,
+        source: :channel 
+
 
     def password=(password)
         @password = password
