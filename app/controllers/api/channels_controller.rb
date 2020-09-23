@@ -1,7 +1,13 @@
 class Api::ChannelsController < ApplicationController 
     def index 
-        @channels = Channel.all 
-        render :index 
+        debugger 
+        if params[:user_id]
+            @channels = current_user.channels 
+            render :index 
+        else 
+            @channels = Channel.all 
+            render :index 
+        ends
     end
 
     def show 

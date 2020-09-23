@@ -5,6 +5,12 @@ export const fetchChannels = () => {
     })
 }
 
+export const fetchUserChannels = (userId) => {
+    return $.ajax({
+        url: `api/users/${userId}/channels`
+    })
+}
+
 export const fetchChannel = channelId => {
     return $.ajax({
         url: `api/channels${channelId}`
