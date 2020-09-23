@@ -20,8 +20,8 @@ const SplashFooter = () => (
         </div>
         <div className="footer-col-2">
             <h3>LINKS</h3>
-            <p>GitHub</p>
-            <p>LinkedIn</p>
+            <a className="personal-links" href="https://github.com/fjswayze"><p>GitHub</p></a>
+            <a className="personal-links" href="https://www.linkedin.com/in/francis-swayze-729159133/">LinkedIn</a>
             <p>AngelList</p>
         </div>
         <div className="footer-col-1">
