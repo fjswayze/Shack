@@ -1,3 +1,4 @@
+import { fetchChannel } from '../util/channel_api_util';
 import * as SessionApiUtil from '../util/session_api_util'; 
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'; 
@@ -18,13 +19,16 @@ const receiveErrors = (errors) => ({
     errors 
 })
 
-export const loginAction = (formUser) => dispatch => (
-    SessionApiUtil.login(formUser)
-        .then(
-            (user) => dispatch(receiveCurrentUser(user)),
-            (res) => dispatch(receiveErrors(res.responseJSON)) 
+export const loginAction = (formUser) => dispatch => {
+    return (
+        SessionApiUtil.login(formUser)
+            .then(
+                (user) => dispatch(receiveCurrentUser(user)),
+                (user) => (fetchChannel(user.channel_ids[0])),
+                (res) => dispatch(receiveErrors(res.responseJSON))
             )
-)
+    ); 
+}
 
 export const logoutAction = () => dispatch => {
 

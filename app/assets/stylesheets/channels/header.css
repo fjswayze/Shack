@@ -3,6 +3,7 @@
     height: 35px;
     background-color:#2d092d;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .header-div-1{
@@ -23,6 +24,12 @@
     padding-left: 7px;
     padding-right: 7px;
 }
+
+.header-div-2 i:hover {
+    background-color: #d1ccd42b;
+}
+
+
 .header-div-2 input{
     border-radius: 3px;
     border:#766679 .5px solid; 

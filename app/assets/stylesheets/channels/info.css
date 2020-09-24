@@ -21,8 +21,32 @@
     color: #6c6c73;
 }
 
+.dropdown{
+    background-color: #f7f7f7;
+    color: black;
+    font-weight: normal;
+    border-radius: 5px;
+    list-style: none;
+    padding-inline-start: 0px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.dropdown li{
+    padding: 5px; 
+    width: 200px;
+    border-top: 1px lightgray solid;
+    border-bottom: 1px lightgray solid;
+
+}
+
+.dropdown li:hover{
+    background-color: #094d87;
+
+}
+
 .sub-right-info i:hover{
-    background-color: #acacb3d1;
+    background-color: #eaeaf3;
 }
 
 .counter{
@@ -49,6 +73,10 @@
     width: 22%;
     border-top: #865986 1px solid; 
     border-bottom: #865986 1px solid; 
+}
+
+.left-info:hover{
+    background-color: #2d092d;
 }
 
 .add  {

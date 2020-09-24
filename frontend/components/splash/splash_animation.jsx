@@ -1,11 +1,9 @@
 import React from 'react'; 
-import { render } from 'react-dom';
-import { Link } from 'react-router-dom';
+
 
 
 class SplashAnimation extends React.Component{
     handleClick(){
-        this.props.fetchChannel(21);
         this.props.action({ email: 'test1997@gmail.com', password: 'hello1997' });
     }
     render(){
