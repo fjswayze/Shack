@@ -1,4 +1,4 @@
-class Membership < ActiveRecodrd::Base 
+class Membership < ActiveRecord::Base 
     belongs_to :membership, polymorphic: true 
 
 
