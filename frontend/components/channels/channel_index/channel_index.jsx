@@ -6,6 +6,7 @@ const ChannelIndex = props => (
             <ChannelIndexItem
                 channel={channel}
                 key={channel.id}
+                editChannel={this.props.editChannel}
                 /> 
         ))}
     </div>

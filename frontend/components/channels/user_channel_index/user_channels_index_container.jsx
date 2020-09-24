@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import UserChannelsIndex from './user_channels_index';
+import fetchChannels from '../../../actions/channel_actions'; 
 
 const mSTP = (state) => {
     return {
@@ -11,6 +12,7 @@ const mSTP = (state) => {
 }
 
 const mDTP = dispatch => ({
+    fetchChannels: () => dispatch(fetchChannels)
 })
 
 export default connect(mSTP, mDTP)(UserChannelsIndex); 

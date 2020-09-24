@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index'; 
+import {editChannel} from '../../../actions/channel_actions'; 
 
 const mSTP = (state) => {
     return {
@@ -9,7 +10,7 @@ const mSTP = (state) => {
 }
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logoutAction())
+    editChannel: channel => dispatch(editChannel(channel))
 })
 
 export default connect(mSTP, mDTP)(ChannelIndex); 

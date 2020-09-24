@@ -25,8 +25,8 @@ export const loginAction = (formUser) => dispatch => {
             .then(
                 (user) => dispatch(receiveCurrentUser(user)),
                 (res) => dispatch(receiveErrors(res.responseJSON)),
-                (user) => fetchChannel(user.channel_ids[0])
-            )
+                (user) => fetchChannel(user.channel_ids[0]))
+        
     ); 
 }
 
