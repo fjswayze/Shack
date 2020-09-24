@@ -1,6 +1,6 @@
-import { fetchChannel } from '../util/channel_api_util';
+import { fetchChannel} from '../util/channel_api_util';
 import * as SessionApiUtil from '../util/session_api_util'; 
-
+import * as ChannelApiUtil from '../util/channel_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'; 
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'; 
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'; 
@@ -24,8 +24,8 @@ export const loginAction = (formUser) => dispatch => {
         SessionApiUtil.login(formUser)
             .then(
                 (user) => dispatch(receiveCurrentUser(user)),
-                (user) => (fetchChannel(user.channel_ids[0])),
-                (res) => dispatch(receiveErrors(res.responseJSON))
+                (res) => dispatch(receiveErrors(res.responseJSON)),
+                (user) => fetchChannel(user.channel_ids[0])
             )
     ); 
 }

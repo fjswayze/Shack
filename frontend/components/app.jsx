@@ -5,13 +5,15 @@ import SignupFormContainer from './splash/session/signup_form_container';
 import Splash from "./splash/splash"; 
 import { AuthRoute, ChannelRoute } from '../util/route_util'; 
 import InfoContainer from './channels/info_bar/info_container';
+import Header from './channels/header/header';
 
 const App = () => (
     <div>
         <AuthRoute exact path="/signin" component={SigninFormContainer}/>
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Route path={`/channels/:channelId`} component={InfoContainer} />
-        <Route exact path="/" component={Splash} />
+        <Route path='/channels' component={Header}/>
+        <ChannelRoute path={`/channels/:channelId`} component={InfoContainer} />
+        <AuthRoute exact path="/" component={Splash} />
     </div>
 ); 
 

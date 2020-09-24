@@ -10,7 +10,6 @@ const mSTP = state => {
     } else{
        defaultValue = 1; 
     }
-    debugger
     return {
     loggedIn: Boolean(state.session.id),
     defaultChannel: defaultValue

@@ -5,9 +5,8 @@ import Info from './info';
 
 
 const mSTP = (state, ownProps) =>  {
-    debugger
     return { 
-        channel: state.entities.channels[ownProps.match.params.channelId] || {}, 
+        channelId: state.entities.channels[ownProps.match.params.channelId] || {}, 
         user: state.entities.users[state.session.id]
     }
     
