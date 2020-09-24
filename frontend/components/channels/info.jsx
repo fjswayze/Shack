@@ -12,12 +12,13 @@ class Info extends React.Component{
             <div className="info-div">
                 <div className="left-info">
                     <p className="workspace-name">App Academy</p>
+                    <img className="pencil" src={window.pencil_icon} />
                 </div>
                 <div className="right-info">
-                    {/* <h3 className="channel-name">{channels[0].name}</h3> */}
+                    <h3 className="channel-name">Channel Name</h3> 
                     <div className='sub-right-info'>
                         <p>picture here</p>
-                        <p>59</p>
+                        <p className="counter">59</p>
                         <img className="add" src={window.add_iconURL} />
                         <img className="info-img" src={window.info_iconURL} />
                       

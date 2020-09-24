@@ -1,7 +1,6 @@
 import React from 'react'; 
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
-import { fetchChannel } from '../../util/channel_api_util';
 
 
 class SplashAnimation extends React.Component{

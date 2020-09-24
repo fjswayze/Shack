@@ -1,12 +1,12 @@
-import { fetchChannel, fetchUserChannels} from "../../actions/channel_actions"; 
+import {fetchUserChannels} from "../../actions/channel_actions"; 
 import { connect } from 'react-redux'; 
 import { logoutAction } from "../../actions/session_actions";
 import Info from './info'; 
+import React from 'react'
 
 const mSTP = (state, ownProps) =>  {
     return { 
-        user: state.entities.users[state.session.id],
-        channel: state.entities.channels
+        user: state.entities.users[state.session.id]
     }
     
 }
