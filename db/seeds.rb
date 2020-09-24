@@ -9,6 +9,7 @@ User.destroy_all
 Channel.destroy_all
 UserChannelJoin.destroy_all
 
+testchannel1 = Channel.create(name: 'shacks', admin_id: 1)
 testuser = User.create(email: 'test1997@gmail.com', password: 'hello1997')
-testchannel = Channel.create(name: 'test', admin_id: testuser.id)
+testchannel = Channel.create( name: 'test', admin_id: testuser.id)
 testchanneljoins = UserChannelJoin.create(user_id: testuser.id, channel_id: testchannel.id)

@@ -1,9 +1,14 @@
 import React from 'react'; 
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
+import { fetchChannel } from '../../util/channel_api_util';
 
 
 class SplashAnimation extends React.Component{
+    handleClick(){
+        this.props.fetchChannel(21);
+        this.props.action({ email: 'test1997@gmail.com', password: 'hello1997' });
+    }
     render(){
         return(
             <div className="animation">
@@ -14,8 +19,7 @@ class SplashAnimation extends React.Component{
                         but why would you talk about anything else? That’s why we
                 made Shack — a place where people talk about shacks, together.</p>
                         <button onClick={() => 
-                        this.props.action({email: 'test1997@gmail.com', password: 'hello1997'})
-                        }>DEMO</button>
+                        this.handleClick()  }>DEMO</button>
                     </div>
                     <div className="ani-row-1-col-2">
                         <img className="splash-shack-1" src={window.no_messageURL} />
