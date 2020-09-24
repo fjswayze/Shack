@@ -2,7 +2,7 @@
     height: 65px;
     width: 100%; 
     display: flex;
-    border: lightgray 1px solid;
+    
 }
 
 .channel-name {
@@ -11,18 +11,29 @@
     font-size: 16px;
     font-family: sans-serif;
 }
+
 .pencil{
-    width: 45px;
-    padding-right: 10px;
+    width: 60px;
+    padding-top: 15px;
+}
+
+.sub-right-info i {
+    color: #6c6c73;
+}
+
+.sub-right-info i:hover{
+    background-color: #acacb3d1;
 }
 
 .counter{
     font-family: sans-serif;
+    font-size: 13px;
 }
 
 .workspace-name{
     padding-left: 10px;
     font-size: 14px;
+    
 }
 
 .left-info{
@@ -36,6 +47,8 @@
     font-weight: bold;
     font-family: sans-serif;
     width: 22%;
+    border-top: #865986 1px solid; 
+    border-bottom: #865986 1px solid; 
 }
 
 .add  {
@@ -45,9 +58,9 @@
 }
 .right-info {
     width: 78%;
-    height: 100px;
-     border-top: lightgray;
-    border-bottom: lightgray;
+    height: 63px;
+     border-top: lightgray 1px solid;
+    border-bottom: lightgray 1px solid;
     display: flex;
     justify-content: space-between;
     

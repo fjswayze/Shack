@@ -1,25 +1,47 @@
 .header-div{
     display: flex;
     height: 35px;
-    justify-content: space-between;
     background-color:#2d092d;
+    justify-content: space-between;
+}
+
+.header-div-1{
+   
 }
 
 .header-div-2{
+
     display: flex;
     height: 50px;
     justify-content: space-between;
 }
 
+.header-div-2 i {
+    width: 20px;
+    color: #d1ccd4;
+    padding-top: 9px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
 .header-div-2 input{
     border-radius: 3px;
     border:#766679 .5px solid; 
     height: 50%;
-    width: 300px;
+    width: 310px;
     color: white;
     background-color: #6f666f52;
 }
 
 .header-div-2-parts{
     padding: 5px; 
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    width: 60px;
+    height: 50px;
 }

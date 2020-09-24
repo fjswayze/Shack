@@ -6,14 +6,15 @@ class Header extends React.Component{
             <div className="header-div"> 
                 <div className="header-div-1"></div>
                 <div className="header-div-2">
-                    <p className="header-div-2-parts">C</p>
+                    <i class="far fa-clock"></i>
                     <form className="header-div-2-parts">
                         < input type="text"/>
                     </form>
-                    <p className="header-div-2-parts">?</p>
+                    <i class="far fa-question-circle"></i>
                 </div>
+
                 <div className="modal">
-                <p>P</p>
+                    <img className="profile" src={window.profileURL} />
                 </div>
             </div>
         )

@@ -2,9 +2,10 @@ import {fetchUserChannels} from "../../actions/channel_actions";
 import { connect } from 'react-redux'; 
 import { logoutAction } from "../../actions/session_actions";
 import Info from './info'; 
-import React from 'react'
+
 
 const mSTP = (state, ownProps) =>  {
+    debugger
     return { 
         user: state.entities.users[state.session.id]
     }
