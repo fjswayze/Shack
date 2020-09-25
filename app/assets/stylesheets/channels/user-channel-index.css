@@ -1,0 +1,51 @@
+.channels-index{
+     background-color: #3e0d3e;
+}
+
+.channels-index button{
+    border: none;
+    background-color: #3e0d3e;
+    color: lightgray; 
+    text-align: left;
+    width: 110px;
+    border: 0px; 
+    outline: 0px;
+    /* top: 20px;  */
+}
+
+
+
+.user-channels-dropdown{
+    background-color: #3e0d3e;
+    color: lightgray; 
+    list-style: none;
+    padding-inline-start: 0px;
+    border: none;
+    text-align: left;
+    width: 100px;
+    border: 0px; 
+    outline: 0px;
+    
+   
+}
+
+.arrows-channels{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px; 
+    color: lightgray;
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+.first-channel{
+    padding-left: 12px;
+    margin: 0; 
+}
+
+.user-channels-dropdown-content{
+    margin-top: 0; 
+    padding: 2px; 
+    padding-inline-start: 12px;
+
+
+}

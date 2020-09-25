@@ -3,12 +3,55 @@
     height: 35px;
     background-color:#2d092d;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-.header-div-1{
-   
+.modal button{
+    background-color:#2d092d;
+    border: none;
+    height: 35px;
+    outline: none;
+}   
+
+ .header-dropdown{
+    background-color: #f7f7f7;
+    color: black;
+    font-weight: normal;
+    border-radius: 5px;
+    list-style: none;
+    padding-inline-start: 0px;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: sans-serif;
+    z-index: 10;
+      left: 100%;
+    transform: translateX(-100%);
+    
+}  
+.header-dropdown input{
+    color: gray;
 }
+.header-dropdown li{
+    padding: 5px; 
+    width: 200px;
+    text-align: left;
+}
+
+.header-sign{
+    padding-top: 4px;
+    margin-bottom: 4px;
+    border-top: 1px solid lightgray; 
+}
+
+.header-edit{
+    border-top: 1px solid lightgray;
+}
+
+
+.header-dropdown li:hover{
+    background-color: #094d87;
+} 
+
 
 .header-div-2{
 

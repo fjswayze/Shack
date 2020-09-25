@@ -1,5 +1,5 @@
 import React from 'react'; 
-
+import ProfileDropdownContainer from './profile_dropdown_container'
 class Header extends React.Component{
     render(){
         return(
@@ -14,7 +14,7 @@ class Header extends React.Component{
                 </div>
 
                 <div className="modal">
-                    <img className="profile" src={window.profileURL} />
+                    <ProfileDropdownContainer/> 
                 </div>
             </div>
         )

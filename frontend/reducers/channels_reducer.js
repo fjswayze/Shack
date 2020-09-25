@@ -1,6 +1,7 @@
 import {RECEIVE_CHANNEL, RECEIVE_CHANNELS, REMOVE_CHANNEL} from '../actions/channel_actions'; 
 
 const ChannelReducer = (state = {}, action) => {
+    
     Object.freeze(state);
     let newState = Object.assign({}, state)
     switch (action.type) {

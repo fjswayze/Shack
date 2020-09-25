@@ -23,10 +23,10 @@ export const fetchChannels = () => dispatch => (
         .then(channels => dispatch(receiveChannels(channels)))
 ); 
 
-export const fetchUserChannels = (userId) => dispatch => (
-    APIUtil.fetchUserChannels(userId)
+export const fetchUserChannels = (userId) => dispatch => {
+    return APIUtil.fetchUserChannels(userId)
         .then(channels => dispatch(receiveChannels(channels)))
-); 
+}; 
 
 export const fetchChannel = (channelId) => dispatch => (
     APIUtil.fetchChannel(channelId)

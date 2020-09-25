@@ -5,6 +5,10 @@
     
 }
 
+/* .info-click-dropdown-button{
+    background-color: #3e0d3e;
+} */
+
 .channel-name {
     padding-left: 15px;
     padding-top: 5px;
@@ -30,6 +34,14 @@
     padding-inline-start: 0px;
     font-size: 14px;
     overflow: hidden;
+    transform-origin: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+   
+}
+
+.dropdown-div{
+    transform: translateX(-100%);
 }
 
 .dropdown li{
@@ -37,7 +49,6 @@
     width: 200px;
     border-top: 1px lightgray solid;
     border-bottom: 1px lightgray solid;
-
 }
 
 .dropdown li:hover{

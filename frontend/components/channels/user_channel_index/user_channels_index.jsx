@@ -11,6 +11,12 @@ class UserChannelsIndex extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount(){
+        this.props.user.channel_ids.forEach(channel => (
+            this.props.fetchChannel(channel)
+        ))
+    }
+
     handleBlur(e){
         this.setState({show: false})
     }
@@ -18,24 +24,33 @@ class UserChannelsIndex extends React.Component{
         this.setState({show: !this.state.show})
     }
     render(){
+        debugger
         return(
-            <div>
-                <h3>Channels</h3>
+            <div className="channels-index">
+            <div className="arrows-channels">
+                    
+
+            </div>
+          
+                
             <button
             style={{position: 'relative'}}
             onBlur={this.handleBlur}
             onClick={this.handleClick}
-            >
+            > 
+            <p> <i className="fas fa-caret-down"></i> Channels</p> 
+            <p className="first-channel">{this.props.channels[0].name}</p>
                 {this.state.show ? (
                     <div>
                     <ul
-                    className="dropdown"
+                    className="user-channels-dropdown"
                     onClick={e => e.stopPropagation()}
                     style={{position: 'absolute'}}
                     >
-                            {this.props.channelIds.map(id => (
-                                <Link to={`/channels/${id}`}>{this.props.channels[id].name}</Link>
-                            ))}
+                        {this.props.channels.slice(1).map(channel =>(
+                            <Link to={`/channels/${channel.id}`}>{channel.name}</Link>
+                        ))}
+                         
                     </ul>
                         </div>
                 ): null}
@@ -45,5 +60,4 @@ class UserChannelsIndex extends React.Component{
     }
 }
 
-{/* onClick="fetchChannels()" <Link to ChannelsIndex></Link> */ }
 export default UserChannelsIndex; 

@@ -24,16 +24,17 @@ class InfoClickDropdown extends React.Component {
     render(){
         return(
             <div>
-                <buton
+                <div
+                className="info-click-dropdown-button"
                 style={{position: 'relative'}}
                 onBlur={this.handleBlur}
                 onClick={this.handleClick}
                 >
-                    ∨
+                    <i className="fas fa-caret-down"></i>
                 {this.state.show ? (
-                <div >
+                <div class="dropdown-div" >
                     <ul
-                     className="dropdown"
+                    className="dropdown"
                     onClick={e => e.stopPropagation()}
                     style={{ position: 'absolute', top: '100%'}}
                     >
@@ -42,7 +43,7 @@ class InfoClickDropdown extends React.Component {
                     </ul>
                 </div>
                 ): null}
-                </buton>
+                </div>
             </div>
         )
     }
