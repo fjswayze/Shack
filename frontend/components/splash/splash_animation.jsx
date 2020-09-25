@@ -34,6 +34,7 @@ class SplashAnimation extends React.Component{
                     </div>
                 </div>
             </div >
+            
         )
     }
 }

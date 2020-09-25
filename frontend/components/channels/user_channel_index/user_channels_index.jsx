@@ -7,55 +7,55 @@ class UserChannelsIndex extends React.Component{
         this.state = {
             show: false 
         }
-        this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount(){
         this.props.user.channel_ids.forEach(channel => (
             this.props.fetchChannel(channel)
-        ))
+        ))  
     }
 
-    handleBlur(e){
-        this.setState({show: false})
-    }
+
     handleClick(){
         this.setState({show: !this.state.show})
     }
     render(){
-        debugger
+        let channelsArray; 
+        if(!this.props.channels[0]){
+            channelsArray = [1, 2]
+        } else{
+            channelsArray = this.props.channels; 
+        }
         return(
+        <div>
             <div className="channels-index">
-            <div className="arrows-channels">
-                    
+            <div>
 
-            </div>
-          
                 
+            </div>
             <button
             style={{position: 'relative'}}
-            onBlur={this.handleBlur}
             onClick={this.handleClick}
             > 
-            <p> <i className="fas fa-caret-down"></i> Channels</p> 
-            <p className="first-channel">{this.props.channels[0].name}</p>
+            <p className="channels-title"> <i className="fas fa-caret-down"></i> Channels</p>        
                 {this.state.show ? (
-                    <div>
+    
                     <ul
                     className="user-channels-dropdown"
                     onClick={e => e.stopPropagation()}
                     style={{position: 'absolute'}}
                     >
-                        {this.props.channels.slice(1).map(channel =>(
-                            <Link to={`/channels/${channel.id}`}>{channel.name}</Link>
+                        {channelsArray.slice(1).map(channel =>(
+                            <Link Link to={`/channels/${channel.id}`}><p>{channel.name}</p></Link>
                         ))}
                          
                     </ul>
-                        </div>
                 ): null}
             </button>
+         <p className="first-channel"> <Link Link to={`/channels/${channelsArray[0].id}`}><p>{channelsArray[0].name}</p></Link></p>
             </div>
+        </div>
         )
     }
 }

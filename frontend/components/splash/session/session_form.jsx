@@ -10,6 +10,11 @@ class SessionForm extends React.Component {
         }
     this.handleSubmit = this.handleSubmit.bind(this); 
     }
+
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
+
     handleSubmit(e) { 
         e.preventDefault(); 
         this.props.processForm(this.state); 
@@ -68,12 +73,13 @@ class SessionForm extends React.Component {
                         onChange={this.update('password')}
                         />
                             <br></br>
-                        <button type="submit">{this.props.formType}</button>
+                            <div>{this.props.errors.map(error => (
+                                <p className="errors">{error}</p>
+                            ))}</div>
+                        <button id="submit-button" type="submit">{this.props.formType}</button>
                     </label>
                 </form>
-                <div>{this.props.errors.map(error => (
-                    <p className="errors">{error}</p>
-                ))}</div>
+                
             </div>
             </div>
         )

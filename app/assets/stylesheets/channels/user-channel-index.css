@@ -1,5 +1,7 @@
 .channels-index{
      background-color: #3e0d3e;
+     width: 22%;
+   
 }
 
 .channels-index button{
@@ -7,45 +9,49 @@
     background-color: #3e0d3e;
     color: lightgray; 
     text-align: left;
-    width: 110px;
+    width: 100%;
+    height: 20px;
     border: 0px; 
     outline: 0px;
-    /* top: 20px;  */
+    padding: 0px; d
 }
-
-
 
 .user-channels-dropdown{
     background-color: #3e0d3e;
     color: lightgray; 
     list-style: none;
-    padding-inline-start: 0px;
     border: none;
     text-align: left;
-    width: 100px;
     border: 0px; 
     outline: 0px;
-    
+    width: 100%;
+     left: -8%;
+    transform: translateX(-8%); 
+    transform: translateY(6%); 
    
 }
-
-.arrows-channels{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px; 
-    color: lightgray;
-    font-family: sans-serif;
-    padding-left: 10px;
+.channels-title{
+    padding-left: 20px;
 }
+.channels-index a{
+    color: lightgray; 
+    text-decoration: none;
+}
+
+.user-channels-dropdown p{
+    /* padding-left: 20px; */
+}
+
+
 .first-channel{
-    padding-left: 12px;
+    padding-left: 32px;
     margin: 0; 
+    font-family: sans-serif;
+    font-size: 14px;
 }
 
 .user-channels-dropdown-content{
     margin-top: 0; 
     padding: 2px; 
-    padding-inline-start: 12px;
-
-
+    /* padding-inline-start: 12px; */
 }

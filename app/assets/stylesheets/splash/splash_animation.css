@@ -1,5 +1,5 @@
  .animation{
-     height: 1100px;
+     /* min-height: 1100px; */
      width: 100%;
      background-color: #e6e1d6;
      overflow: hidden;
@@ -12,6 +12,13 @@
  }
   .animation-row-2{
    display: flex;
+ }
+ .animation-row-3{
+   height: 100px;
+ }
+
+ .shack-channel-demo{
+   width: 90%;
  }
  
  .ani-row-1-col-1{
@@ -35,20 +42,14 @@
  }
 
 
-
  .animation-row-1 h1{
   padding-top: 100px;
   padding-left: 20px;
    font-size: 50px;
    width: 350px;
-  
  }
 
 
- .shack-channel-demo{
-   width: 90%;
-   padding: 10px;
- }
 
  .animation-row-1 p{
      padding-left: 20px;

@@ -5,7 +5,7 @@ import {fetchChannel} from '../../../actions/channel_actions';
 const mSTP = (state) => {
     return {
         user: state.entities.users[state.session.id],
-        channels: Object.values(state.entities.channels) || []
+        channels: Object.values(state.entities.channels) || [1, 3]
     }
 
 }
