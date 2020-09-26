@@ -1,0 +1,14 @@
+
+.window{
+    display: flex;
+    height: 100%;
+}
+.sidebar{
+    width: 22%;
+    height: 100%; 
+    background-color: #3e0d3e;
+}
+
+.mainwindow{
+    width: 88%;
+}

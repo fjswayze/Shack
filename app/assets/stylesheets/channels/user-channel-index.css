@@ -1,6 +1,6 @@
 .channels-index{
      background-color: #3e0d3e;
-     width: 22%;
+     width: 100%;
    
 }
 
@@ -9,7 +9,7 @@
 }
 
 .title-and-info-link a{
-    font-size: 24px;
+    font-size: 12px;
     border-radius: 2px;
     align-self: center;
     
@@ -45,7 +45,7 @@
     padding-left: 10px;
 }
 
-.channels-index button{
+.show-channels{
     border: none;
     background-color: #3e0d3e;
     color: lightgray; 
@@ -66,19 +66,26 @@
     text-align: left;
     border: 0px; 
     outline: 0px;
-    width: 108%;
+    width: 122%;
+    padding-left: 50px;
      left: -8%;
     transform: translateX(-8%); 
-    transform: translateY(6%); 
+    transform: translateY(16%); 
 }
 
 .channels-title{
     padding-left: 20px;
 }
-.channels-index a{
+.ui-channel-link {
     color: lightgray; 
     text-decoration: none;
     background-color: none;
+}
+
+.first-channel a {
+   color: lightgray; 
+    text-decoration: none;
+    background-color: none; 
 }
 
 

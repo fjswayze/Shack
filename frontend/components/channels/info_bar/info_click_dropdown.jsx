@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'; 
 import React from 'react'; 
 
 class InfoClickDropdown extends React.Component {
@@ -12,6 +12,8 @@ class InfoClickDropdown extends React.Component {
         this.handleClick = this.handleClick.bind(this); 
     }   
 
+  
+
 
     handleBlur(e){
         this.setState({show:false})
@@ -22,6 +24,21 @@ class InfoClickDropdown extends React.Component {
     }
 
     render(){
+        const dropdownButton = this.props.dropdownType === 'Sign out' ? (
+            <i className="fas fa-caret-down"></i>
+        ) : (
+                <i className="fas fa-info-circle"></i>
+        )
+        const dropdownContent = this.props.dropdownType === 'Sign out' ? (
+            <div>
+              <li onClick={() => this.props.logout()}>App Academy</li>
+              <li onClick={() => this.props.logout()}>Sign Out</li>
+            </div>
+        ) : (
+
+            <Link to={`/channels/${this.props.channel.id}/edit`}>Hello</Link>
+        ); 
+
         return(
             <div>
                 <div
@@ -30,16 +47,15 @@ class InfoClickDropdown extends React.Component {
                 onBlur={this.handleBlur}
                 onClick={this.handleClick}
                 >
-                    <i className="fas fa-caret-down"></i>
+                   {dropdownButton}
                 {this.state.show ? (
-                <div class="dropdown-div" >
+                <div className="dropdown-div" >
                     <ul
                     className="dropdown"
                     onClick={e => e.stopPropagation()}
                     style={{ position: 'absolute', top: '100%'}}
                     >
-                        <li onClick={() => this.props.logout()}>App Academy</li>
-                        <li onClick={() => this.props.logout()}>Sign Out</li>
+                        {dropdownContent}
                     </ul>
                 </div>
                 ): null}
