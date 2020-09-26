@@ -22,7 +22,6 @@ class UCIDropdown extends React.Component{
         }
 
         render(){
-            debugger
             return(
                 <div>
                     <div

@@ -5,7 +5,6 @@ import ChannelForm from './channel_form';
 
 class EditChannelForm extends React.Component {
     componentDidMount(){
-        debugger
         this.props.fetchChannel(this.props.match.params.channelId)
     }
 

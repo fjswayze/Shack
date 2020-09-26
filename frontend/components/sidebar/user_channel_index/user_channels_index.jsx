@@ -17,8 +17,13 @@ class UserChannelsIndex extends React.Component{
         ))  
     }
 
+    
+
 
     handleClick(){
+        this.props.user.channel_ids.forEach(channel => (
+            this.props.fetchChannel(channel)
+        ))  
         this.setState({show: !this.state.show})
     }
     render(){
@@ -52,7 +57,7 @@ class UserChannelsIndex extends React.Component{
                     style={{position: 'absolute'}}
                     >
                         {channelsArray.slice(1).map(channel =>(
-                            <Link className="ui-channel-link" Link to={`/channels/${channel.id}`}><p>{channel.name}</p></Link>
+                            <Link className="ui-channel-link" Link to={`/channels/${channel.id}`}>{channel.name}</Link>
                         ))}      
                     </ul>
                 ): null}
@@ -61,7 +66,7 @@ class UserChannelsIndex extends React.Component{
                     <UCIDropdownContainer/> 
                 </div>
             </div>
-         <p className="first-channel"> <Link Link to={`/channels/${channelsArray[0].id}`}><p>{channelsArray[0].name}</p></Link></p>
+         <Link to={`/channels/${channelsArray[0].id}`}><p>{channelsArray[0].name}</p></Link>
             </div>
             
         </div>

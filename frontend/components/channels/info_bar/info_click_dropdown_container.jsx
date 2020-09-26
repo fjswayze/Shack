@@ -4,8 +4,7 @@ import InfoClickDropdown from './info_click_dropdown';
 
 const mSTP = (state) => {
     return {
-        user: state.entities.users[state.session.id],
-        dropdownType: 'Sign out'
+        user: state.entities.users[state.session.id]
     }
 
 }

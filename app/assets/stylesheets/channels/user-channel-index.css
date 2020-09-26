@@ -47,7 +47,7 @@
 
 .show-channels{
     border: none;
-    background-color: #3e0d3e;
+    background-color: #3e0d3e00; 
     color: lightgray; 
     text-align: left;
     width: 100%;

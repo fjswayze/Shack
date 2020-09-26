@@ -24,6 +24,9 @@ class InfoClickDropdown extends React.Component {
     }
 
     render(){
+
+
+
         const dropdownButton = this.props.dropdownType === 'Sign out' ? (
             <i className="fas fa-caret-down"></i>
         ) : (
@@ -35,8 +38,11 @@ class InfoClickDropdown extends React.Component {
               <li onClick={() => this.props.logout()}>Sign Out</li>
             </div>
         ) : (
-
-            <Link to={`/channels/${this.props.channel.id}/edit`}>Hello</Link>
+            <div className="edit-channel-div">
+                    <Link to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
+                   
+            </div>
+          
         ); 
 
         return(

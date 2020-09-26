@@ -25,14 +25,17 @@
     color: #6c6c73;
 }
 
+
+
 .dropdown{
     background-color: #f7f7f7;
+    font-family: sans-serif;
     color: black;
     font-weight: normal;
     border-radius: 5px;
     list-style: none;
     padding-inline-start: 0px;
-    font-size: 14px;
+    font-size: 12px;
     overflow: hidden;
     transform-origin: 10px;
     left: 50%;
@@ -43,13 +46,36 @@
 
 .dropdown-div{
     transform: translateX(-100%);
+    z-index: 20;
 }
+
 
 .dropdown li{
     padding: 5px; 
-    width: 200px;
+   
     border-top: 1px lightgray solid;
     border-bottom: 1px lightgray solid;
+}
+
+.dropdown a{
+    padding-left: 15px; 
+    padding-right: 17px; 
+    
+    color: black;
+    text-decoration: none;
+    
+}
+
+.dropdown a:hover{
+    background-color:#094d87;
+}
+
+.edit-channel-div {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dropdown li:hover{
