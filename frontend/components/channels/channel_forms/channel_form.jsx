@@ -2,10 +2,12 @@ import React from 'react';
 
 class ChannelForm extends React.Component{
     constructor(props){
+        debugger
         super(props);
         this.state = this.props.channel; 
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
+   
 
     handleSubmit(e){
         e.preventDefault(); 
@@ -19,9 +21,7 @@ class ChannelForm extends React.Component{
     render(){
     const {form} = this.props; 
         return(
-            // <div className="master-form">
-            //     <div className="side-bar">
-            //     </div>
+         
 
                 <div className="form">
                     <h3>{form}</h3>
@@ -37,7 +37,8 @@ class ChannelForm extends React.Component{
                         <br></br>
                         <label>Description
                             <br></br>
-                            <textarea
+                            <input
+                            type="text"
                             value={this.state.description}
                             onChange={this.update('description')}
                             />
@@ -47,7 +48,6 @@ class ChannelForm extends React.Component{
                     </form>
             
                 </div>
-            // </div>
            
         )
     }

@@ -50,7 +50,7 @@ class UserChannelsIndex extends React.Component{
                     style={{position: 'absolute'}}
                     >
                         {channelsArray.slice(1).map(channel =>(
-                            <Link classname="ui-channel-link" Link to={`/channels/${channel.id}`}><p>{channel.name}</p></Link>
+                            <Link className="ui-channel-link" Link to={`/channels/${channel.id}`}><p>{channel.name}</p></Link>
                         ))}      
                     </ul>
                 ): null}

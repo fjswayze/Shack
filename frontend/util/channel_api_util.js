@@ -27,15 +27,16 @@ export const createChannel = channel => {
 
 export const deleteChannel = channelId => {
     return $.ajax({
-        url: `api/channels${channelId}`,
+        url: `api/channels/${channelId}`,
         method: 'DELETE'
     })
 }
 
 export const updateChannel = channel => {
     return $.ajax({
-        url: `api/channels${channel.id}`,
-        method: 'DELETE'
+        url: `api/channels/${channel.id}`,
+        method: 'PATCH',
+        data: {channel}
     })
 }
 

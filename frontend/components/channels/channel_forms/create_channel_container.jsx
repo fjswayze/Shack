@@ -6,7 +6,8 @@ import {createChannel} from '../../../actions/channel_actions';
 const mSTP = state => ({
     channel: {
         name: '',
-        description: ''
+        description: '',
+        admin_id: state.entities.users[state.session.id].id
     }, 
     form: 'Create Channel'
 })

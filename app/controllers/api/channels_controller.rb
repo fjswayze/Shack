@@ -37,7 +37,7 @@ class Api::ChannelsController < ApplicationController
     end
 
     def destroy 
-        @channel = Post.find(params[:id])
+        @channel = Channel.find(params[:id])
         if @channel.destroy 
             render :show 
         else
@@ -49,6 +49,6 @@ class Api::ChannelsController < ApplicationController
     private 
 
     def channel_params
-        params.require(:channel).permit(:name, :admin_id)
+        params.require(:channel).permit(:name, :description, :admin_id)
     end
 end
