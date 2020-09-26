@@ -1,0 +1,27 @@
+.form{
+    position: relative;
+    left: 30%; 
+}
+
+
+.form label{
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form input{
+    width: 390px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} 
+
+.form textarea{
+    width: 390px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+} 

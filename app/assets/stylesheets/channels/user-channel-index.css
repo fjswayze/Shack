@@ -4,9 +4,38 @@
    
 }
 
+.title-and-info-link{
+    display: flex;
+}
+
+.title-and-info-link a{
+    font-size: 24px;
+    border-radius: 2px;
+    align-self: center;
+    
+    
+}
+
+.fake-button{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 30px;
+    width: 35px;
+    border-radius: 2px;
+    margin: 4px;
+}
+
+.fake-button:hover{
+    background-color: #d3d3d326; 
+    
+}
+
+
 .master-div{
     display: flex;
 }
+
 
 .first-channel{
     padding-left: 4px;

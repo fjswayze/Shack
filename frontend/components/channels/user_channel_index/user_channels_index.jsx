@@ -34,11 +34,14 @@ class UserChannelsIndex extends React.Component{
 
                 
             </div>
+            <div className="title-and-info-link">
             <button
             style={{position: 'relative'}}
             onClick={this.handleClick}
             > 
-            <p className="channels-title"> <i className="fas fa-caret-down"></i> Channels</p>        
+               
+                    <p className="channels-title"> <i className="fas fa-caret-down"></i> Channels</p>      
+            
                 {this.state.show ? (
     
                     <ul
@@ -52,6 +55,10 @@ class UserChannelsIndex extends React.Component{
                     </ul>
                 ): null}
             </button>
+                <div className="fake-button">
+                    <Link to="/channels/index/">+</Link> 
+                </div>
+            </div>
          <p className="first-channel"> <Link Link to={`/channels/${channelsArray[0].id}`}><p>{channelsArray[0].name}</p></Link></p>
             </div>
             
