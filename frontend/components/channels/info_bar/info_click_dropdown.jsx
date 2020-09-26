@@ -38,7 +38,7 @@ class InfoClickDropdown extends React.Component {
                     onClick={e => e.stopPropagation()}
                     style={{ position: 'absolute', top: '100%'}}
                     >
-                        <li>App Academy</li>
+                        <li onClick={() => this.props.logout()}>App Academy</li>
                         <li onClick={() => this.props.logout()}>Sign Out</li>
                     </ul>
                 </div>

@@ -2,13 +2,21 @@ import React from 'react';
 
 class ChannelIndexItem extends React.Component{
     render(){
+    let length; 
+    if(!this.props.channel.user_ids){
+        length = 0
+    }else{
+        length= this.props.channel.user_ids.length
+    }
         return(
-            <div>
-                <p>{this.props.channel.name}</p>
-                <p>{this.props.channel.user_ids.length}</p>
-                <p>{this.props.channel.description}</p>
-                <button onClick={() => this.props.editChannel(this.props.channel)}>Join</button>
-            </div>
+                    <div className="chanels-index-item">
+                        <div>
+                        <p className="chanels-index-item-name">{this.props.channel.name} {this.props.channel.description}</p>
+                    <p className="chanels-index-item-members">{length} members</p>
+                    </div>
+            
+                        <button>Join</button>
+                    </div>  
         )
     }
 }

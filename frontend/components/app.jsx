@@ -6,8 +6,8 @@ import Splash from "./splash/splash";
 import { AuthRoute, ChannelRoute } from '../util/route_util'; 
 import InfoContainer from './channels/info_bar/info_container';
 import Header from './channels/header/header';
-import UserChannelsIndexContainer from './channels/user_channel_index/user_channels_index_container'
-
+import UserChannelsIndexContainer from './channels/user_channel_index/user_channels_index_container'; 
+import ChannelIndexContainer from './channels/channel_index/channel_index_container';
 const App = () => (
     <div>
         <AuthRoute exact path="/signin" component={SigninFormContainer}/>
@@ -15,6 +15,7 @@ const App = () => (
         <Route path='/channels' component={Header}/>
         <ChannelRoute path={`/channels/:channelId`} component={InfoContainer} />
         <ChannelRoute path='/channels' component={UserChannelsIndexContainer}/> 
+        <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer}/>
         <Route exact path="/" component={Splash} />
     </div>
 ); 

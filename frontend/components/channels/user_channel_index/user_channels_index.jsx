@@ -28,7 +28,7 @@ class UserChannelsIndex extends React.Component{
             channelsArray = this.props.channels; 
         }
         return(
-        <div>
+        <div className="master-div">
             <div className="channels-index">
             <div>
 
@@ -47,14 +47,14 @@ class UserChannelsIndex extends React.Component{
                     style={{position: 'absolute'}}
                     >
                         {channelsArray.slice(1).map(channel =>(
-                            <Link Link to={`/channels/${channel.id}`}><p>{channel.name}</p></Link>
-                        ))}
-                         
+                            <Link classname="ui-channel-link" Link to={`/channels/${channel.id}`}><p>{channel.name}</p></Link>
+                        ))}      
                     </ul>
                 ): null}
             </button>
          <p className="first-channel"> <Link Link to={`/channels/${channelsArray[0].id}`}><p>{channelsArray[0].name}</p></Link></p>
             </div>
+            
         </div>
         )
     }
