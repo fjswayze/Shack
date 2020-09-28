@@ -9,4 +9,6 @@ class Channel < ApplicationRecord
         through: :channel_memberships,
         source: :user 
 
+    has_many :messages, as: :messageable 
+
 end 

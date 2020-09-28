@@ -8,7 +8,7 @@ class UsersIndex extends React.Component{
 
     render(){
         let usersArray; 
-        debugger
+        
         if(!this.props.channel.name){ return null; 
         } else {
             usersArray = this.props.users.filter(user => (!this.props.channel.user_ids.includes(user.id))) 

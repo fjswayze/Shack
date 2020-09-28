@@ -9,5 +9,6 @@ Rails.application.routes.draw do
       resources :channels, only: [:create, :index, :show, :destroy, :update]
       resource :session, only: [:create, :destroy]
       resources :user_channel_joins, only: [:create]
+     mount ActionCable.server, at: '/cable'
     end
 end

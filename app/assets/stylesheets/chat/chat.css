@@ -1,0 +1,51 @@
+.message-list li{
+    font-family: sans-serif;
+}
+
+.message-list{
+    font-size: 14px;
+    list-style: none;
+    margin-left: 5%;
+}
+
+.message-form-container{
+    border: 1px solid gray; 
+    min-height: 100px;
+    width: 98%;
+    margin-left: 1%;
+    border-radius: 5px;
+ 
+}
+
+.message-form-input{
+    width: 100%;
+    height: 70px;
+    border: 0px; 
+    padding: 0;
+    outline:none; 
+}
+
+.message-form-btn-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+}
+
+.message-form-btn-active{
+    background-color: #0b9a6c;
+    color:white; 
+    border: 0;
+    border-radius: 3px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.message-form-btn-inactive{
+    background-color: none;
+    color:darkgray; 
+    border: 0;
+    border-radius: 3px;
+    height: 25px;
+    margin-right: 5px;
+}
