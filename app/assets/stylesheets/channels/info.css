@@ -57,6 +57,9 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    width: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
    
 }
 
@@ -76,7 +79,8 @@
 .dropdown a{
     padding-left: 15px; 
     padding-right: 17px; 
-    
+    padding-bottom: 4px;
+    padding-top: 4px; 
     color: black;
     text-decoration: none;
     
@@ -84,12 +88,12 @@
 
 .dropdown a:hover{
     background-color:#094d87;
+    color: white;
 }
 
 .edit-channel-div {
     width: 120px;
     height: 40px;
-    display: flex;
     justify-content: center;
     align-items: center;
 }

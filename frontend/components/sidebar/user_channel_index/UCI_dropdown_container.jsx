@@ -42,7 +42,7 @@ class UCIDropdown extends React.Component{
                                 <button className= "create-channel" onClick={() => this.props.openModal()}>Create a channel</button>
                             </ul>
                         </div> 
-                       ): null} 
+                       ): null}  
 
                     </div>
                 </div>
