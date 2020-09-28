@@ -16,7 +16,7 @@ class UsersIndex extends React.Component{
         return(
            
                 <div className="all-users-index">
-                    <h3>Users</h3>
+                    <h3>Add people to {this.props.channel.name}</h3>
                 
                     {usersArray.map(user => (
                         <div className='users-index-item'>

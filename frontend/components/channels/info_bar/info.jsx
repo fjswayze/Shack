@@ -7,8 +7,14 @@ class Info extends React.Component{
         this.props.fetchChannel(this.props.match.params.channelId); 
     }
     render(){
-        
-        return(
+        const UsersIndex = (this.props.channel.id) ? ( 
+            <Link to={`/channels/${this.props.channel.id}/users/index`}><button className="users-index-btn">+ Add</button></Link>
+        ) : (<div></div>)
+
+        const membersCount = (this.props.channel.user_ids) ? (<p className="members-count">{this.props.channel.user_ids.length}</p>) : (
+            <div></div>
+        )
+        return( 
             <div>
             <div className="info-div">
                 <div className="left-info">
@@ -19,8 +25,9 @@ class Info extends React.Component{
                 <div className="right-info">
                     <h3 className="channel-name">{this.props.channel.name}</h3> 
                     <div className='sub-right-info'>
-                            <Link to={`/channels/${this.props.channel.id}/users/index`}><i className="fas fa-user-plus"></i></Link>
-                            <button className="delete-channel" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
+                            {membersCount}
+                           { UsersIndex}
+                            {/* <button className="delete-channel" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button> */}
                                <InfoClickDropDown channel={this.props.channel}/> 
                     </div>
                 </div>

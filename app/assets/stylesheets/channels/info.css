@@ -160,3 +160,18 @@
     padding-right: 20px;
     padding-bottom: 20px;
 }
+
+.members-count{
+    font-family: sans-serif;
+}
+
+.users-index-btn{
+    color: white; 
+    background-color: #177bc3 ;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 3px;
+    height: 30px;
+
+}

@@ -40,6 +40,7 @@ class InfoClickDropdown extends React.Component {
         ) : (
             <div className="edit-channel-div">
                     <Link to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
+                    <a onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</a>
                    
             </div>
           

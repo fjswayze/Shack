@@ -52,11 +52,14 @@ class UserChannelsIndex extends React.Component{
                                 style={{position: 'absolute'}}
                                 >
                                 {selectedChannels.map(channel =>(
+            
                                     <>
                                     <Link  key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link>
                                     <br></br>
                                     </>
-                                ))}      
+                            
+                                ))}   
+                             
                                  </ul>
                             </div>
                         ): 
@@ -68,6 +71,7 @@ class UserChannelsIndex extends React.Component{
                                     style={{ position: 'absolute' }}
                                 >
                                     <Link className="ui-channel-link" to={`/channels/${selectedChannels[0].id}`}>{selectedChannels[0].name}</Link>
+                            
                                 </ul>
                             </div>
                         
