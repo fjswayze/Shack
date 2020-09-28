@@ -40,7 +40,7 @@ class ProfileDropdown extends React.Component{
                                 
                                 <li><input 
                                 type="text"
-                                value="update your status"
+                                defaultValue="update your status"
                                 ></input></li>
                                 <li>{this.props.user.name}</li>
                                 <li className="header-edit">Edit profile</li>

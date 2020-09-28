@@ -25,24 +25,24 @@ class UCIDropdown extends React.Component{
             return(
                 <div>
                     <div
-                    className='UCI-dropdown-button'
+                    className='info-click-dropdown-button'
                     style={{position: 'relative'}}
                     onBlur={this.handleBlur}
                     onClick={this.handleClick}
                     >
                      + 
                     {this.state.show ? ( 
-                      
+                      <div className="dropdown-div-UCI">
                             <ul 
-                            className="UCI-dropdown"
+                            className="dropdown-UCI"
                             onClick={e => e.stopPropagation()}
                             style={{position: "absolute", top: '100%'}}
                             >
                                 <Link className="channel-browser-link" to="/channels/index/">Browse channels</Link>
                                 <button className= "create-channel" onClick={() => this.props.openModal()}>Create a channel</button>
                             </ul>
-                    
-                      ): null} 
+                        </div> 
+                       ): null} 
 
                     </div>
                 </div>

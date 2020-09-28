@@ -8,13 +8,6 @@
     display: flex;
 }
 
-.title-and-info-link a{
-    font-size: 12px;
-    border-radius: 2px;
-    align-self: center;
-    
-    
-}
 
 .fake-button{
     display: flex;
@@ -32,19 +25,6 @@
 }
 
 
-.master-div{
-    display: flex;
-}
-
-
-.first-channel{
-    padding-left: 4px;
-}
-
-.user-index-channel-name{
-    padding-left: 10px;
-}
-
 .show-channels{
     border: none;
     background-color: #3e0d3e00; 
@@ -57,6 +37,11 @@
     padding: 0px; 
 }
 
+
+.user-channels-dropdown-div{
+    width: 100%;
+}
+
 .user-channels-dropdown{
     background-color: #3e0d3e;
     box-sizing: border-box;
@@ -66,38 +51,38 @@
     text-align: left;
     border: 0px; 
     outline: 0px;
-    width: 122%;
-    padding-left: 50px;
-     left: -8%;
-    transform: translateX(-8%); 
-    transform: translateY(16%); 
+    width: 100%;
+    
+    
 }
 
-.channels-title{
-    padding-left: 20px;
+.user-channels-dropdown a{
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 100%;
 }
+
+
+
 .ui-channel-link {
     color: lightgray; 
     text-decoration: none;
     background-color: none;
+    padding-top: 5px;
+    font-size: 15px; 
 }
 
-.first-channel a {
-   color: lightgray; 
+.ui-channel-link-first {
+    color: lightgray; 
     text-decoration: none;
-    background-color: none; 
-}
-
-
-.ui-channel-link{
-    margin-left: 10px ;
-}
-
-.first-channel{
-    padding-left: 32px;
-    margin: 0; 
+    background-color: none;
+    padding-top: 5px;
+    padding-left: 21%; 
     font-family: sans-serif;
-    font-size: 14px;
 }
+
+
+
+
 
 

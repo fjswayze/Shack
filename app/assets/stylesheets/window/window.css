@@ -2,13 +2,15 @@
 .window{
     display: flex;
     height: 100%;
+    width: 100%;
 }
 .sidebar{
     width: 22%;
-    height: 100%; 
+    min-height: 500px; 
+  
     background-color: #3e0d3e;
 }
 
-.mainwindow{
-    width: 88%;
+.main-window{
+    width: 78%;
 }

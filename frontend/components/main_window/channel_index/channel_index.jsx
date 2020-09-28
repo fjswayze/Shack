@@ -8,25 +8,26 @@ class ChannelIndex extends React.Component{
     }
 
     render() {
-        let channelsArray;
+        let channelIndexArray;
         if (!this.props.channels[0]) {
-            channelsArray = [1, 2]
+            channelIndexArray = [1, 2]
         } else {
-            channelsArray = this.props.channels;
+            channelIndexArray = this.props.channels;
         }
         return(
-            <div className="master-channels-index-div">
-                <div className="sidebar">
-                    Sidebar
-                </div>
+           
+                
                 <div className="all-channels-index">
-                    {channelsArray.map(channel => (
+                    {channelIndexArray.map(channel => (
                      <ChannelIndexItem 
+                    key={channel.id}
                     channel={channel}
+                    user={this.props.user}
+                    createChannelMembership={this.props.createChannelMembership}
                     />
                     ))}
                 </div>
-            </div>
+          
         )
         }
 }

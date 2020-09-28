@@ -1,6 +1,6 @@
 import React from 'react'; 
 import InfoClickDropDown from './info_click_dropdown'; 
-
+import {Link} from 'react-router-dom'; 
 class Info extends React.Component{
     componentDidMount(){   
         
@@ -19,8 +19,8 @@ class Info extends React.Component{
                 <div className="right-info">
                     <h3 className="channel-name">{this.props.channel.name}</h3> 
                     <div className='sub-right-info'>
-                            <i className="fas fa-user-plus"></i>
-                            <button onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
+                            <Link to={`/channels/${this.props.channel.id}/users/index`}><i className="fas fa-user-plus"></i></Link>
+                            <button className="delete-channel" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
                                <InfoClickDropDown channel={this.props.channel}/> 
                     </div>
                 </div>

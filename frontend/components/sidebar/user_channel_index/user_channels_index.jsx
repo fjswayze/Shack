@@ -12,6 +12,7 @@ class UserChannelsIndex extends React.Component{
     }
 
     componentDidMount(){
+        debugger
         this.props.user.channel_ids.forEach(channel => (
             this.props.fetchChannel(channel)
         ))  
@@ -21,54 +22,69 @@ class UserChannelsIndex extends React.Component{
 
 
     handleClick(){
-        this.props.user.channel_ids.forEach(channel => (
-            this.props.fetchChannel(channel)
-        ))  
         this.setState({show: !this.state.show})
     }
     render(){
+        if(!this.props.channels[2]) return <div></div>; 
         let channelsArray; 
-        if(!this.props.channels[0]){
-            channelsArray = [1, 2]
-        } else{
-            channelsArray = this.props.channels; 
-        }
+        channelsArray = this.props.channels
+        
+        let selectedChannels = channelsArray.filter(channel => (this.props.user.channel_ids.includes(channel.id))); 
+        debugger
         return(
         <div className="master-div">
             <div className="channels-index">
-            <div>
-
-                
-            </div>
-            <div className="title-and-info-link">
-            <button
-            className="show-channels"
-            style={{position: 'relative'}}
-            onClick={this.handleClick}
-            > 
-               
-                    <p className="channels-title"> <i className="fas fa-caret-down"></i> Channels</p>      
-            
-                {this.state.show ? (
     
-                    <ul
-                    className="user-channels-dropdown"
-                    onClick={e => e.stopPropagation()}
-                    style={{position: 'absolute'}}
-                    >
-                        {channelsArray.slice(1).map(channel =>(
-                            <Link className="ui-channel-link" Link to={`/channels/${channel.id}`}>{channel.name}</Link>
-                        ))}      
-                    </ul>
-                ): null}
-            </button>
-                <div className="fake-button">
-                    <UCIDropdownContainer/> 
-                </div>
-            </div>
-         <Link to={`/channels/${channelsArray[0].id}`}><p>{channelsArray[0].name}</p></Link>
-            </div>
+                <div className='title-and-info-link'>
+                    <button
+                    className="show-channels"
+                    style={{position: 'relative'}}
+                    onClick={this.handleClick}
+                    > 
+               
+                        <p className='channels-title-uci'><i className="fas fa-caret-down"></i> Channels</p>      
             
+                        {this.state.show ? (
+                            <div className='user-channels-dropdown-div'>
+                                <ul
+                                className="user-channels-dropdown"
+                                onClick={e => e.stopPropagation()}
+                                style={{position: 'absolute'}}
+                                >
+                                {selectedChannels.map(channel =>(
+                                    <>
+                                    <Link  key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link>
+                                    <br></br>
+                                    </>
+                                ))}      
+                                 </ul>
+                            </div>
+                        ): 
+
+                            <div className='user-channels-dropdown-div'>
+                                <ul
+                                    className="user-channels-dropdown"
+                                    onClick={e => e.stopPropagation()}
+                                    style={{ position: 'absolute' }}
+                                >
+                                    <Link className="ui-channel-link" to={`/channels/${selectedChannels[0].id}`}>{selectedChannels[0].name}</Link>
+                                </ul>
+                            </div>
+                        
+                             
+
+                        }
+               
+                    </button>
+                        <div className="fake-button">
+                            <UCIDropdownContainer />
+                        </div>
+
+                </div>
+                
+           
+                    {/* <Link className="ui-channel-link-first" to={`/channels/${channelsArray[0].id}`}>{channelsArray[0].name}</Link> */}
+                </div>
         </div>
         )
     }

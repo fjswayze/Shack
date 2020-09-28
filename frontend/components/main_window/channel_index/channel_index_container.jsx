@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index'; 
-import {updateChannel, fetchChannels} from '../../../actions/channel_actions'; 
+import {fetchChannels} from '../../../actions/channel_actions'; 
+import {createChannelMembership} from '../../../actions/channel_membership_actions'
+
 
 const mSTP = (state) => {
     return {
-        channels: Object.values(state.entities.channels) || []
+        channels: Object.values(state.entities.channels) || [],
+        user: state.entities.users[state.session.id]
     }
 
 }
 
 const mDTP = dispatch => ({
-    updateChannel: channel => dispatch(updateChannel(channel)),
-    fetchChannels: () => dispatch(fetchChannels())
+    fetchChannels: () => dispatch(fetchChannels()),
+    createChannelMembership: (channelMembership) => dispatch(createChannelMembership(channelMembership))
+   
 })
 
 export default connect(mSTP, mDTP)(ChannelIndex); 

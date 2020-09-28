@@ -7,12 +7,12 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true 
     after_initialize :ensure_session_token, :ensure_profile_picture, :ensure_user_name
 
-    has_many :user_channel_joins,
+    has_many :channel_memberships,
         foreign_key: :user_id, 
-        class_name: :UserChannelJoin 
+        class_name: :ChannelMembership 
 
     has_many :channels, 
-        through: :user_channel_joins,
+        through: :channel_memberships,
         source: :channel 
 
 

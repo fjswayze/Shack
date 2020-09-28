@@ -1,12 +1,12 @@
 class Channel < ApplicationRecord  
     validates :name, presence: true 
     
-    has_many :user_channel_joins,
+    has_many :channel_memberships,
         foreign_key: :channel_id, 
-        class_name: :UserChannelJoin
+        class_name: :ChannelMembership 
 
     has_many :users, 
-        through: :user_channel_joins,
+        through: :channel_memberships,
         source: :user 
 
 end 

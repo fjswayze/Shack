@@ -1,65 +1,54 @@
-.UCI-dropdown{
-  
-    background-color: #f5f5f5;
+
+.create-channel:hover{
+     background-color: #094d87;
+}
+
+.create-channel{
+border: 0px;
+padding-right: 22px;
+background-color: #f7f7f7;
+}
+
+
+
+.dropdown-UCI {
+    background-color: #f7f7f7;
+    font-family: sans-serif;
     color: black;
     font-weight: normal;
     border-radius: 5px;
     list-style: none;
     padding-inline-start: 0px;
-    font-size: 14px;
-    font-family: sans-serif;
-   
-    border-radius: 5px;
-    position: absolute;
-    top: 100%;
+    font-size: 12px;
+    overflow: hidden;
+    transform-origin: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
-    box-shadow: 0 0 0 0.5pt #807878;
-    width: 100px; 
+    width: 130px;
+}
 
-}  
-
-
-.UCI-dropdown button{
-    background-color: #f7f7f7;
+.channel-browser-link {
+    padding-left: 15px;
+    padding-right: 15px;
     color: black;
-    font-size: 12px;
-    border: none;
-    font-family: sans-serif;
-    padding-left: 10px;
-  
-}
-
-.UCI-dropdown button:hover{
-background-color: #094d87;
-}
-
-.UCI-dropdown a:hover{
-background-color: #094d87;
-}
-
-
-.UCI-dropdown a{
-   background-color: #f7f7f7;
-    color: black;
-
-    border: none; 
     text-decoration: none;
-    font-family: sans-serif;
+    font-size: 13px;
+    border-bottom: 1px darkgray solid;
+   
 }
 
-.channel-browser-link{
-    font-size: 12px;
-    color: black;
-    padding-left: 4px;
-    padding-right: 3px;
+.channel-browser-link:hover{
+    background-color: #094d87;
 }
 
-.UCI-dropdown button:hover{
-    cursor: pointer;
+.channels-title-uci{
+    /* padding-top: 15px; */
+    transform: translateX(-6%);
 }
 
-.create-channel{
-   background-color: #f7f7f7;
-     color: black ; 
-}
 
+
+.user-channels-dropdown-div{
+    transform: translateY(-12px);
+}

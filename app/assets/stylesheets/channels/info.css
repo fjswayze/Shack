@@ -5,10 +5,26 @@
     
 }
 
-/* .info-click-dropdown-button{
-    background-color: #3e0d3e;
-} */
+.info-click-dropdown-button{
+   color: lightgray;
+}
 
+.channels-title-uci{
+    padding-left: 15%;
+}
+.delete-channel{
+    background-color: #6c6c73;
+    color: white;
+    outline: none;
+    box-shadow: none;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.delete-channel:hover{
+    background-color: #404044; 
+    cursor: pointer;
+}
 .channel-name {
     padding-left: 15px;
     padding-top: 5px;

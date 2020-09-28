@@ -10,7 +10,9 @@ class ChannelForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault(); 
-        this.props.action(this.state); 
+        this.props.action(this.state).then(action =>
+            this.props.history.push(`/channels/${action.channel.id}`));
+        this.props.closeModal();
     }
 
     update(field){
@@ -64,7 +66,7 @@ class ChannelForm extends React.Component{
                             value={true}
                             onChange={this.update('private')}
                             ></input>
-                            <span class="slider"></span>
+                            <span className="slider"></span>
                         </label>
                         
                         <div></div>
