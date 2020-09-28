@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all 
 Channel.destroy_all
-UserChannelJoin.destroy_all
+ChannelMembership.destroy_all
 
 testchannel1 = Channel.create(name: 'shacks', admin_id: 1)
 

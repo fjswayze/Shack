@@ -12,7 +12,7 @@ class UserChannelsIndex extends React.Component{
     }
 
     componentDidMount(){
-        debugger
+        
         this.props.user.channel_ids.forEach(channel => (
             this.props.fetchChannel(channel)
         ))  
@@ -25,12 +25,12 @@ class UserChannelsIndex extends React.Component{
         this.setState({show: !this.state.show})
     }
     render(){
-        if(!this.props.channels[2]) return <div></div>; 
+        
+        if(!this.props.channels[0]) return <div></div>; 
         let channelsArray; 
         channelsArray = this.props.channels
         
         let selectedChannels = channelsArray.filter(channel => (this.props.user.channel_ids.includes(channel.id))); 
-        debugger
         return(
         <div className="master-div">
             <div className="channels-index">
