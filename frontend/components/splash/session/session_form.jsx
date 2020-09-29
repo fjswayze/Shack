@@ -12,15 +12,15 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
+    
+
     componentWillUnmount(){
         this.props.clearErrors()
     }
 
     handleSubmit(e) { 
         e.preventDefault(); 
-        this.props.processForm(this.state).then(() => {
-            this.props.history.push('/channels/1')
-        }); 
+        this.props.processForm(this.state); 
     }
 
    
@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     }
 
     render(){
-        debugger
+        
         const headerCommand = this.props.formType === 'Sign Up' ?
                 <h1>Sign up for Shack</h1> 
             :

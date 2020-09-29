@@ -4,7 +4,7 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :profile_picture_id, presence: true 
     validates :session_token, presence: true, uniqueness: true 
-    after_initialize :ensure_session_token, :ensure_profile_picture, :ensure_user_name
+    after_initialize :ensure_session_token, :ensure_profile_picture, :ensure_user_name, :ensure_channel_id
 
     has_many :channel_memberships,
         foreign_key: :user_id, 
@@ -13,6 +13,7 @@ class User < ApplicationRecord
     has_many :channels, 
         through: :channel_memberships,
         source: :channel 
+
 
 
     def password=(password)
@@ -43,6 +44,11 @@ class User < ApplicationRecord
         self.session_token ||=   SecureRandom.base64(64)
     end
 
+    def ensure_channel_id
+        @channel = Channel.find_by(name: 'shacks')
+        ChannelMembership.new(user_id: self.id, channel_id: @channel.id)
+        self.channel_ids.push(@channel.id)
+    end
    
     def ensure_profile_picture
         self.profile_picture_id ||= 1 

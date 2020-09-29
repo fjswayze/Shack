@@ -12,7 +12,7 @@ const MainWindow = () => (
         <Switch> 
             <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer} />
             <ChannelRoute path={`/channels/:channelId/users/index`} component={UsersIndexContainer}/> 
-            <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoom}/> 
+            {/* <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoom}/>  */}
         </Switch> 
     </div>
 )
