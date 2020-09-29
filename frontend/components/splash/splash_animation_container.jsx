@@ -11,7 +11,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    action: (user) => dispatch(loginAction(user)).then(() => console.log("hello from dispatch")),
+    action: (user) => dispatch(loginAction(user)),
     fetchChannel: (channelId) => dispatch(fetchChannel(channelId))
 })
 

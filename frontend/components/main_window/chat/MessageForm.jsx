@@ -3,11 +3,8 @@ import React from 'react';
 class MessageForm extends React.Component{
     constructor(props){
         super(props); 
-        this.state = this.props.message; 
+        this.state = {body: ''}
         this.handleSubmit = this.handleSubmit.bind(this)
-    }
-    componentDidMount(){
-        this.props.fetchChannel(this.props.match.params.channelId)
     }
 
     update(field){
@@ -21,7 +18,6 @@ class MessageForm extends React.Component{
     }
 
     render(){
-        if(!this.state.messageable_id) return null; 
         const messageFormBtn = this.state.body === '' ? (
             <button className="message-form-btn-inactive" type="submit"><i class="far fa-paper-plane"></i></button>
         ) : (<button className="message-form-btn-active" type="submit"><i class="far fa-paper-plane"></i></button>)
@@ -31,7 +27,7 @@ class MessageForm extends React.Component{
                     <input
                     className="message-form-input"
                     type="textarea"
-                    value={this.state}
+                    value={this.state.body}
                     onChange={this.update('body')}
                     placeholder="Message (insert channel name) here"
                     />

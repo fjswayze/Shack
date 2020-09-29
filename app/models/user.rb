@@ -1,6 +1,5 @@
 class User < ApplicationRecord 
     attr_reader :password
-    validates :username, presence: true
     validates :email, presence: true, uniqueness: true 
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :profile_picture_id, presence: true 
@@ -44,6 +43,7 @@ class User < ApplicationRecord
         self.session_token ||=   SecureRandom.base64(64)
     end
 
+   
     def ensure_profile_picture
         self.profile_picture_id ||= 1 
     end

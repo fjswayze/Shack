@@ -21,7 +21,11 @@ class SplashHeader extends React.Component{
         )
         return(
             <div className="splash-header">
+                <div className="logo-and-links-header">
                 <img onClick={this.reload} className="shack-logo" src={window.shackURL} />
+                <a href="https://www.linkedin.com/in/francis-swayze-729159133/">LinkedIn</a>
+                <a href="https://github.com/fjswayze">GitHub</a>
+                </div>
                     {buttons}
             </div>
         )

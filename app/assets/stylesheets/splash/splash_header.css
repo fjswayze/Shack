@@ -1,5 +1,6 @@
 .shack-logo{
      height: 50px;
+     padding-left: 3%;
  }
 
  .splash-header{
@@ -60,4 +61,15 @@
  .right{
     flex-direction: end;
      padding: 15px;
+ }
+
+
+ .logo-and-links-header{
+     display: flex;
+     align-items: center;
+     font-family: sans-serif;
+ }
+
+ .logo-and-links-header a{
+     padding: 10px;
  }

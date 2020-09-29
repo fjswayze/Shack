@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class SessionForm extends React.Component {
     constructor(props){
         super(props);
@@ -17,14 +18,18 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) { 
         e.preventDefault(); 
-        this.props.processForm(this.state); 
+        this.props.processForm(this.state).then(() => {
+            this.props.history.push('/channels/1')
+        }); 
     }
 
+   
     update(field){
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
     render(){
+        debugger
         const headerCommand = this.props.formType === 'Sign Up' ?
                 <h1>Sign up for Shack</h1> 
             :
@@ -56,7 +61,7 @@ class SessionForm extends React.Component {
             <div className="session-form">
                 {headerCommand}
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email adress
+                    <label>Email address
                         <br></br>
                         <input 
                         type="text"
@@ -73,9 +78,14 @@ class SessionForm extends React.Component {
                         onChange={this.update('password')}
                         />
                             <br></br>
-                            <div>{this.props.errors.map(error => (
-                                <p className="errors">{error}</p>
-                            ))}</div>
+                            <ul>
+                                
+                                {this.props.errors[0].map(error => (
+        
+                                    <li className="errors">{error}</li>
+                                 
+                            ))}
+                            </ul>
                         <button id="submit-button" type="submit">{this.props.formType}</button>
                     </label>
                 </form>

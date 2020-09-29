@@ -28,30 +28,20 @@ class ChatRoom extends React.Component {
     }
 
     render(){
+        if(!this.bottom) return null; 
         const messageList = this.state.messages.map(message => {
             return(
                 <li key={message.id}>
-                    {message.body}
-                    {message.user_id}
+                    {message}
                 <div ref={this.bottom}/>
                 </li> 
             ); 
         }); 
-        
         return (
             <div className="chatroom=container">
-                <div className="message-list">{messageList}</div>
-                <MessageForm
-                message={
-                    {
-                        body: '',
-                        user_id: this.props.user.id,
-                        messageable_id: this.props.channel.id, 
-                        messageable_type: 'channel'
-                    }
-                }
                 
-                /> 
+                <div className="message-list">{messageList}</div>
+                <MessageForm/> 
             </div>
         )
     }

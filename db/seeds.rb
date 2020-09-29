@@ -24,5 +24,5 @@ los_angeles_shacks = Channel.create(name: 'Shacks of LA', admin_id: shaq.id)
 
 
 norwegian_channeljoins = ChannelMembership.create(user_id: testuser.id, channel_id: norwegian_channel.id)
-norwegian_channeljoins = ChannelMembership.create(user_id: testuser.id, channel_id: london_channel.id)
+london_channel_joins = ChannelMembership.create(user_id: testuser.id, channel_id: london_channel.id)
 

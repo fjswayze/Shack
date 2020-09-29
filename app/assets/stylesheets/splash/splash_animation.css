@@ -5,13 +5,17 @@
      overflow: hidden;
      font-size: 18px;
      font-family: sans-serif;
+     padding-left: 5%;
+     padding-right: 5%;
  }
 
  .animation-row-1{
    display: flex;
+   align-items: center;
  }
   .animation-row-2{
    display: flex;
+   align-items: center;
  }
  .animation-row-3{
    height: 100px;
@@ -22,18 +26,23 @@
  }
  
  .ani-row-1-col-1{
-   width: 50%;
+   width: 40%;
  }
   .animation-row-2-col-1{
    width: 65%;
  }
 
+ .animation-row-2-col-2{
+   width: 30%;
+ }
+
+
+ 
+
   .ani-row-1-col-2{
-   width: 50%;
+   width: 60%;
  }
-  .animation-row-1-col-2{
-   width: 35%;
- }
+ 
 
  .splash-shack-1{
    width: 80%;
