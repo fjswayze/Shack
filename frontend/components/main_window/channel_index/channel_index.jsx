@@ -1,4 +1,5 @@
 import React from 'react'; 
+import ChannelIndexInfo from './channel_index_info';
 import ChannelIndexItem from './channel_index_item'; 
 
 class ChannelIndex extends React.Component{
@@ -15,7 +16,7 @@ class ChannelIndex extends React.Component{
             channelIndexArray = this.props.channels;
         }
         return(
-           
+           <div>
                 
                 <div className="all-channels-index">
                     {channelIndexArray.map(channel => (
@@ -27,6 +28,7 @@ class ChannelIndex extends React.Component{
                     />
                     ))}
                 </div>
+            </div>
           
         )
         }

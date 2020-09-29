@@ -31,24 +31,26 @@ class ProfileDropdown extends React.Component{
                    
                     <img className="profile" src={window.profileURL} />
                     {this.state.show ? (
-                        <div >
+                       
                             <ul
                                 className="header-dropdown"
                                 onClick={e => e.stopPropagation()}
                                 style={{ position: 'absolute' }}
                             >
+                        <div className="header-dropdown-div">
+                                <div className="header-dropdown-profile-username">
+                                    <img className="dropdown-profile" src={window.profileURL} />
+                                    <div className="username">{this.props.user.username}</div>
+                                    
+                                </div>
+                                <div>
                                 
-                                <li><input 
-                                type="text"
-                                defaultValue="update your status"
-                                ></input></li>
-                                <li>{this.props.user.name}</li>
-                                <li className="header-edit">Edit profile</li>
-                                <li>View profile</li>
                                 <li className="header-sign" onClick={() => this.props.logout()}>Sign Out</li>
+                            </div>
+                            </div>
                             </ul>
-                        </div>
-                    ) : null}
+                        
+                      ) : null} 
                 </button>
             </div>
         )

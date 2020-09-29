@@ -55,5 +55,37 @@
     font-size: 12px;
 }
 
+.channels-index-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: sans-serif;
+    font-weight: bold;
+    align-items: center;
+}
+
+.channels-index-info div {
+    padding: 20px;
+    
+    font-size: 15px;
+}
+
+.channels-index-info button{
+    color:  #3e3d3d; 
+    background-color: white;
+    border: 1px solid lightgray;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px; 
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.channels-index-info button:hover{
+    background-color: #5a59590f; 
+    box-shadow: 2px 2px #a9a9a914;
+}
+
 
 

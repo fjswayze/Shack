@@ -5,12 +5,22 @@
     width: 100%;
 }
 .sidebar{
-    width: 22%;
-    min-height: 500px; 
+    min-width: 220px;
+    height: 700px;
+    /* position: absolute;
+    top: 100px; 
+    bottom: 0px;  */
   
     background-color: #3e0d3e;
 }
 
+
+
 .main-window{
-    width: 78%;
+   
+    position: absolute;
+    top: 100px; 
+    left: 220px;
+    right: 0px; 
+    bottom: 0px; 
 }

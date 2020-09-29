@@ -6,7 +6,7 @@ class UserChannelsIndex extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            show: false 
+            show: true 
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -25,12 +25,24 @@ class UserChannelsIndex extends React.Component{
         this.setState({show: !this.state.show})
     }
     render(){
+        let caret = this.state.show ? (
+            <i className="fas fa-caret-down"></i>
+        ) : (
+                <i id="caret-right" class="fas fa-caret-right"></i>
+        )
         
         if(!this.props.channels[0]) return <div></div>; 
         let channelsArray; 
         channelsArray = this.props.channels
-        
-        let selectedChannels = channelsArray.filter(channel => (this.props.user.channel_ids.includes(channel.id))); 
+
+        let selectedChannels; 
+        if (this.props.channel) {
+        selectedChannels = channelsArray.filter(channel => (this.props.user.channel_ids.includes(channel.id) && this.props.channel.id != channel.id)); 
+        let activeChannel = this.props.channel; 
+        delete selectedChannels[activeChannel.id]; 
+        selectedChannels.unshift(activeChannel); } else {
+            selectedChannels = channelsArray.filter(channel => (this.props.user.channel_ids.includes(channel.id)))
+        }
         return(
         <div className="master-div">
             <div className="channels-index">
@@ -41,11 +53,13 @@ class UserChannelsIndex extends React.Component{
                     style={{position: 'relative'}}
                     onClick={this.handleClick}
                     > 
-               
-                        <p className='channels-title-uci'><i className="fas fa-caret-down"></i> Channels</p>      
+                           
+                          
+                    {caret}
+
             
                         {this.state.show ? (
-                            <div className='user-channels-dropdown-div'>
+                            
                                 <ul
                                 className="user-channels-dropdown"
                                 onClick={e => e.stopPropagation()}
@@ -53,38 +67,41 @@ class UserChannelsIndex extends React.Component{
                                 >
                                 {selectedChannels.map(channel =>(
             
-                                    <>
-                                    <Link  key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link>
-                                    <br></br>
-                                    </>
+                                 
+                                    <li className= "uci-li-ele"><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>
+                                    
+                                   
                             
                                 ))}   
                              
                                  </ul>
-                            </div>
+                         
                         ): 
 
-                            <div className='user-channels-dropdown-div'>
+                         
+                                    
                                 <ul
                                     className="user-channels-dropdown"
                                     onClick={e => e.stopPropagation()}
                                     style={{ position: 'absolute' }}
                                 >
-                                    <Link className="ui-channel-link" to={`/channels/${selectedChannels[0].id}`}>{selectedChannels[0].name}</Link>
+                                    <li className="uci-li-ele"><Link className="ui-channel-link" to={`/channels/${selectedChannels[0].id}`}>{selectedChannels[0].name}</Link></li>
                             
                                 </ul>
-                            </div>
+                          
                         
                              
 
                         }
                
                     </button>
+                        <div className='channels-title-uci'>Channels</div>  
+                    </div>
                         <div className="fake-button">
                             <UCIDropdownContainer />
                         </div>
 
-                </div>
+                
                 
            
                     {/* <Link className="ui-channel-link-first" to={`/channels/${channelsArray[0].id}`}>{channelsArray[0].name}</Link> */}
