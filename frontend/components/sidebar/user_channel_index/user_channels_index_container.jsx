@@ -3,7 +3,7 @@ import UserChannelsIndex from './user_channels_index';
 import {fetchChannel} from '../../../actions/channel_actions'; 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         user: state.entities.users[state.session.id],
         channels: Object.values(state.entities.channels) || [1, 3],

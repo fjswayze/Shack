@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import {openModal} from '../../../actions/modal_actions'; 
 import React from 'react'; 
 import { Link } from 'react-router-dom';
+import {withRouter} from 'react-router-dom'; 
 
 class UCIDropdown extends React.Component{
     constructor(props){
@@ -9,11 +10,14 @@ class UCIDropdown extends React.Component{
             this.state ={
                 show: false
             }
-            this.handleBlur = this.handleBlur.bind(this)
-            this.handleClick = this.handleClick.bind(this)
+            this.handleBlur = this.handleBlur.bind(this); 
+            this.handleClick = this.handleClick.bind(this); 
+            this.handleSpecialClick = this.handleSpecialClick.bind(this); 
+            this.handleOtherSpecialClick = this.handleOtherSpecialClick.bind(this); 
         }
 
         handleBlur(e){
+            
             this.setState({ show: false })
         }
 
@@ -21,10 +25,20 @@ class UCIDropdown extends React.Component{
             this.setState({ show: !this.state.show })
         }
 
+        handleOtherSpecialClick(){
+            this.setState({show: !this.state.show})
+            this.props.history.push('/channels/index')
+        }
+    
+        handleSpecialClick(){
+            this.setState({ show: !this.state.show }); 
+            this.props.openModal(); 
+        }
+
         render(){
             return(
-                <div>
-                    <div
+                <div >
+                    <button
                     className='info-click-dropdown-button'
                     style={{position: 'relative'}}
                     onBlur={this.handleBlur}
@@ -38,13 +52,13 @@ class UCIDropdown extends React.Component{
                             onClick={e => e.stopPropagation()}
                             style={{position: "absolute", top: '100%'}}
                             >
-                                <Link className="channel-browser-link" to="/channels/index/">Browse channels</Link>
-                                <button className= "create-channel" onClick={() => this.props.openModal()}>Create a channel</button>
+                                   <div onClick={this.handleOtherSpecialClick} className="channel-browser-link" >Browse channels</div>
+                                    <div className= "create-channel" onClick={this.handleSpecialClick}>Create a channel</div>
                             </ul>
                         </div> 
                        ): null}  
 
-                    </div>
+                    </button>
                 </div>
             )
         }
@@ -66,4 +80,4 @@ const mDTP = dispatch =>  ({
     openModal: () => dispatch(openModal('create'))
 })
 
-export default connect(mSTP, mDTP)(UCIDropdown); 
+export default withRouter(connect(mSTP, mDTP)(UCIDropdown)); 

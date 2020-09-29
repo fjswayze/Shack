@@ -12,8 +12,10 @@ class Api::ChannelMembershipsController < ApplicationController
     end
 
 
-    def destroy 
-        @channel_membership = ChannelMembership.find(params[:id])
+    def hack_destroy 
+         
+        @channel_membership = ChannelMembership.find_by(user_id: params[:user_id], channel_id: params[:channel_id]); 
+        
         if @channel_membership.destroy 
             render :show 
         else

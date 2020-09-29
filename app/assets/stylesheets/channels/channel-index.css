@@ -33,12 +33,11 @@
 
 
 .chanels-index-item button{
-   background-color: #30806a; 
+   
     font-weight: bold;
     width: 100px;
     margin: 20px;
-    color: white; 
-    border: none;
+    
     border-radius: 5px;
     height: 40px; 
     align-self: center;
@@ -46,9 +45,22 @@
     font-size: 16px;
 }
 
-.chanels-index-item button:hover{
-    background-color: #3c9e83;
+.channels-index-leave-btn{
+    background-color: white;
+    color: black;
+    border: 1px darkgray solid; 
 }
+
+.channels-index-join-btn{
+background-color: #30806a;
+color: white;  
+border: none;
+}
+
+.channels-index-join-btn:hover{
+ background-color: #3c9e83;
+}
+
 
 .chanels-index-item-members{
     color: #736f6f;

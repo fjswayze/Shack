@@ -19,7 +19,7 @@ export const createChannelMembership = channelMembership => dispatch => {
         .then(channelMembership => dispatch(receiveChannelMembership(channelMembership)))
 }
 
-export const deleteChannelMembership = channelMembershipId => dispatch => (
-    ChannelMembershipUtil.deleteChannelMembership(channelMembershipId)
-        .then(() => dispatch(removeChannelMembership(channelMembershipId)))
+export const deleteChannelMembership = (channelId, userId) => dispatch => (
+    ChannelMembershipUtil.deleteChannelMembership(channelId, userId)
+        .then(() => dispatch(removeChannelMembership(channelId, userId)))
 )

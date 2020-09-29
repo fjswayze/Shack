@@ -3,7 +3,7 @@ import {logoutAction} from '../../../actions/session_actions';
 import ProfileDropdown from './profile_dropdown';
 
 const mSTP = state => {
-    debugger
+    
     return{
         user: state.entities.users[state.session.id] || {}
     }

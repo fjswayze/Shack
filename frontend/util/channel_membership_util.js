@@ -6,9 +6,8 @@ export const createChannelMembership = channel_membership => {
     })
 }
 
-export const deleteChannelMembership = channel_membership => {
+export const deleteChannelMembership = (channelId, userId) => {
     return $.ajax({
-        url: 'api/channel_memberships/:id',
-        method: 'DELETE'
+        url: `/api/channel_memberships/${channelId}/${userId}`
     })
 }

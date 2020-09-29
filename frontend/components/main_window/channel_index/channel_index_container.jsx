@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index'; 
 import {fetchChannels} from '../../../actions/channel_actions'; 
-import {createChannelMembership} from '../../../actions/channel_membership_actions'
+import {createChannelMembership, deleteChannelMembership} from '../../../actions/channel_membership_actions'
 
 
 const mSTP = (state) => {
@@ -14,7 +14,8 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => ({
     fetchChannels: () => dispatch(fetchChannels()),
-    createChannelMembership: (channelMembership) => dispatch(createChannelMembership(channelMembership))
+    createChannelMembership: (channelMembership) => dispatch(createChannelMembership(channelMembership)),
+    deleteChannelMembership: (channelId, userId) => dispatch(deleteChannelMembership(channelId, userId))
    
 })
 

@@ -1,7 +1,42 @@
 import React from 'react'; 
 
 class ChannelIndexItem extends React.Component{
-    
+    constructor(props){
+        super(props); 
+        this.state = (
+            {show: false,
+            joinable: this.props.joinable
+            
+            }
+            
+            
+            )
+        this.handleMouseOver = this.handleMouseOver.bind(this); 
+        this.handleMouseLeave = this.handleMouseLeave.bind(this); 
+        this.handleJoin = this.handleJoin.bind(this); 
+        this.handleLeave = this.handleLeave.bind(this); 
+    }
+
+    handleMouseOver(e){
+        this.setState({ show: true})
+    }
+
+    handleMouseLeave(e){
+        this.setState({ show: false })
+    }
+
+    handleJoin(){
+        this.setState({joinable: false});
+        this.props.createChannelMembership({ channel_id: this.props.channel.id, user_id: this.props.user.id }); 
+        window.location.reload();
+    }
+
+    handleLeave() {
+        this.setState({ joinable: true })
+        this.props.deleteChannelMembership(this.props.channel.id, this.props.user.id); 
+        window.location.reload(); 
+       
+    }
 
     render(){
         
@@ -12,13 +47,19 @@ class ChannelIndexItem extends React.Component{
         length= this.props.channel.user_ids.length
     }
         return(
-                    <div className="chanels-index-item">
+                    <div 
+                    onMouseLeave={this.handleMouseLeave}
+                    onMouseOver={this.handleMouseOver} className="chanels-index-item">
                         <div>
                         <p className="chanels-index-item-name">{this.props.channel.name} {this.props.channel.description}</p>
                     <p className="chanels-index-item-members">{length} members</p>
                     </div>
-            
-                        <button onClick={() => this.props.createChannelMembership({channel_id: this.props.channel.id, user_id: this.props.user.id})}>Join</button>
+                        {this.state.show  && this.state.joinable ? (
+                    <button  onClick={this.handleJoin} className="channels-index-join-btn" >Join</button>
+                    ): this.state.show && !this.state.joinable ? (
+                        <button onClick={this.handleLeave} className="channels-index-leave-btn" >Leave</button>
+                        ) : null}
+                       
                     </div>  
         )
     }

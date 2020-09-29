@@ -9,11 +9,9 @@ import UsersIndexContainer from './users_index/users_index_container';
 const MainWindow = () => (
     <div className="main-window">
         <ChannelRoute path={`/channels/:channelId/edit`} component={EditChannelContainer} /> 
-        <Switch> 
-            <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer} />
-            <ChannelRoute path={`/channels/:channelId/users/index`} component={UsersIndexContainer}/> 
-            {/* <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoom}/>  */}
-        </Switch> 
+        <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer} />
+        {/* <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoom}/>  */}
+       
     </div>
 )
 

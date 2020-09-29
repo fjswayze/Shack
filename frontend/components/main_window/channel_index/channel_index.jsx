@@ -1,5 +1,4 @@
 import React from 'react'; 
-import ChannelIndexInfo from './channel_index_info';
 import ChannelIndexItem from './channel_index_item'; 
 
 class ChannelIndex extends React.Component{
@@ -13,7 +12,7 @@ class ChannelIndex extends React.Component{
         if (!this.props.channels[0]) {
             channelIndexArray = [1, 2]
         } else {
-            channelIndexArray = this.props.channels;
+            channelIndexArray = this.props.channels
         }
         return(
            <div>
@@ -24,7 +23,9 @@ class ChannelIndex extends React.Component{
                     key={channel.id}
                     channel={channel}
                     user={this.props.user}
+                    joinable={!this.props.user.channel_ids.includes(channel.id)}
                     createChannelMembership={this.props.createChannelMembership}
+                    deleteChannelMembership={this.props.deleteChannelMembership}
                     />
                     ))}
                 </div>

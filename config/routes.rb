@@ -9,6 +9,11 @@ Rails.application.routes.draw do
       resources :channels, only: [:create, :index, :show, :destroy, :update] do 
         resources :messages, only:[:index]
       end
+
+      get 'channel_memberships/:channel_id/:user_id/', to: 'channel_memberships#hack_destroy'
+
+
+
       resource :session, only: [:create, :destroy]
       resources :user_channel_joins, only: [:create]
       resources :messages, only: [:create, :destroy]
