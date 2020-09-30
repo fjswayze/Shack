@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { closeModal } from '../actions/modal_actions';
-import {fetchUsers} from '../actions/user_actions'; 
+import { closeModal } from '../../actions/modal_actions';
+import {fetchUsers} from '../../actions/user_actions'; 
 import Modal from './modal';
-import { fetchChannel } from '../actions/channel_actions';
+import { fetchChannel } from '../../actions/channel_actions';
 
 const mSTP = (state, ownProps) => ({
     modal: state.ui.modal,

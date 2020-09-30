@@ -7,8 +7,8 @@ import { AuthRoute, ChannelRoute } from '../util/route_util';
 import InfoContainer from './channels/info_bar/info_container';
 import Header from './channels/header/header';
 import Window from './window'; 
-import ModalContainer from './modal_container'; 
-import UsersIndexModalContainer from './users_index_modal_container'; 
+import ModalContainer from './modal/modal_container'; 
+import UsersIndexModalContainer from './modal/users_index_modal_container'; 
 import ChannelIndexInfoContainer from './main_window/channel_index/channel_index_info'; 
 
 

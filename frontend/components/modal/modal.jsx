@@ -1,6 +1,6 @@
 import React from 'react'; 
-import CreateChannelContainer from './main_window/channel_forms/create_channel_container'; 
-import UsersIndex from './main_window/users_index/users_index'; 
+import CreateChannelContainer from '../main_window/channel_forms/create_channel_container'; 
+import UsersIndex from './users_index/users_index'; 
 
 function Modal(props){
     if(!props.modal){
