@@ -12,17 +12,25 @@
 }
 
 .all-users-index button{
-   background-color: #30806a; 
+    background-color: #8281814d;
     font-weight: bold;
     width: 100px;
-    margin: 20px;
-    color: white; 
+   
+    color: #4a4949;
     border: none;
     border-radius: 5px;
     height: 40px; 
-    align-self: center;
+    
     padding-left: 10px;
     font-size: 16px;
+      margin-left: 308px;
+      margin-right: 20px;
+       margin-top: 20px;
+        margin-bottom: 20px;
+}
+
+.all-users-index h3{
+        margin-left: 6px;
 }
 
 .users-index-item:hover{
@@ -32,3 +40,15 @@
 .first-child-border:first-child{
     border-top: 1px solid lightgray;
 }
+
+.add-people-search{
+    width: 400px;
+    height: 40px;
+    margin-right: 20px;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #797676;
+    padding: 3px;
+    margin-left: 5px;
+}
+

@@ -1,12 +1,13 @@
 import React from 'react'; 
-import {connect} from 'react-redux'; 
-import {closeModal} from '../actions/modal_actions'; 
 import CreateChannelContainer from './main_window/channel_forms/create_channel_container'; 
-import UsersIndexContainer from './main_window/users_index/users_index_container'
+import UsersIndex from './main_window/users_index/users_index'; 
 
 function Modal(props){
     if(!props.modal){
         return null; 
+    }
+    if(!props.channel){
+        return null
     }
     let component; 
     switch(props.modal){
@@ -14,7 +15,11 @@ function Modal(props){
         component = <CreateChannelContainer/>; 
         break; 
         case 'users index': 
-        component = <UsersIndexContainer/>; 
+            component = <UsersIndex 
+                        channel={props.channel}
+                        fetchUsers={props.fetchUsers}
+                        fetchChannel={props.fetchChannel}
+                        />; 
         break; 
     default:
         return null; 
@@ -28,14 +33,5 @@ function Modal(props){
     ); 
 }
 
-const mSTP = (state) => ({
-    modal: state.ui.modal
-})
 
-const mDTP = dispatch => {
-    return {
-        closeModal: () => dispatch(closeModal())
-    }
-}
-
-export default connect(mSTP, mDTP)(Modal); 
+export default Modal; 

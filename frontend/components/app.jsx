@@ -7,14 +7,15 @@ import { AuthRoute, ChannelRoute } from '../util/route_util';
 import InfoContainer from './channels/info_bar/info_container';
 import Header from './channels/header/header';
 import Window from './window'; 
-import Modal from './modal'; 
+import ModalContainer from './modal_container'; 
+import UsersIndexModalContainer from './users_index_modal_container'; 
 import ChannelIndexInfoContainer from './main_window/channel_index/channel_index_info'; 
 
 
 const App = () => (
     <div>
-        <Modal/> 
-        <Modal path='/channels/users/index'/> 
+        <ModalContainer/> 
+        <Route path='/channels/:channelId' component={UsersIndexModalContainer}/> 
         <AuthRoute exact path="/signin" component={SigninFormContainer}/>
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route path='/channels' component={Header}/>
