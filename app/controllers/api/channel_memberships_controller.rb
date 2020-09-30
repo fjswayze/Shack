@@ -2,6 +2,12 @@ class Api::ChannelMembershipsController < ApplicationController
 
         skip_before_action :verify_authenticity_token 
 
+    def index 
+        @channel_memberships - ChannelMembership.all 
+        render :index
+    end
+
+
     def create 
         @channel_membership = ChannelMembership.new(channel_membership_params)
         if @channel_membership.save 

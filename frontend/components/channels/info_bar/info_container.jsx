@@ -19,7 +19,8 @@ const mDTP = dispatch => ({
     logout: () => dispatch(logoutAction()),
     fetchChannel: channelId => dispatch(fetchChannel(channelId)), 
     deleteChannel: channelId => dispatch(deleteChannel(channelId)),
-    openModal: () => dispatch(openModal('users index'))
+    openAddModal: () => dispatch(openModal('users index')), 
+    openUsersModal: () => dispatch(openModal('channel members'))
 })
 
 export default connect(mSTP, mDTP)(Info); 

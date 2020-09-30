@@ -1,6 +1,6 @@
 import React from 'react'; 
 import InfoClickDropDown from './info_click_dropdown'; 
-import {Link} from 'react-router-dom'; 
+
 class Info extends React.Component{
     constructor(props){
         super(props); 
@@ -16,10 +16,10 @@ class Info extends React.Component{
     }
     render(){
         const UsersIndex = (this.props.channel.id) ? ( 
-            <button onClick={this.props.openModal} className="users-index-btn">+ Add</button>
+            <button onClick={this.props.openAddModal} className="users-index-btn">+ Add</button>
         ) : (<div></div>)
 
-        const membersCount = (this.props.channel.user_ids) ? (<p className="members-count">{this.props.channel.user_ids.length}</p>) : (
+        const membersCount = (this.props.channel.user_ids) ? (<p onClick={this.props.openUsersModal} className="members-count">{this.props.channel.user_ids.length}</p>) : (
             <div></div>
         )
         return( 
@@ -35,8 +35,10 @@ class Info extends React.Component{
                     <div className='sub-right-info'>
                             {membersCount}
                            { UsersIndex}
-                            {/* <button className="delete-channel" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button> */}
-                               <InfoClickDropDown channel={this.props.channel}/> 
+                            <button className="delete-channel" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
+                               <InfoClickDropDown 
+                               deleteChannel={this.props.deleteChannel}
+                               channel={this.props.channel}/> 
                     </div>
                 </div>
             </div>

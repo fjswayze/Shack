@@ -3,6 +3,7 @@ import ChannelForm from './channel_form';
 import {createChannel} from '../../../actions/channel_actions'; 
 import {closeModal} from '../../../actions/modal_actions'; 
 import {updateUser} from '../../../actions/user_actions'; 
+import {fetchChannelMemberships} from '../../../actions/channel_membership_actions'; 
 import {withRouter} from 'react-router';
 
 
@@ -20,6 +21,7 @@ const mDTP = dispatch => {
     return {
         action: (channel) => dispatch(createChannel(channel)), 
         closeModal: () => dispatch(closeModal()),
+        fetchChannelMemberships: () => dispatch(fetchChannelMemberships())
 
     }
    

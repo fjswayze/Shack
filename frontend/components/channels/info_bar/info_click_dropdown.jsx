@@ -24,47 +24,26 @@ class InfoClickDropdown extends React.Component {
     }
 
     render(){
-
-
-
-        const dropdownButton = this.props.dropdownType === 'Sign out' ? (
-            <i className="fas fa-caret-down"></i>
-        ) : (
-                <i className="fas fa-info-circle"></i>
-        )
-        const dropdownContent = this.props.dropdownType === 'Sign out' ? (
-            <div>
-              <li onClick={() => this.props.logout()}>App Academy</li>
-              <li onClick={() => this.props.logout()}>Sign Out</li>
-            </div>
-        ) : (
-            <div className="edit-channel-div">
-                    <Link to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
-                    <br></br>
-                    <br></br>
-                    <a onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</a>
-                   
-            </div>
-          
-        ); 
-
+  
         return(
             <div>
                 <div
-                className="info-click-dropdown-button"
+                
                 style={{position: 'relative'}}
                 onBlur={this.handleBlur}
                 onClick={this.handleClick}
                 >
-                   {dropdownButton}
+                    <i className="fas fa-info-circle"></i>
                 {this.state.show ? (
-                <div className="dropdown-div" >
+                <div  >
                     <ul
-                    className="dropdown"
+                  
                     onClick={e => e.stopPropagation()}
                     style={{ position: 'absolute', top: '100%'}}
                     >
-                        {dropdownContent}
+                                <Link to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
+                                
+                                <div onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</div>
                     </ul>
                 </div>
                 ): null}

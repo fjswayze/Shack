@@ -47,7 +47,7 @@ class User < ApplicationRecord
     end
 
     def ensure_channel_id
-        @channel = Channel.find_by(name: 'shacks')
+        @channel = Channel.find_by(name: 'shacks') 
         ChannelMembership.new(user_id: self.id, channel_id: @channel.id)
         self.channel_ids.push(@channel.id)
     end

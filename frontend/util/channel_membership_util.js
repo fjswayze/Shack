@@ -1,3 +1,11 @@
+export const fetchChannelMemberships = () => {
+    return $.ajax({
+        url: 'api/channel_memberships'
+    })
+}
+
+
+
 export const createChannelMembership = channel_membership => {
     return $.ajax({
         url: 'api/channel_memberships',

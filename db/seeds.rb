@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all 
-Channel.destroy_all
-ChannelMembership.destroy_all
 
+Channel.destroy_all
 testchannel1 = Channel.create(name: 'shacks', admin_id: 1)
+ChannelMembership.destroy_all
+User.destroy_all 
 
 testuser = User.create(email: 'test1997@gmail.com', password: 'hello1997')
 ed = User.create(email: 'ed@gmail.com', password: 'shacklover29')
@@ -24,5 +24,10 @@ los_angeles_shacks = Channel.create(name: 'Shacks of LA', admin_id: shaq.id)
 
 
 norwegian_channeljoins = ChannelMembership.create(user_id: testuser.id, channel_id: norwegian_channel.id)
+norwegian_channeljoins2 = ChannelMembership.create(user_id: ed.id, channel_id: norwegian_channel.id)
+
 london_channel_joins = ChannelMembership.create(user_id: testuser.id, channel_id: london_channel.id)
+london_channel_joins2 = ChannelMembership.create(user_id: bigshack.id, channel_id: london_channel.id)
+
+los_angeles_joins = ChannelMembership.create(user_id: shaq, channel_id: los_angeles_shacks)
 
