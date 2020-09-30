@@ -2,13 +2,21 @@ import React from 'react';
 import InfoClickDropDown from './info_click_dropdown'; 
 import {Link} from 'react-router-dom'; 
 class Info extends React.Component{
+    constructor(props){
+        super(props); 
+        this.handleClick = this.handleClick.bind(this); 
+    }
+
+    handleClick(){
+        this.props.open
+    }
     componentDidMount(){   
         
         this.props.fetchChannel(this.props.match.params.channelId); 
     }
     render(){
         const UsersIndex = (this.props.channel.id) ? ( 
-            <Link to={`/channels/${this.props.channel.id}/users/index`}><button className="users-index-btn">+ Add</button></Link>
+            <button onClick={this.props.openModal} className="users-index-btn">+ Add</button>
         ) : (<div></div>)
 
         const membersCount = (this.props.channel.user_ids) ? (<p className="members-count">{this.props.channel.user_ids.length}</p>) : (

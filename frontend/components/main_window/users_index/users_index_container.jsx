@@ -4,10 +4,9 @@ import { fetchUsers } from '../../../actions/user_actions';
 import { createChannelMembership} from '../../../actions/channel_membership_actions'; 
 import {fetchChannel} from '../../../actions/channel_actions'
 
-const mSTP = (state, ownProps) => {
+const mSTP = (state) => {
     return {
-        users: Object.values(state.entities.users) || [],
-        channel: state.entities.channels[ownProps.match.params.channelId] || {}
+        users: Object.values(state.entities.users) || []
     }
 
 }

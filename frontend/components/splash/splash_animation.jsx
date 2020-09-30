@@ -4,7 +4,8 @@ import React from 'react';
 
 class SplashAnimation extends React.Component{
     handleClick(){
-        this.props.action({ email: 'test1997@gmail.com', password: 'hello1997' });
+        this.props.action({ email: 'test1997@gmail.com', password: 'hello1997' }).then(() => this.props.history.push('/signin'))
+        ;
     }
     render(){
         return(

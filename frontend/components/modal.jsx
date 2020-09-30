@@ -4,12 +4,12 @@ import {closeModal} from '../actions/modal_actions';
 import CreateChannelContainer from './main_window/channel_forms/create_channel_container'; 
 import UsersIndexContainer from './main_window/users_index/users_index_container'
 
-function Modal({modal, closeModal}){
-    if(!modal){
+function Modal(props){
+    if(!props.modal){
         return null; 
     }
     let component; 
-    switch(modal){
+    switch(props.modal){
         case 'create': 
         component = <CreateChannelContainer/>; 
         break; 
@@ -20,7 +20,7 @@ function Modal({modal, closeModal}){
         return null; 
     }
     return(
-        <div className="modal-background" onClick={closeModal}>
+        <div className="modal-background" onClick={props.closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
@@ -28,8 +28,8 @@ function Modal({modal, closeModal}){
     ); 
 }
 
-const mSTP = state => ({
-    modal: state.ui.modal 
+const mSTP = (state) => ({
+    modal: state.ui.modal
 })
 
 const mDTP = dispatch => {

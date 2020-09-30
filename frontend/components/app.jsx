@@ -14,6 +14,7 @@ import ChannelIndexInfoContainer from './main_window/channel_index/channel_index
 const App = () => (
     <div>
         <Modal/> 
+        <Modal path='/channels/users/index'/> 
         <AuthRoute exact path="/signin" component={SigninFormContainer}/>
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route path='/channels' component={Header}/>

@@ -12,7 +12,8 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logoutAction()),
-    deleteChannel: (channelId) => dispatch(deleteChannel(channelId))
+    deleteChannel: (channelId) => dispatch(deleteChannel(channelId)), 
+   
 })
 
 export default connect(mSTP, mDTP)(InfoClickDropdown); 

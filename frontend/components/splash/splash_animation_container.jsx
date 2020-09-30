@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { loginAction } from "../../actions/session_actions"; 
 import { fetchChannel } from "../../actions/channel_actions";
 import SplashAnimation from './splash_animation'; 
+import {withRouter} from 'react-router'; 
 
 const mSTP = state => ({
     user: {
@@ -15,4 +16,4 @@ const mDTP = dispatch => ({
     fetchChannel: (channelId) => dispatch(fetchChannel(channelId))
 })
 
-export default connect(mSTP, mDTP)(SplashAnimation); 
+export default withRouter(connect(mSTP, mDTP)(SplashAnimation)); 
