@@ -2,6 +2,7 @@ import React from 'react';
 import CreateChannelContainer from '../main_window/channel_forms/create_channel_container'; 
 import UsersIndex from './users_index/users_index'; 
 import ChannelMembersIndex from './users_index/channel_members_index'; 
+import ChannelForm from '../main_window/channel_forms/channel_form'; 
 
 function Modal(props){
     if(!props.modal){
@@ -34,8 +35,13 @@ function Modal(props){
                         openModal={props.openAddModal}
                         user={props.user}
                         deleteChannelMembership={props.deleteChannelMembership}
+                        fetchChannel={props.fetchChannel}
                         />; 
         break; 
+        case 'edit channel':
+            component = <ChannelForm 
+                        channel={props.channel}
+                        /> 
     default:
         return null; 
     }

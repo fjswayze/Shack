@@ -20,7 +20,8 @@ const mDTP = dispatch => ({
     fetchChannel: channelId => dispatch(fetchChannel(channelId)), 
     deleteChannel: channelId => dispatch(deleteChannel(channelId)),
     openAddModal: () => dispatch(openModal('users index')), 
-    openUsersModal: () => dispatch(openModal('channel members'))
+    openUsersModal: () => dispatch(openModal('channel members')),
+    openEditModal: () => dispatch(openModal('edit channel'))
 })
 
 export default connect(mSTP, mDTP)(Info); 

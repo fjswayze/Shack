@@ -1,6 +1,7 @@
 import React from 'react'; 
 import InfoClickDropDown from './info_click_dropdown'; 
 
+
 class Info extends React.Component{
     constructor(props){
         super(props); 
@@ -35,10 +36,13 @@ class Info extends React.Component{
                     <div className='sub-right-info'>
                             {membersCount}
                            { UsersIndex}
-                            <button className="delete-channel" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
-                               <InfoClickDropDown 
-                               deleteChannel={this.props.deleteChannel}
-                               channel={this.props.channel}/> 
+
+                           <InfoClickDropDown
+                                deleteChannel={this.props.deleteChannel}
+                                channel={this.props.channel} 
+                                openModal={this.props.openEditModal}
+                                />
+                            
                     </div>
                 </div>
             </div>

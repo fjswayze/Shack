@@ -28,7 +28,7 @@ class InfoClickDropdown extends React.Component {
         return(
             <div>
                 <div
-                
+                className="revised-outer-div"
                 style={{position: 'relative'}}
                 onBlur={this.handleBlur}
                 onClick={this.handleClick}
@@ -37,13 +37,13 @@ class InfoClickDropdown extends React.Component {
                 {this.state.show ? (
                 <div  >
                     <ul
-                  
+                    className='revised-info-click-dropdown'
                     onClick={e => e.stopPropagation()}
                     style={{ position: 'absolute', top: '100%'}}
                     >
-                                <Link to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
+                                <Link className='revised-info-click-dropdown-link' to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
                                 
-                                <div onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</div>
+                                <div className='revised-info-click-dropdown-inner-div' onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</div>
                     </ul>
                 </div>
                 ): null}
