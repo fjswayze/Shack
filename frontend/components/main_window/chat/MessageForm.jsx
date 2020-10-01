@@ -20,11 +20,10 @@ class MessageForm extends React.Component{
     }
 
     submitOnEnter(e) {
-       
+        
         if (e.which === 13) {
+            e.target.form.dispatchEvent(new Event('submit', { cancelable: true }))
             e.preventDefault();
-            e.target.form.dispatchEvent(new Event('submit', { cancelable: true }));
-            
         }
     }
 

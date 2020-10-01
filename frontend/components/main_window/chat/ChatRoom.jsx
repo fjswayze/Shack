@@ -1,6 +1,6 @@
 import React from 'react'; 
-import MessageForm from './MessageForm.jsx'; 
-
+import MessageFormContainer from './message_form_container'; 
+import MessageForm from './MessageForm'; 
 class ChatRoom extends React.Component {
     constructor(props){
         super(props); 
@@ -65,7 +65,7 @@ class ChatRoom extends React.Component {
         return (
             <div className="chatroom=container">  
                 <div className="message-list">{messageList}</div>
-                <MessageForm
+                <MessageForm 
                 channel={this.props.channel}
                 user={this.props.user}
                 /> 
