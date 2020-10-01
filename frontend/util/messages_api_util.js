@@ -3,7 +3,8 @@ export const fetchChannelMessages = (channelId) => ({
 })
 
 
-export const createlMessage = (message) => ({
+
+export const createMessage = (message) => ({
     url: `api/messages/${message.id}`,
     method: 'POST',
     data: message
