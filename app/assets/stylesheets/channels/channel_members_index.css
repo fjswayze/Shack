@@ -1,6 +1,9 @@
 .channel_members_index{
     font-family: sans-serif;
-    padding: 15px; 
+    padding-left: 25px; 
+    padding-right: 25px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
     min-height: 400px;
     min-width: 400px;
 }
