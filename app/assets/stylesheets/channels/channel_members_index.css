@@ -2,6 +2,7 @@
     font-family: sans-serif;
     padding: 15px; 
     min-height: 400px;
+    min-width: 400px;
 }
 
 .channel_members_index p {

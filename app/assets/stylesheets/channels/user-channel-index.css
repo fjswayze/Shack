@@ -46,9 +46,9 @@
 
 
 .ui-channel-link {
-    color: lightgray; 
+    color: #bbbbbb; 
     text-decoration: none;
-    font-size: 15px; 
+    font-size: 14px; 
 
 }
 
@@ -73,8 +73,9 @@
 
 .channels-title-uci{
     font-family: sans-serif;
-    color: lightgray; 
+    color: #bbbbbb; 
     padding-top: 5px;
+    font-size: 15px;
 }
 
 
@@ -92,8 +93,9 @@
 .uci-li-ele{
     list-style: none;
     padding-bottom: 5px;
-    padding-left: 40px;
+    padding-left: 50px;
     padding-right: 10px;
+    font-size: 14px;
 }
 
 .uci-li-ele:hover{

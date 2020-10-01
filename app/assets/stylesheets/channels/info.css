@@ -7,6 +7,10 @@
 
 .info-click-dropdown-button{
    color: lightgray;
+   font-size: 26px;
+   font-weight: lighter;
+   font-family: serif;
+   
 }
 
 .channels-title-uci{
@@ -66,7 +70,7 @@
 }
 
 .dropdown-div{
-    transform: translateX(-100%);
+    transform: translateX(-60%);
     z-index: 20;
 }
 
@@ -134,9 +138,10 @@
     color: white;
     font-weight: bold;
     font-family: sans-serif;
-    min-width: 220px;
-    border-top: #865986 1px solid; 
-    border-bottom: #865986 1px solid; 
+    min-width: 219px;
+    border-top: #734c73 1px solid; 
+    border-bottom: #734c73 1px solid; 
+    border-right: #734c73 1px solid; 
 }
 
 .left-info:hover{
@@ -151,7 +156,7 @@
 .right-info {
     width: 100%;
     height: 63px;
-     border-top: lightgray 1px solid;
+     border-top: white 1px solid;
     border-bottom: lightgray 1px solid;
     display: flex;
     justify-content: space-between;
@@ -211,8 +216,8 @@
     left: 50%;
     transform: translateX(-80%);
     z-index: 10;
-    width: 100px;
-    padding: 5px; 
+    width: 200px;
+    
     padding-bottom: 10px;
     padding-top: 10px;
     border: 1px solid lightgray; 
@@ -229,8 +234,10 @@
 }
 
 .revised-info-click-dropdown div {
-    border-top: 1px solid gray;
+    font-size: 15px;
     padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
     margin-top: 5px; 
     cursor: pointer;
      color: #443f3f; 

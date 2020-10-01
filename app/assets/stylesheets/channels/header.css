@@ -1,6 +1,6 @@
 .header-div{
     display: flex;
-    height: 35px;
+    height: 38px;
     background-color:#2d092d;
     justify-content: space-between;
     /* overflow: hidden; */
@@ -84,8 +84,8 @@
     font-family: sans-serif;
     z-index: 10;
       left: 100%;
-    transform: translateX(-160px);
-    width: 150px; 
+    transform: translateX(-217px);
+    width: 200px; 
     border: 1px solid lightgray; 
     box-shadow: 3px 3px#d3d3d34f;
     
@@ -103,8 +103,10 @@
     padding: 5px; 
 }
 .profile{
-     width: 35px;
-    height: 27.5px;
+    padding-top: 5px; 
+     width: 40px;
+    height: 30px;
+    padding-right: 5px;
 }
 .dropdown-profile {
     width: 35px;

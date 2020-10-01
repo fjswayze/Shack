@@ -50,7 +50,7 @@ class ProfileDropdown extends React.Component{
                             </div>
                             </ul>
                         
-                      ) : null} 
+                      ) : null}  
                 </button>
             </div>
         )

@@ -14,10 +14,21 @@ class ChannelMembersIndex extends React.Component{
         
         if(!this.props.channel) return null; 
         let usersArray = Object.values(this.props.users); 
+        let count = usersArray.filter(user => this.props.channel.user_ids.includes(user.id))
         let selectedUsers = usersArray.filter(user => this.props.channel.user_ids.includes(user.id) && this.props.user.id != user.id); 
+        let  channelMembersLength; 
+        
+        if(count.length === 1){
+            channelMembersLength = <h1> 1 member in {this.props.channel.name}</h1>
+        } else{
+            channelMembersLength = <h1>{selectedUsers.length + 1} members in {this.props.channel.name}</h1>
+        }
+
+
+
         return(
             <div className="channel_members_index">
-                <h1>{selectedUsers.length} members in {this.props.channel.name}</h1>
+              {channelMembersLength}
                 <p onClick={this.props.openModal}>Add people</p>
               
                     {selectedUsers.map(user => (

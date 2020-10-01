@@ -41,7 +41,7 @@ class InfoClickDropdown extends React.Component {
                     onClick={e => e.stopPropagation()}
                     style={{ position: 'absolute', top: '100%'}}
                     >
-                                <Link className='revised-info-click-dropdown-link' to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link>
+                            <div><Link className='revised-info-click-dropdown-link' to={`/channels/${this.props.channel.id}/edit`}>Edit Channel</Link></div>
                                 
                                 <div className='revised-info-click-dropdown-inner-div' onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</div>
                     </ul>
