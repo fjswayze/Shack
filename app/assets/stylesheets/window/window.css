@@ -19,8 +19,9 @@
 .main-window{
    
     position: absolute;
-    top: 100px; 
+    top: 110px; 
     left: 220px;
     right: 0px; 
     bottom: 0px; 
+    overflow: scroll;
 }

@@ -3,7 +3,9 @@ import React from 'react';
 class MessageForm extends React.Component{
     constructor(props){
         super(props); 
-        this.state = {body: ''}
+        this.state = {
+            body: ''
+        }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -17,6 +19,15 @@ class MessageForm extends React.Component{
         this.setState({body: ""}); 
     }
 
+    submitOnEnter(e) {
+       
+        if (e.which === 13) {
+            e.preventDefault();
+            e.target.form.dispatchEvent(new Event('submit', { cancelable: true }));
+            
+        }
+    }
+
     render(){
         const messageFormBtn = this.state.body === '' ? (
             <button className="message-form-btn-inactive" type="submit"><i class="far fa-paper-plane"></i></button>
@@ -24,13 +35,15 @@ class MessageForm extends React.Component{
         return(
             <div className="message-form-container">
                 <form className="message-form" onSubmit={this.handleSubmit}>
-                    <input
+                <div className="fake-text-area">
+                    <textarea
+                    onKeyPress={this.submitOnEnter}
                     className="message-form-input"
-                    type="textarea"
                     value={this.state.body}
                     onChange={this.update('body')}
-                    placeholder="Message (insert channel name) here"
+                    placeholder={`Message ${this.props.channel.name} here`}
                     />
+                </div>
                     <div className="message-form-btn-container">
                         <div></div>
                         {messageFormBtn}
