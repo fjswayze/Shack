@@ -21,7 +21,7 @@ const App = () => (
         <Route path='/channels' component={Header}/>
         <Switch>
             <ChannelRoute exact path='/channels/index/' component={ChannelIndexInfoContainer}/> 
-            <ChannelRoute exact path={`/channels/:channelId`} component={InfoContainer} />
+            <ChannelRoute  path={`/channels/:channelId`} component={InfoContainer} />
         </Switch>
         <ChannelRoute path="/channels" component={Window}/> 
         <Route exact path="/" component={Splash} />

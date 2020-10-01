@@ -36,6 +36,7 @@ function Modal(props){
                         user={props.user}
                         deleteChannelMembership={props.deleteChannelMembership}
                         fetchChannel={props.fetchChannel}
+                        closeModal={props.closeModal}
                         />; 
         break; 
         case 'edit channel':

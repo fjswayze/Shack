@@ -8,6 +8,7 @@ class ChannelMembersIndex extends React.Component{
 
     handleClick(channelId, userId){
         this.props.deleteChannelMembership(channelId, userId); 
+       
     }
 
     render(){

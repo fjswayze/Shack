@@ -1,5 +1,5 @@
 import {RECEIVE_CHANNEL, RECEIVE_CHANNELS, REMOVE_CHANNEL} from '../actions/channel_actions'; 
-import {RECEIVE_CHANNEL_MEMBERSHIP} from '../actions/channel_membership_actions'; 
+import {RECEIVE_CHANNEL_MEMBERSHIP, REMOVE_CHANNEL_MEMBERSHIP} from '../actions/channel_membership_actions'; 
 const ChannelReducer = (state = {}, action) => {
     
     Object.freeze(state);
