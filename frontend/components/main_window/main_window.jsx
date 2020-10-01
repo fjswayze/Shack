@@ -9,7 +9,7 @@ const MainWindow = () => (
     <div className="main-window">
         <ChannelRoute path={`/channels/:channelId/edit`} component={EditChannelContainer} /> 
         <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer} />
-        {/* <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoom}/>  */}
+        <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoom}/> 
        
     </div>
 )

@@ -23,9 +23,7 @@ class ChatRoom extends React.Component {
             }
         ); 
     }
-    componentDidUpdate(){
-        this.bottom.current.scrollIntoView(); 
-    }
+  
 
     render(){
         if(!this.bottom) return null; 
