@@ -37,6 +37,7 @@ class ChatRoom extends React.Component {
         let minutes = date.getMinutes(); 
         let AMorPM = hours > 12 ? ('PM') : ('AM'); 
         let revisedHours = hours % 12;
+        if(revisedHours === 0) revisedHours = 12; 
         if(minutes < 10){
             minutes = (minutes * 10)
         }
