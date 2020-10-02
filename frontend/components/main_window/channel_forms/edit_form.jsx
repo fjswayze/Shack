@@ -24,7 +24,7 @@ class EditForm extends React.Component {
     }
 
     render() {
-        debugger
+        
         if(!this.props.channel.id) return null; 
         const { form } = this.props;
         let description;

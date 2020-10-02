@@ -47,7 +47,7 @@ class ChatRoom extends React.Component {
         if(minutes === 0){
             minutes = '00'
         }
-        debugger
+        
         const messageList = this.state.messages.map(message => {
             return(
                 <li key={message.id}>
