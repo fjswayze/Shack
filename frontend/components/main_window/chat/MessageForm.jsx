@@ -15,7 +15,7 @@ class MessageForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault(); 
-        App.cable.subscriptions.subscriptions[0].speak({message: this.state.body})
+        App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, user_id: this.props.user.id, messageable_id: this.props.channel.id, messageable_type: 'Channel'})
         this.setState({body: ""}); 
     }
 
@@ -28,6 +28,7 @@ class MessageForm extends React.Component{
     }
 
     render(){
+        if(!this.props.channel) return null; 
         const messageFormBtn = this.state.body === '' ? (
             <button className="message-form-btn-inactive" type="submit"><i class="far fa-paper-plane"></i></button>
         ) : (<button className="message-form-btn-active" type="submit"><i class="far fa-paper-plane"></i></button>)

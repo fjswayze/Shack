@@ -1,5 +1,4 @@
 import React from 'react'; 
-import MessageFormContainer from './message_form_container'; 
 import MessageForm from './MessageForm'; 
 class ChatRoom extends React.Component {
     constructor(props){
@@ -11,6 +10,7 @@ class ChatRoom extends React.Component {
  
 
     componentDidMount(){
+        this.props.fetchUsers()
         App.cable.subscriptions.create(
             {channel: 'ChatChannel'}, 
             {
@@ -39,11 +39,12 @@ class ChatRoom extends React.Component {
         let revisedHours = hours % 12;
         if(revisedHours === 0) revisedHours = 12; 
         if(minutes < 10){
-            minutes = (minutes * 10)
+            minutes = (`0${minutes}`)
         }
         if(minutes === 0){
             minutes = '00'
         }
+        debugger
         const messageList = this.state.messages.map(message => {
             return(
                 <li key={message.id}>
@@ -51,12 +52,12 @@ class ChatRoom extends React.Component {
                     <img className="message-profile" src={window.profileURL} />
                     <div>
                     <div className="username-and-timestamp-div">
-                        <p className="message-username">{this.props.user.username}</p>
+                        <p className="message-username">{this.props.users[message.user_id].username}</p>
                         <p className="message-timestamp">
                             {revisedHours}:{minutes} {AMorPM}
                         </p>
                     </div>
-                        <div className="messsage-body-div">{message}</div>
+                        <div className="messsage-body-div">{message.body}</div>
                     </div>
                     </div>
                 <div ref={this.bottom}/>
