@@ -20,17 +20,17 @@ const removeMessage = messageId => ({
 })
 
 
-export const fetchChannelMessages = (channelId) = dispatch => (
+export const fetchChannelMessages = (channelId) => dispatch => (
     MessageUtil.fetchChannelMessages(channelId)
         .then(messages => dispatch(receiveMessages(messages)))
 )
 
-export const createMessage = message = dispatch => (
+export const createMessage = message => dispatch => (
     MessageUtil.createMessage(message)
         .then(createdMessage => dispatch(receiveMessage(createdMessage)))
 )
 
-export const deleteMessage = messageId = dispatch => (
+export const deleteMessage = messageId => dispatch => (
     MessageUtil.deleteMessage(messageId)
         .then(() => dispatch(removeMessage(messageId)))
 )
