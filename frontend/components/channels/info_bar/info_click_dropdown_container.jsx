@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { logoutAction } from "../../../actions/session_actions";
 import {deleteChannel} from '../../../actions/channel_actions'; 
 import InfoClickDropdown from './info_click_dropdown'; 
-
+import {withRouter} from 'react-router-dom'
 const mSTP = (state) => {
     return {
         user: state.entities.users[state.session.id]

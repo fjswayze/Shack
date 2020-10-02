@@ -11,6 +11,8 @@ class UsersIndex extends React.Component{
             filterDisplay: [],
             setFilterDisplay: [],
         }
+        this.handleChange = this.handleChange.bind(this); 
+
     }
     componentDidMount(){
         this.props.fetchUsers(); 

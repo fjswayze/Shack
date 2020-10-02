@@ -1,26 +1,9 @@
 import { connect } from "react-redux";
-const { updateChannel, fetchChannel} = require("../../../actions/channel_actions");
-import React from 'react'; 
-import ChannelForm from './channel_form'; 
+import { updateChannel, fetchChannel} from "../../../actions/channel_actions";
+import EditForm from './edit_form'; 
+import {withRouter} from 'react-router-dom'; 
 
-class EditChannelForm extends React.Component {
-    componentDidMount(){
-        this.props.fetchChannel(this.props.match.params.channelId)
-    }
 
-    render(){
-        
-        if(!this.props.channel.name) return <div></div>; 
-        return(
-            <ChannelForm
-                action={this.props.action}
-                channel={this.props.channel}
-                form={this.props.form}
-            />
-        )
-     
-    }
-}
 
 const mSTP = (state, ownProps) => {
    return {
@@ -34,4 +17,4 @@ const mDTP = dispatch => ({
     fetchChannel: channelId => dispatch(fetchChannel(channelId))
 })
 
-export default connect(mSTP, mDTP)(EditChannelForm); 
+export default withRouter(connect(mSTP, mDTP)(EditForm)); 

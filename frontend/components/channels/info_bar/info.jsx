@@ -15,6 +15,10 @@ class Info extends React.Component{
         
         this.props.fetchChannel(this.props.match.params.channelId); 
     }
+
+    componentDidUpdate(){
+        this.props.match.params.channelId
+    }
     render(){
         const UsersIndex = (this.props.channel.id) ? ( 
             <button onClick={this.props.openAddModal} className="users-index-btn">+ Add</button>

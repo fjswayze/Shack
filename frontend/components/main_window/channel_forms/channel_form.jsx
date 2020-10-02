@@ -11,12 +11,8 @@ class ChannelForm extends React.Component{
     handleSubmit(e){
         
         e.preventDefault(); 
-        this.props.action(this.state).then(action =>
-            this.props.history.push(`/channels/${action.channel.id}`));
-        
-            this.props.fetchChannelMemberships; 
-        
-        this.props.closeModal();
+        this.props.action(this.state)
+        this.props.closeModal; 
     }
 
     update(field){

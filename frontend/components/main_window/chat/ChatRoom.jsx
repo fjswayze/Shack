@@ -1,4 +1,5 @@
 import React from 'react'; 
+
 import MessageForm from './MessageForm'; 
 class ChatRoom extends React.Component {
     constructor(props){
@@ -30,6 +31,8 @@ class ChatRoom extends React.Component {
     // }
 
     render(){
+        if(!this.props.users) return null; 
+
         if(!this.props.user) return null; 
         if(!this.bottom) return null; 
         let date = new Date(); 
