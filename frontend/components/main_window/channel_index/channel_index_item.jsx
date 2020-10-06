@@ -28,13 +28,11 @@ class ChannelIndexItem extends React.Component{
     handleJoin(){
         this.setState({joinable: false});
         this.props.createChannelMembership({ channel_id: this.props.channel.id, user_id: this.props.user.id }); 
-        // window.location.reload(); hacky solution: trigger reload
     }
 
     handleLeave() {
         this.setState({ joinable: true })
         this.props.deleteChannelMembership(this.props.channel.id, this.props.user.id); 
-        // window.location.reload(); hacky solution: trigger reload
        
     }
 

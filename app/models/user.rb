@@ -14,7 +14,6 @@ class User < ApplicationRecord
         through: :channel_memberships,
         source: :channel 
 
-    # has_one_attached :avatar 
 
 
 
