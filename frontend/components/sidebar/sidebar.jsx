@@ -6,8 +6,13 @@ import UserChannelIndexContainer from './user_channel_index/user_channels_index_
 const Sidebar = () => (
     <div className="sidebar">
         <Switch>
+
             <ChannelRoute exact path="/channels/:channelId" component={UserChannelIndexContainer} /> 
-            <ChannelRoute path="/" component={UserChannelIndexContainer}/> 
+            <ChannelRoute exact path="/channels/:channelId/edit" component={UserChannelIndexContainer} /> 
+            <ChannelRoute exact path="/channels/index" component={UserChannelIndexContainer} /> 
+            <ChannelRoute path="/" component={UserChannelIndexContainer} /> 
+
+
         </Switch>
     </div>
 )

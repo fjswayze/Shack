@@ -4,10 +4,18 @@ import ChannelIndexItem from './channel_index_item';
 class ChannelIndex extends React.Component{
 
     componentDidMount() {
+        
         this.props.fetchChannels()
     }
 
+    handleClick(channelId){
+        debugger
+        this.props.history.push(`/channels/${channelId}`)
+    }
+
     render() {
+        
+        if (!this.props.channels[0]) return <div></div>; 
         let channelIndexArray;
         if (!this.props.channels[0]) {
             channelIndexArray = [1, 2]

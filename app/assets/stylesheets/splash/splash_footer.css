@@ -30,9 +30,21 @@
      color: #888383;
      text-decoration: none;
      margin-bottom: 5px;
+     margin-top: 5px;
 
  }
 
- .footer-col-3{
-     padding-right: 60px;
+ .personal-links:hover{
+     color: #4b7be8; 
  }
+
+ #add-space{
+     padding-right: 100px;
+ }
+
+ .footer-col-2{
+    
+     display: flex;
+     flex-direction: column;
+ }
+

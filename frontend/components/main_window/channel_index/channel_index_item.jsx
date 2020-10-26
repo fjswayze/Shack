@@ -1,5 +1,5 @@
 import React from 'react'; 
-
+import {Link} from 'react-router-dom'
 class ChannelIndexItem extends React.Component{
     constructor(props){
         super(props); 
@@ -37,7 +37,7 @@ class ChannelIndexItem extends React.Component{
     }
 
     render(){
-        
+    
     let length; 
     if(!this.props.channel.user_ids){
         length = 0
@@ -45,9 +45,11 @@ class ChannelIndexItem extends React.Component{
         length= this.props.channel.user_ids.length
     }
         return(
-                    <div 
+                    <Link
                     onMouseLeave={this.handleMouseLeave}
-                    onMouseOver={this.handleMouseOver} className="chanels-index-item">
+                    onMouseOver={this.handleMouseOver} className="chanels-index-item"
+                    to={`/channels/${this.props.channel.id}`}
+                    >
                         <div>
                         <p className="chanels-index-item-name">{this.props.channel.name} {this.props.channel.description}</p>
                     <p className="chanels-index-item-members">{length} members</p>
@@ -58,7 +60,7 @@ class ChannelIndexItem extends React.Component{
                         <button onClick={this.handleLeave} className="channels-index-leave-btn" >Leave</button>
                         ) : null}
                        
-                    </div>  
+                    </Link>  
         )
     }
 }

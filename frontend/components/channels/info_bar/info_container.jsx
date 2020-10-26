@@ -4,7 +4,7 @@ import { logoutAction } from "../../../actions/session_actions";
 import Info from './info'; 
 import { deleteChannel } from '../../../actions/channel_actions'; 
 import { openModal } from '../../../actions/modal_actions'; 
-
+import {withRouter} from 'react-router-dom'
 
 
 const mSTP = (state, ownProps) =>  { 
@@ -24,5 +24,5 @@ const mDTP = dispatch => ({
     openEditModal: () => dispatch(openModal('edit channel'))
 })
 
-export default connect(mSTP, mDTP)(Info); 
+export default withRouter(connect(mSTP, mDTP)(Info)); 
 

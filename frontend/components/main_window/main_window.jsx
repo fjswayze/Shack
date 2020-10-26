@@ -8,10 +8,10 @@ import ChatRoomContainer from './chat/chat_room_container';
 const MainWindow = () => (
     <div className="main-window">
         
-        <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer} />
         <Switch>
-        <ChannelRoute path={`/channels/:channelId/edit`} component={EditChannelContainer} /> 
-        <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoomContainer}/> 
+            <ChannelRoute exact path='/channels/index/' component={ChannelIndexContainer} />
+            <ChannelRoute path={`/channels/:channelId/edit`} component={EditChannelContainer} /> 
+            <ChannelRoute exact path={`/channels/:channelId`} component={ChatRoomContainer}/> 
         </Switch>
        
     </div>

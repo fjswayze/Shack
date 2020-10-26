@@ -20,7 +20,9 @@ font-size: 13px;
     border: 0px;
     outline: none;
     border-radius: 4px;
+    cursor: pointer;
 }
+
 
 
 .dropdown-UCI {

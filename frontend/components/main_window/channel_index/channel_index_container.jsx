@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ChannelIndex from './channel_index'; 
 import {fetchChannels} from '../../../actions/channel_actions'; 
 import {createChannelMembership, deleteChannelMembership} from '../../../actions/channel_membership_actions'
-
+import {withRouter} from 'react-router-dom'; 
 
 const mSTP = (state) => {
     return {
@@ -19,4 +19,4 @@ const mDTP = dispatch => ({
    
 })
 
-export default connect(mSTP, mDTP)(ChannelIndex); 
+export default withRouter(connect(mSTP, mDTP)(ChannelIndex)); 

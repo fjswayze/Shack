@@ -37,6 +37,7 @@
 }
 
 .pencil{
+    display: none;
     width: 60px;
     padding-top: 15px;
 }

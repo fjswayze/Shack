@@ -71,6 +71,17 @@
  
 }
 
+.channels-browser{
+    font-family: sans-serif;
+    color: white; 
+    background-color: #0c63ad;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    padding-left: 45px; 
+    cursor: pointer;
+}
+
 .channels-title-uci{
     font-family: sans-serif;
     color: #bbbbbb; 
@@ -103,14 +114,23 @@
       cursor: pointer;
 }
 
-.uci-li-ele:first-of-type{
+.active-channel {
     background-color: #0c63ad;
     color: white;
 }
 
-.uci-li-ele:first-of-type a{
+.active-channel a{
     color: white;
 }
 
+
+.selected-channel {
+    background-color: #0c63ad;
+    color: white;
+}
+
+.selected-channel a{
+    color: white;
+}
 
 

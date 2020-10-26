@@ -9,7 +9,7 @@ class SplashFooter extends React.Component{
             <div className="footer">
                 <img onClick={this.reload} src={window.shackURL} />
 
-                <div className="footer-col-3">
+                <div id='add-space' className="footer-col-3">
                     <h3>COVID READS</h3>
                     <p>Feel Free</p>
                     <p>Disgrace</p>
@@ -22,9 +22,13 @@ class SplashFooter extends React.Component{
                 </div>
                 <div className="footer-col-2">
                     <h3>LINKS</h3>
-                    <a className="personal-links" href="https://github.com/fjswayze"><p>GitHub</p></a>
+                    <a className="personal-links" href="https://github.com/fjswayze">GitHub</a>
+                    <br></br>
                     <a className="personal-links" href="https://www.linkedin.com/in/francis-swayze-729159133/">LinkedIn</a>
-                    <p>AngelList</p>
+                    <br></br>
+                    <a className='personal-links' href='https://angel.co/u/francis-swayze'>AngelList</a>
+                    <br></br>
+                    <a className='personal-links' href='https://fjswayze.github.io/'>Personal Site</a>
                 </div>
                 <div className="footer-col-1">
                     <h3>SKILLS</h3>
