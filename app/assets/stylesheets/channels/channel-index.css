@@ -1,7 +1,7 @@
 
 
 .all-channels-index{
-    width: 100%;
+    width: 95%;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -76,6 +76,8 @@ border: none;
     font-family: sans-serif;
     font-weight: bold;
     align-items: center;
+    padding-right: 3%;
+    border-bottom: 1px solid lightgray;
 }
 
 .channels-index-info div {
@@ -99,6 +101,17 @@ border: none;
 .channels-index-info button:hover{
     background-color: #5a59590f; 
     box-shadow: 2px 2px #a9a9a914;
+}
+
+.num-of-channels{
+    font-family: sans-serif;
+    color: #929191;
+    font-size: 12px;
+    margin-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid lightgray;
+    font-weight: bold;
 }
 
 

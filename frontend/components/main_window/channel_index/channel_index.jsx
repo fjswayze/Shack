@@ -9,7 +9,7 @@ class ChannelIndex extends React.Component{
     }
 
     handleClick(channelId){
-        debugger
+        
         this.props.history.push(`/channels/${channelId}`)
     }
 
@@ -26,6 +26,7 @@ class ChannelIndex extends React.Component{
            <div>
                 
                 <div className="all-channels-index">
+                    <div className='num-of-channels'>{channelIndexArray.length} channels</div>
                     {channelIndexArray.map(channel => (
                      <ChannelIndexItem 
                     key={channel.id}

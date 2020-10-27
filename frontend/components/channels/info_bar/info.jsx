@@ -75,7 +75,7 @@ class Info extends React.Component{
                                     onBlur={this.handleBlur}
                                     onClick={this.handleInfoClick}
                                 >
-                                <i className="fas fa-info-circle"></i>
+                                <i id='become-transparent' className="fas fa-info-circle"></i>
                                     {this.state.show ? (
                                         <div>
                                             <ul

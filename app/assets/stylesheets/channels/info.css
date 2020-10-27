@@ -8,9 +8,24 @@
 .info-click-dropdown-button{
    color: lightgray;
    font-size: 26px;
-   font-weight: lighter;
-   font-family: serif;
+   font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight:200;
    
+}
+
+.revised-outer-div:hover{
+   
+    border-radius: 5px;
+  background-color: lightgray   ;
+  cursor: pointer;
+   
+}
+
+.revised-outer-div{
+     height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: none;
 }
 
 .channels-title-uci{
@@ -180,12 +195,17 @@
 .members-count{
     font-family: sans-serif;
     cursor: pointer;
+    padding-top: 4px; 
+    padding-bottom: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+     border-radius: 4px;
 }
 
 .members-count:hover{
    background-color: #bdb8b82e;
-   padding: 4px; 
-   border-radius: 4px;
+   
+  
 }
  .users-index-btn{
     color: white; 
@@ -252,4 +272,9 @@
 .revised-info-click-dropdown a:hover{
     background-color: #0c63ad;
     color: white;
+}
+
+#become-transparent{
+    background-color: transparent;
+    size: 100%;
 }
