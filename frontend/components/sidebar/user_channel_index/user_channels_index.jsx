@@ -31,6 +31,12 @@ class UserChannelsIndex extends React.Component{
         this.props.history.push(`/channels/${channelNumber}`)
     }
 
+    handleSelectedClick(channelNumber) {
+        // let current = document.getElementsByClassName('selected-channel');
+        // current[0].className = current[0].className.replace(' selected-channel', "");
+        // document.getElementById('channel' + `${channelNumber}`).className += " active-channel"
+        this.props.history.push(`/channels/${channelNumber}`)
+    }
   
 
     render(){
@@ -50,7 +56,7 @@ class UserChannelsIndex extends React.Component{
         }
         altArray = altArray.map((channel) => {
             
-                return (<li id={'channel' + `${channel.id}`} className="uci-li-ele" onClick={() => this.handleChannelClick(channel.id)} ><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>)
+                return (<li id={'channel' + `${channel.id}`} className="uci-li-ele" onClick={() => this.handleSelectedClick(channel.id)} ><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>)
         })
 
 
