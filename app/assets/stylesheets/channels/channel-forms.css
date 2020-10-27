@@ -130,3 +130,25 @@ input:checked + .slider:before {
 .makeprivatewords{
   padding-right: 160px;
 }
+
+.edit-button{
+    color: #4e4b4b;
+    background-color: #80808057;
+    outline: none;
+    border: 0px;
+    margin-left: 450px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.edit-button:hover{
+  background-color: #777676;
+  color: white;
+}

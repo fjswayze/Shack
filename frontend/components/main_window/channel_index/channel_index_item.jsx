@@ -31,6 +31,7 @@ class ChannelIndexItem extends React.Component{
     }
 
     handleLeave() {
+        debugger
         this.setState({ joinable: true })
         this.props.deleteChannelMembership(this.props.channel.id, this.props.user.id); 
        
@@ -45,22 +46,34 @@ class ChannelIndexItem extends React.Component{
         length= this.props.channel.user_ids.length
     }
         return(
+            <div
+                onMouseLeave={this.handleMouseLeave}
+                onMouseOver={this.handleMouseOver}
+            
+            className='channel-index-item-outer-div'>
                     <Link
-                    onMouseLeave={this.handleMouseLeave}
-                    onMouseOver={this.handleMouseOver} className="chanels-index-item"
+                     className="chanels-index-item"
                     to={`/channels/${this.props.channel.id}`}
                     >
                         <div>
                         <p className="chanels-index-item-name">{this.props.channel.name} {this.props.channel.description}</p>
                     <p className="chanels-index-item-members">{length} members</p>
                     </div>
-                        {this.state.show  && this.state.joinable ? (
-                    <button  onClick={this.handleJoin} className="channels-index-join-btn" >Join</button>
-                    ): this.state.show && !this.state.joinable ? (
-                        <button onClick={this.handleLeave} className="channels-index-leave-btn" >Leave</button>
-                        ) : null}
-                       
                     </Link>  
+                      
+            {this.state.show && this.state.joinable ? ( 
+
+                    <button 
+                        onClick={this.handleJoin} className="channels-index-join-btn" >Join</button> )
+
+             : this.state.show && !this.state.joinable ? (
+
+                        <button onClick={this.handleLeave} className="channels-index-leave-btn" >Leave</button>
+
+            ) : null
+        }
+
+            </div>
         )
     }
 }

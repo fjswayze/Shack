@@ -10,7 +10,7 @@ import {withRouter} from 'react-router-dom'
 const mSTP = (state, ownProps) =>  { 
     return { 
         channel: state.entities.channels[ownProps.match.params.channelId] || {}, 
-        user: state.entities.users[state.session.id]
+        user: state.entities.users[state.session.id], 
     }
     
 }

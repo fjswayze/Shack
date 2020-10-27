@@ -34,8 +34,11 @@
 }
 
 
-.chanels-index-item button{
-   
+.channel-index-item-outer-div{
+    position: relative;
+}
+.channel-index-item-outer-div button{
+    cursor: pointer;
     font-weight: bold;
     width: 100px;
     margin: 20px;
@@ -45,6 +48,9 @@
     align-self: center;
     padding-left: 10px;
     font-size: 16px;
+    position: absolute;
+    top: 0%;
+    right: 10%;
 }
 
 .channels-index-leave-btn{

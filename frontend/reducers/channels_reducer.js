@@ -10,9 +10,9 @@ const ChannelReducer = (state = {}, action) => {
         case RECEIVE_CHANNEL:
             return Object.assign(newState, {[action.channel.id]: action.channel}); 
         case RECEIVE_CHANNEL_MEMBERSHIP:
+            newState[action.channelMembership.channel_id].user_ids.push(action.channelMembership.user_id)
             return newState; 
         case REMOVE_CHANNEL_MEMBERSHIP: 
-            
             let editedArray = newState[action.channelMembership.channelId].user_ids.filter(user_id => user_id != action.channelMembership.userId)
             newState[action.channelMembership.channelId].user_ids = editedArray; 
             return newState; 

@@ -4,13 +4,14 @@ import {RECEIVE_CHANNEL_MEMBERSHIP, REMOVE_CHANNEL_MEMBERSHIP} from '../actions/
 import {RECEIVE_CHANNEL} from '../actions/channel_actions'
 
 const UsersReducer = (state = {}, action) => {
-
+    
     Object.freeze(state);
     let newState = Object.assign({}, state); 
     switch (action.type) {
         case RECEIVE_USER: 
             return Object.assign(newState, {[action.user.id]: action.user}); 
         case RECEIVE_CHANNEL_MEMBERSHIP: 
+            
             newState[action.channelMembership.user_id].channel_ids.push(action.channelMembership.channel_id)
             return newState;
         case REMOVE_CHANNEL_MEMBERSHIP: 
@@ -18,7 +19,7 @@ const UsersReducer = (state = {}, action) => {
             newState[action.channelMembership.userId].channel_ids = selectedArray; 
             return newState; 
         case RECEIVE_CHANNEL:
-            if(newState[action.channel]){if(!newState[action.channel.admin_id].channel_ids.includes(action.channel.id)){
+            if(newState[action.channel.admin_id]){if(!newState[action.channel.admin_id].channel_ids.includes(action.channel.id)){
                 newState[action.channel.admin_id].channel_ids.push(action.channel.id)
             }
         }

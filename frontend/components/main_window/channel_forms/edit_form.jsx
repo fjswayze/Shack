@@ -60,7 +60,7 @@ class EditForm extends React.Component {
                     </label>
                     <br></br>
 
-                    <div className="makeprivateandbutton">
+                    {/* <div className="makeprivateandbutton">
                         <div className="makeprivatewords">
                             <label>Make Private</label>
                             <p>When a channel is set to private, it can only be viewed by invitation.</p>
@@ -77,10 +77,10 @@ class EditForm extends React.Component {
 
                         <div></div>
                         <div></div>
-                    </div>
+                    </div> */}
                     <br></br>
 
-                    <button className='channel-form-button' type="submit">{form.split(" ")[0]}</button>
+                    <button className='edit-button' type="submit">{form.split(" ")[0]}</button>
 
                 </form>
 

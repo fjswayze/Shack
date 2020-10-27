@@ -4,7 +4,8 @@ class Info extends React.Component{
     constructor(props){
         super(props); 
         this.state = {
-            show: false
+            show: false, 
+            users: this.props.channel.user_ids
         }
         this.handleInfoClick = this.handleInfoClick.bind(this); 
         this.handleClick = this.handleClick.bind(this); 
@@ -17,13 +18,13 @@ class Info extends React.Component{
     }
 
     componentDidMount(){   
-        
         this.props.fetchChannel(this.props.match.params.channelId); 
+        
     }
 
-    componentDidUpdate(){
-        this.props.match.params.channelId
-    }
+    // componentDidUpdate(){
+    //     this.props.fetchChannel(this.props.match.params.channelId); 
+    // }
 
     handleDelete() {
         let redirect = this.props.user.channel_ids[0];
