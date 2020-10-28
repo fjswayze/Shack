@@ -2,12 +2,11 @@ import {RECEIVE_MESSAGE, RECEIVE_MESSAGES, REMOVE_MESSAGE} from '../actions/mess
 
 
 const MessagesReducer = (state = {}, action) => {
-    debugger
+    
     Object.freeze(state); 
     let newState = Object.assign({}, state); 
     switch (action.type) {
         case RECEIVE_MESSAGE:
-            debugger
             return Object.assign(newState, {[action.message.id]: action.message}); 
         case RECEIVE_MESSAGES:
             return action.messages; 

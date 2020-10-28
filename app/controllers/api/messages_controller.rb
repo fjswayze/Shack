@@ -13,6 +13,7 @@ class Api::MessagesController < ApplicationController
     def create 
          
         @message = Message.new(message_params)
+         
         if @message.save 
             render :show 
         else
@@ -32,6 +33,6 @@ class Api::MessagesController < ApplicationController
     private 
 
     def message_params 
-        params.require(:message).permit(:messageable_id, :messageable_type)
+        params.require(:message).permit(:body, :messageable_id, :messageable_type, :user_id, :username)
     end
 end

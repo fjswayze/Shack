@@ -5,7 +5,7 @@ export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE'; 
 
 export const receiveMessage = message => {
-    debugger
+    
     return {
     type: RECEIVE_MESSAGE, 
     message 

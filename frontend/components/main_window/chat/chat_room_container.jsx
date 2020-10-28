@@ -2,6 +2,8 @@ import {connect} from 'react-redux';
 import {fetchChannel} from '../../../actions/channel_actions'; 
 import {fetchChannelUsers} from '../../../actions/user_actions';
 import {fetchChannelMessages, receiveMessage} from '../../../actions/messages_actions'; 
+import {createChannelMembership} from '../../../actions/channel_membership_actions'; 
+
 import ChatRoom from './ChatRoom.jsx'; 
 
 const mSTP = (state, ownProps) => {
@@ -18,7 +20,8 @@ const mDTP = (dispatch) => ({
     fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
     fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)), 
     fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)), 
-    receiveMessage: message => dispatch(receiveMessage(message))
+    receiveMessage: message => dispatch(receiveMessage(message)), 
+    createChannelMembership: data => dispatch(createChannelMembership(data))
 })
 
 export default connect(mSTP, mDTP)(ChatRoom); 

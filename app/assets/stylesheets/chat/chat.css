@@ -24,6 +24,38 @@
  
 }
 
+.message-input-join{
+    position: absolute;
+    bottom: 0px;
+    background-color:#a7a7a71f;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.you-are-viewing{
+    padding: 10px;
+}
+.message-input-join button {
+      cursor: pointer;
+    font-weight: bold;
+    width: 100px;
+    margin: 20px;
+    
+    border-radius: 5px;
+    height: 40px; 
+    align-self: center;
+   
+}
+.messages-channel-name{
+    font-weight: bold;
+}
+
+
 .message-form-input{
     font-family: sans-serif;
     width: 100%;
@@ -42,6 +74,8 @@
     height: 10px;
     margin-bottom: 20px;
 }
+
+
 
 .message-form-btn-active{
     background-color: #0b9a6c;

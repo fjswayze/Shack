@@ -40,20 +40,26 @@ class UserChannelsIndex extends React.Component{
   
 
     render(){
+        
         if(!this.props.user.username) return null; 
         let caret = this.state.show ? (
             <i className="fas fa-caret-down"></i>
         ) : (
                 <i id="caret-right" class="fas fa-caret-right"></i>
         )
+        const onlyUnique = (value, index, self) => {
+            return self.indexOf(value) === index 
+        }
+        let uniqueChannels = this.props.user.channel_ids.filter(onlyUnique); 
 
-        if (!Object.values(this.props.channels)[this.props.user.channel_ids.length - 1]) return <div></div>
-             
+        if (!Object.values(this.props.channels)[uniqueChannels.length - 1]) return <div></div>
+        
 
         let altArray = [];
-        for (let i = 0; i < this.props.user.channel_ids.length; i++) {
+        
+        for (let i = 0; i < uniqueChannels.length; i++) {
             
-            altArray.push(this.props.channels[this.props.user.channel_ids[i]]);
+            altArray.push(this.props.channels[uniqueChannels[i]]);
         }
         altArray = altArray.map((channel) => {
             
@@ -127,8 +133,8 @@ class UserChannelsIndex extends React.Component{
 
       
         let channelsArray = []; 
-        for(let i = 0; i < this.props.user.channel_ids.length; i++ ){
-            channelsArray.push(this.props.channels[this.props.user.channel_ids[i]]); 
+        for (let i = 0; i < uniqueChannels.length; i++ ){
+            channelsArray.push(this.props.channels[uniqueChannels[i]]); 
         }
         channelsArray = channelsArray.map((channel) => {
         if (channel.id === this.props.channel.id) {return <li id={'channel' + `${channel.id}`} className="uci-li-ele active-channel" onClick={() => this.handleChannelClick(channel.id)}><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>}
