@@ -2,12 +2,13 @@ class Api::MessagesController < ApplicationController
     skip_before_action :verify_authenticity_token 
 
     def index 
-        if params[:messageable_type] = "channel"
-            @channel = Channel.find(params[:messageable_id])
+        
+       
+            @channel = Channel.find(params[:channel_id])
             @messages = @channel.messages 
-            render :index 
-        end
+           
     end
+    
 
     def create 
          

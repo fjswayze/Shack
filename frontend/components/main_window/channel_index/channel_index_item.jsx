@@ -31,7 +31,7 @@ class ChannelIndexItem extends React.Component{
     }
 
     handleLeave() {
-        debugger
+        
         this.setState({ joinable: true })
         this.props.deleteChannelMembership(this.props.channel.id, this.props.user.id); 
        

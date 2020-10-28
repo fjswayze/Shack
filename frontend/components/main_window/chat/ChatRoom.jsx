@@ -4,60 +4,62 @@ import MessageForm from './MessageForm';
 class ChatRoom extends React.Component {
     constructor(props){
         super(props); 
-        this.state = {messages: []}; 
+       this.state = {
+           messages: this.props.messages
+       }
         this.bottom = React.createRef(); 
     }
 
  
 
     componentDidMount(){
-        this.props.fetchUsers()
-        App.cable.subscriptions.create(
-            {channel: 'ChatChannel'}, 
-            {
-                received: data => {
-                    this.setState({
-                        messages: this.state.messages.concat(data.message)
-                    }); 
-                }, 
-                speak: function(data){
-                    return this.perform('speak', data)
-                }
-            }
-        ); 
+            this.props.fetchChannelMessages(this.props.channelId); 
+            this.props.fetchChannelUsers(this.props.channelId)
     }
+
+
+    //     App.cable.subscriptions.create(
+    //         {
+    //     channel: 'ChatChannel',
+    //     channel_id: this.props.channel.id }, 
+    //         {
+    //             received: data => {
+    //                 // this.setState({
+    //                 //     messages: this.state.messages.concat(data.message)
+    //                 // }); 
+    //             }, 
+    //             speak: function(data){
+    //                 return this.perform('speak', data)
+    //             }
+    //         }
+    //     ); 
+    // }
     // componentDidUpdate(){
     //     this.bottom.current.scrollIntoView(); 
     // }
 
     render(){
-        if(!this.props.users) return null; 
-
-        if(!this.props.user) return null; 
-        if(!this.bottom) return null; 
-        let date = new Date(); 
-        let hours = date.getHours(); 
-        let minutes = date.getMinutes(); 
-        let AMorPM = hours > 12 ? ('PM') : ('AM'); 
-        let revisedHours = hours % 12;
-        if(revisedHours === 0) revisedHours = 12; 
-        if(minutes < 10){
-            minutes = (`0${minutes}`)
-        }
-        if(minutes === 0){
-            minutes = '00'
-        }
+        if(!this.props.channel.id) return <div></div>
         
-        const messageList = this.state.messages.map(message => {
+        if(this.props.messages.length === 0) return <div></div>; 
+        if(!this.bottom) return null; 
+       
+        
+        
+        const messageList = this.props.messages.map(message => {
             return(
                 <li key={message.id}>
                     <div className="message-div">
                     <img className="message-profile" src={window.profileURL} />
                     <div>
                     <div className="username-and-timestamp-div">
-                        <p className="message-username">{this.props.users[message.user_id].username}</p>
+                        {/* <p className="message-username">{this.props.users[message.user_id].username}</p> */}
                         <p className="message-timestamp">
-                            {revisedHours}:{minutes} {AMorPM}
+                            
+                                    {parseInt(message.created_at.split("").slice(11, 13).join("")) % 12}:
+                                    {parseInt(message.created_at.split("").slice(14, 16).join(""))}
+                                    {parseInt(message.created_at.split("").slice(11, 13).join("")) > 12 ? (' PM') : (' AM')}
+            
                         </p>
                     </div>
                         <div className="messsage-body-div">{message.body}</div>
@@ -69,6 +71,7 @@ class ChatRoom extends React.Component {
         }); 
         return (
             <div className="chatroom=container">  
+              
                 <div className="message-list">{messageList}</div>
                 <MessageForm 
                 channel={this.props.channel}

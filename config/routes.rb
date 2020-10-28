@@ -8,7 +8,10 @@ Rails.application.routes.draw do
       resources :channel_memberships, only:[:create, :index]
       resources :channels, only: [:create, :index, :show, :destroy, :update] do 
         resources :messages, only:[:index]
+        resources :users, only: [:index]
       end
+
+      
 
       get 'channel_memberships/:channel_id/:user_id/', to: 'channel_memberships#hack_destroy'
 

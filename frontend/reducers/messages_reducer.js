@@ -2,6 +2,7 @@ import {RECEIVE_MESSAGE, RECEIVE_MESSAGES, REMOVE_MESSAGE} from '../actions/mess
 
 
 const MessagesReducer = (state = {}, action) => {
+    
     Object.freeze(state); 
     let newState = Object.assign({}, state); 
     switch (action.type) {

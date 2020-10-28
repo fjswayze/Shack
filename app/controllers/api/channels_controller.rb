@@ -1,8 +1,10 @@
 class Api::ChannelsController < ApplicationController 
 
         skip_before_action :verify_authenticity_token 
-
+     
+    
     def index  
+
         if params[:user_id]
             @channels = current_user.channels 
             render :index 

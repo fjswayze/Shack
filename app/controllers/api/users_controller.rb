@@ -14,8 +14,15 @@ class Api::UsersController < ApplicationController
     end
 
     def index 
-        @users = User.all
-        render :index 
+       
+        if params[:channel_id]
+            @channel = Channel.find(params[:channel_id])
+            @users = @channel.users
+            render :index 
+        else 
+            @users = User.all
+            render :index 
+        end
     end
 
     def update 

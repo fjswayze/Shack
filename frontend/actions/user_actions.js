@@ -14,6 +14,11 @@ const receiveUser = user => ({
     user 
 })
 
+export const fetchChannelUsers = channelId => dispatch => {
+    return UserUtil.fetchChannelUsers(channelId)
+        .then(users => dispatch(receiveUsers(users)))
+}
+
 export const fetchUsers = () => dispatch =>  {
     return UserUtil.fetchUsers() 
         .then(users => dispatch(receiveUsers(users)))
@@ -23,3 +28,4 @@ export const updateUser = (user) => dispatch => {
     return UserUtil.updateUser(user)
         .then(updatedUser => dispatch(receiveUser(updatedUser)))
 }
+
