@@ -25,7 +25,12 @@ const UsersReducer = (state = {}, action) => {
         }
             return newState; 
         case RECEIVE_USERS:
-            return action.users; 
+            
+            let newUsers = Object.values(action.users).filter(user => !newState[user.id])
+            for(let i = 0; i < newUsers.length; i++){
+                Object.assign(newState, {[newUsers[i].id]: newUsers[i]}); 
+            }
+            return newState
         case RECEIVE_CURRENT_USER:
         return Object.assign(newState, {[action.currentUser.id]: action.currentUser}); 
         default:

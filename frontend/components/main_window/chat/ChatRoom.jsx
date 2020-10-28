@@ -15,38 +15,45 @@ class ChatRoom extends React.Component {
     componentDidMount(){
             this.props.fetchChannelMessages(this.props.channelId); 
             this.props.fetchChannelUsers(this.props.channelId)
+    
+
+
+        App.cable.subscriptions.create(
+            {
+        channel: 'ChatChannel',
+        channel_id: this.props.channelId }, 
+            {
+                received: data => {
+                    debugger
+                    this.props.receiveMessage(data.message);  
+                }, 
+                speak: function(data){
+                    return this.perform('speak', data)
+                }
+            }
+        ); 
+    }
+    componentDidUpdate(prevProps){
+        if(this.props.channelId !== prevProps.channelId){
+            this.props.fetchChannelMessages(this.props.channelId)
+        }
+        // debugger
+        // if(Object.values(this.props.messages).length !== Object.values(prevProps.messages)){
+        //     this.props.fetchChannelMessages(this.props.channelId)
+        // }
     }
 
-
-    //     App.cable.subscriptions.create(
-    //         {
-    //     channel: 'ChatChannel',
-    //     channel_id: this.props.channel.id }, 
-    //         {
-    //             received: data => {
-    //                 // this.setState({
-    //                 //     messages: this.state.messages.concat(data.message)
-    //                 // }); 
-    //             }, 
-    //             speak: function(data){
-    //                 return this.perform('speak', data)
-    //             }
-    //         }
-    //     ); 
-    // }
-    // componentDidUpdate(){
-    //     this.bottom.current.scrollIntoView(); 
-    // }
-
     render(){
-        if(!this.props.channel.id) return <div></div>
+        if(!this.props.user) return <div></div>
+        if(!this.props.channelId) return <div></div>
         
         if(this.props.messages.length === 0) return <div></div>; 
-        if(!this.bottom) return null; 
+   
        
         
         
         const messageList = this.props.messages.map(message => {
+            debugger
             return(
                 <li key={message.id}>
                     <div className="message-div">

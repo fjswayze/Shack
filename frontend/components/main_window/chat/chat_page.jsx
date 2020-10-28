@@ -5,9 +5,9 @@ import ChatRoom from './ChatRoom.jsx';
 class ChatPage extends React.Component{
     // componentDidMount(){
     //     this.props.fetchChannel(this.props.channel.id); 
-    //     debugger
+    //     
     //     if(this.props.channel.id){
-    //         debugger
+    //         
     //         this.props.fetchChannelMessages(this.props.channel.id)
     //     }
     // }

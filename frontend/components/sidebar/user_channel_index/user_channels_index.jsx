@@ -40,6 +40,7 @@ class UserChannelsIndex extends React.Component{
   
 
     render(){
+        if(!this.props.user.username) return null; 
         let caret = this.state.show ? (
             <i className="fas fa-caret-down"></i>
         ) : (
@@ -47,7 +48,7 @@ class UserChannelsIndex extends React.Component{
         )
 
         if (!Object.values(this.props.channels)[this.props.user.channel_ids.length - 1]) return <div></div>
-
+             
 
         let altArray = [];
         for (let i = 0; i < this.props.user.channel_ids.length; i++) {
