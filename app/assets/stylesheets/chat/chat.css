@@ -122,10 +122,15 @@
 .message-div{
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: space-between  ;
+    width: 95%;
     padding-left: 2.5%;
+    padding-right: 2.5%;
     padding-top: 5px; 
     padding-bottom: 5px;
+}
+.message-profile-body{
+    display: flex;
 }
 
 .message-div:hover{
@@ -168,3 +173,109 @@
 .fake-text-area{
 padding: 10px;
 }
+
+.message-div:hover .message-actions-div {
+    visibility: visible;
+}
+
+
+
+.message-actions-div{
+    visibility: hidden;
+   
+   
+    border: 1px solid gray; 
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    
+}
+
+.message-actions-div button{
+    background-color: white;
+    border: none;
+}
+.message-actions-div :hover{
+    background-color: #d3d3d330;
+    border: none;
+}
+
+.delete-tool-tip, .update-tool-tip{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltiptext, .tooltiptextedit {
+    visibility: hidden;
+    width: 120px; 
+    background-color: black;
+    color: white; 
+    text-align: center;
+    padding: 5px 0; 
+    border-radius: 6px;
+    position: absolute; 
+ 
+    bottom: 25px; 
+}
+
+.tooltiptext {
+    right: 10px;
+}
+
+.tooltiptextedit {
+    right: 5px;
+}
+
+.delete-tool-tip:hover .tooltiptext{
+    visibility: visible;
+}
+
+.update-tool-tip:hover .tooltiptextedit{
+    visibility: visible;
+}
+
+.message-edit-div{
+    visibility: hidden; 
+    height: 0px;
+    width: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hide-div{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+}
+
+
+
+.edit-cancel{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 3px;
+    cursor: pointer;
+}
+.edit-submit{
+    background-color: teal;
+    color: white;
+    padding: 5px;
+    margin: 3px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-edit-div textarea {
+    border: 1px solid gray; 
+    min-height: 70px;
+    width: 95%;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+

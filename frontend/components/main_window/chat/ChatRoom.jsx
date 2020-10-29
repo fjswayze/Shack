@@ -1,11 +1,13 @@
 import React from 'react'; 
+import EditMessageForm from './edit_message_form'; 
+import MessageForm from './MessageForm'
 
-import MessageForm from './MessageForm'; 
 class ChatRoom extends React.Component {
     constructor(props){
         super(props); 
        this.state = {
-           messages: this.props.messages
+           messages: this.props.messages,
+           editedMessage: ''
        }
         this.bottom = React.createRef(); 
     }
@@ -13,6 +15,34 @@ class ChatRoom extends React.Component {
     handleJoin(data){
         this.props.createChannelMembership(data)
     }
+
+    handleEdit(id){
+        let hide = document.getElementById('hide-div' + `${id}`); 
+        let li = document.getElementById('message-li' + `${id}`)
+        let body = document.getElementById('message-body-div' + `${id}`); 
+        let edit = document.getElementById('message-edit-div' + `${id}`); 
+        let messageTime = document.getElementById('username-and-timestamp-div' + `${id}`);  
+        let tools = document.getElementById('message-actions-div' + `${id}`); 
+        hide.style.overflow = 'visible'; 
+        hide.style.height = 'auto'; 
+        hide.style.width = 'auto'; 
+        hide.style.visibility = 'visible'; 
+
+        tools.style.height = '0px';
+        tools.style.width = '0px'; 
+        
+        messageTime.style.height = '0px'; 
+        messageTime.style.width = '0px'
+        li.style.backgroundColor = '#f5cd0912'
+        body.style.visibility = 'hidden'; 
+        body.style.height = '0px'; 
+        body.style.width = '0px'; 
+        edit.style.visibility = 'visible';
+        edit.style.height = '110px';
+        edit.style.width = '800px';
+    }
+
+
 
     componentDidMount(){
             this.props.fetchChannelMessages(this.props.channelId); 
@@ -79,26 +109,56 @@ class ChatRoom extends React.Component {
         
         const filteredMessages = this.props.messages.filter(message => message.messageable_id === parseInt(this.props.channelId))
         
-        const messageList = filteredMessages.map((message, idx) => {
+        const messageList = filteredMessages.map((message) => {
             return(
-                <li key={message.id}>
+                <li id={'message-li' + `${message.id}`} key={message.id}>
+
+
                     <div className="message-div">
-                    <img className="message-profile" src={window.profileURL} />
-                    <div>
-                    <div className="username-and-timestamp-div">
-                        <p className="message-username">{message.username}</p>
-                        <p className="message-timestamp">
+                        <div className='message-profile-body'>
+                        <img className="message-profile" src={window.profileURL} />
+                            
+                        <div>
+                            <div id={'username-and-timestamp-div' + `${message.id}`} className="username-and-timestamp-div">
+                                <p className="message-username">{message.username}</p>
+                                <p className="message-timestamp">
                             
                                     {(parseInt(message.created_at.split("").slice(11, 13).join("")) + 17) % 12}:
-                                    {parseInt(message.created_at.split("").slice(14, 16).join(""))}
+                                    {(message.created_at.split("").slice(14, 16).join(""))}
                                     {(parseInt(message.created_at.split("").slice(11, 13).join("")) > 19 || parseInt(message.created_at.split("").slice(11, 13).join("")) < 7 )? (' PM') : (' AM')}
             
-                        </p>
+                                </p>
+                            </div>
+                                
+                            <div id={'message-body-div' + `${message.id}`} className="messsage-body-div">{message.body}</div>
+                            <div id={'hide-div' + `${message.id}`}className='hide-div'>
+                                <EditMessageForm
+                                    message={message}
+                                    editMessage={this.props.updateMessage}
+                                >
+                                </EditMessageForm>
+                            </div>
+
+                        </div>
+                        </div>
+                       
+                       
+                            {message.user_id === this.props.user.id ?
+                                <div id={'message-actions-div' + `${message.id}`} className='message-actions-div'>
+                                <button onClick={() => this.props.deleteMessage(message.id)} className='delete-tool-tip'>
+                                    <i class="far fa-trash-alt"></i>
+                                    <span className='tooltiptext'>Delete Message</span>
+                                </button>
+                                <button onClick={() => this.handleEdit(message.id)} className='update-tool-tip'>
+                                    <i class="far fa-edit"></i>
+                                    <span  className='tooltiptextedit'>Edit Message</span>
+                                </button>
+                                </div>
+                                :
+                                <div></div>}
+                     
                     </div>
-                        <div className="messsage-body-div">{message.body}</div>
-                    </div>
-                    </div>
-                
+                    
                 </li> 
             ); 
         }); 
@@ -110,19 +170,11 @@ class ChatRoom extends React.Component {
                             <div className='flex-div'>
                                 <div className="message-list">{messageList}
                                 <div id='scroll-here' ref={this.bottom} />
+                                </div>
                             </div>
-                           
                         </div>
-                        
-                        </div>
-             
-                
                 </div>
-             
-               
                     <div>{messageInput}</div>
-              
-           
             </div>
           
         )

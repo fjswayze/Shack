@@ -34,6 +34,11 @@ export const createMessage = message => dispatch => (
         .then(createdMessage => dispatch(receiveMessage(createdMessage)))
 )
 
+export const updateMessage = message => dispatch => (
+    MessageUtil.updateMessage(message)
+        .then(updatedMessage => dispatch(receiveMessage(updatedMessage)))
+)
+
 export const deleteMessage = messageId => dispatch => (
     MessageUtil.deleteMessage(messageId)
         .then(() => dispatch(removeMessage(messageId)))

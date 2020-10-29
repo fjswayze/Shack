@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
       resource :session, only: [:create, :destroy]
       resources :user_channel_joins, only: [:create]
-      resources :messages, only: [:create, :destroy]
+      resources :messages, only: [:create, :destroy, :update]
      mount ActionCable.server, at: '/cable'
     end
 end
