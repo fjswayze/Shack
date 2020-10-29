@@ -35,14 +35,16 @@ class ChatRoom extends React.Component {
             }
         ); 
     }
+
+
     componentDidUpdate(prevProps){
         if(this.props.channelId !== prevProps.channelId){
             this.props.fetchChannelMessages(this.props.channelId)
         }
-        // 
-        // if(Object.values(this.props.messages).length !== Object.values(prevProps.messages)){
-        //     this.props.fetchChannelMessages(this.props.channelId)
-        // }
+        if(this.bottom.current != null){
+            let ele = document.getElementById('scroll-here')
+           ele.scrollIntoView()
+        }
     }
 
     render(){
@@ -66,7 +68,7 @@ class ChatRoom extends React.Component {
                     >Join Channel</button>
             </div>
         </div>; 
-        debugger
+        
        for(let i = 0; i < this.props.channel.user_ids.length; i++){
            if (this.props.channel.user_ids[i] === parseInt(this.props.user.id)) {messageInput = <MessageForm
                channel={this.props.channel}
@@ -76,9 +78,8 @@ class ChatRoom extends React.Component {
        }
         
         const filteredMessages = this.props.messages.filter(message => message.messageable_id === parseInt(this.props.channelId))
-        debugger
-        const messageList = filteredMessages.map(message => {
-            debugger
+        
+        const messageList = filteredMessages.map((message, idx) => {
             return(
                 <li key={message.id}>
                     <div className="message-div">
@@ -88,29 +89,42 @@ class ChatRoom extends React.Component {
                         <p className="message-username">{message.username}</p>
                         <p className="message-timestamp">
                             
-                                    {parseInt(message.created_at.split("").slice(11, 13).join("")) % 12}:
+                                    {(parseInt(message.created_at.split("").slice(11, 13).join("")) + 17) % 12}:
                                     {parseInt(message.created_at.split("").slice(14, 16).join(""))}
-                                    {parseInt(message.created_at.split("").slice(11, 13).join("")) > 12 ? (' PM') : (' AM')}
+                                    {(parseInt(message.created_at.split("").slice(11, 13).join("")) > 19 || parseInt(message.created_at.split("").slice(11, 13).join("")) < 7 )? (' PM') : (' AM')}
             
                         </p>
                     </div>
                         <div className="messsage-body-div">{message.body}</div>
                     </div>
                     </div>
-                <div ref={this.bottom}/>
+                
                 </li> 
             ); 
         }); 
         return (
-            <div className="chatroom=container">  
+       
+            <div>
+                <div className="chatroom-container">  
+                        <div className='message-list-container'>
+                            <div className='flex-div'>
+                                <div className="message-list">{messageList}
+                                <div id='scroll-here' ref={this.bottom} />
+                            </div>
+                           
+                        </div>
+                        
+                        </div>
+             
+                
+                </div>
+             
+               
+                    <div>{messageInput}</div>
               
-                <div className="message-list">{messageList}</div>
-        <div>{messageInput}</div>
-                {/* <MessageForm 
-                channel={this.props.channel}
-                user={this.props.user}
-                />  */}
+           
             </div>
+          
         )
     }
 }

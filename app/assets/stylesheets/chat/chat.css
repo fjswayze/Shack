@@ -1,25 +1,49 @@
+.chatroom-container{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
 .message-list li{
     font-family: sans-serif;
     padding-top: 5px; 
 }
 
+.message-list-container{
+    position: absolute;
+    bottom: 120px;
+    top: 0px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.flex-div{
+     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
 .message-list{
     font-size: 14px;
     list-style: none;
-    margin-left: 2.5%;
-    position: absolute;
-    bottom: 130px;
-    overflow: hidden;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .message-form-container{
-    position: absolute; 
+    background-color: white;
+    position: absolute;
+    z-index: 3;
     overflow: hidden;
+    left: 2.5%;
+    right: 2.5%;
     bottom: 20px; 
     border: 1px solid gray; 
     min-height: 70px;
     width: 95%;
-    margin-left: 2.5%;
     border-radius: 5px;
  
 }
@@ -98,6 +122,14 @@
 .message-div{
     display: flex;
     align-items: center;
+    width: 100%;
+    padding-left: 2.5%;
+    padding-top: 5px; 
+    padding-bottom: 5px;
+}
+
+.message-div:hover{
+    background-color: #d3d3d330;
 }
 
 .message-username{
