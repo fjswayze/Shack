@@ -10,9 +10,17 @@ class User < ApplicationRecord
         foreign_key: :user_id, 
         class_name: :ChannelMembership 
 
+    has_many :DM_memberships, 
+        foreign_key: :DM_id, 
+        class_name: :DMMembership
+
     has_many :channels, 
         through: :channel_memberships,
         source: :channel 
+
+    has_many :direct_messages, 
+        through: :DM_memberships, 
+        source: :direct_message 
 
 
 

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserChannelsIndex from './user_channels_index';
 import {fetchChannel} from '../../../actions/channel_actions'; 
+import {fetchDirectMessage} from '../../../actions/direct_message_actions'; 
 import {withRouter} from 'react-router-dom'
 
 const mSTP = (state, ownProps) => {

@@ -1,0 +1,1 @@
+json.extract! direct_message, :id, :admin_id, :user_ids

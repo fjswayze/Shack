@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_214714) do
+ActiveRecord::Schema.define(version: 2020_10_30_022517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 2020_10_28_214714) do
     t.integer "user_ids", default: [], array: true
     t.integer "message_ids", default: [], array: true
     t.index ["admin_id"], name: "index_channels_on_admin_id"
+  end
+
+  create_table "direct_messages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_ids", default: [], array: true
+    t.integer "message_ids", default: [], array: true
+    t.integer "admin_id"
+  end
+
+  create_table "dm_memberships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "DM_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "DM_id"], name: "index_dm_memberships_on_user_id_and_DM_id", unique: true
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -75,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_10_28_214714) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "channel_ids", default: [], array: true
+    t.integer "direct_messages_ids", default: [], array: true
     t.index ["email"], name: "index_users_on_email"
     t.index ["session_token"], name: "index_users_on_session_token"
     t.index ["username"], name: "index_users_on_username"

@@ -10,6 +10,8 @@ Channel.destroy_all
 Message.destroy_all
 testchannel1 = Channel.create(name: 'shacks', admin_id: 1)
 ChannelMembership.destroy_all
+DirectMessage.destroy_all
+DMMembership.destroy_all
 User.destroy_all 
 
 testuser = User.create(email: 'test1997@gmail.com', password: 'hello1997')
@@ -21,6 +23,11 @@ shaq = User.create(email: 'shaq@hotmail.com', password:'lakersbaby')
 norwegian_channel = Channel.create(name: 'Norweigian Shacks', admin_id: ed.id)
 london_channel = Channel.create(name: 'London Shacks', admin_id: bigshack.id)
 los_angeles_shacks = Channel.create(name: 'Shacks of LA', admin_id: shaq.id)
+ DM1 = DirectMessage.create(admin_id: testuser.id)
+
+
+
+DM1_joins = DMMembership.create(user_id: testuser.id, DM_id: DM1.id)
 
 
 shack_joins = ChannelMembership.create(user_id: testuser.id, channel_id: testchannel1.id)
