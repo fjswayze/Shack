@@ -1,27 +1,25 @@
-import { RECEIVE_DIRECT_MESSAGE, RECEIVE_DIRECT_MESSAGES, REMOVE_DIRECT_MESSAGE} from '../actions/direct_message_actions'; 
-import {RECEIVE_CHANNEL_MEMBERSHIP, REMOVE_CHANNEL_MEMBERSHIP} from '../actions/channel_membership_actions'; 
-const ChannelReducer = (state = {}, action) => {
+import { RECEIVE_DIRECT_MESSAGE, RECEIVE_DIRECT_MESSAGES, REMOVE_DIRECT_MESSAGE, RECEIVE_USERS_DIRECT_MESSAGES} from '../actions/direct_message_actions'; 
+
+
+const DMReducer = (state = {}, action) => {
     
     Object.freeze(state);
     let newState = Object.assign({}, state)
     switch (action.type) {
-        case RECEIVE_CHANNELS: 
-            return action.channels; 
-        case RECEIVE_CHANNEL:
-            return Object.assign(newState, {[action.channel.id]: action.channel}); 
-        case RECEIVE_CHANNEL_MEMBERSHIP:
-            newState[action.channelMembership.channel_id].user_ids.push(action.channelMembership.user_id)
-            return newState; 
-        case REMOVE_CHANNEL_MEMBERSHIP: 
-            let editedArray = newState[action.channelMembership.channelId].user_ids.filter(user_id => user_id != action.channelMembership.userId)
-            newState[action.channelMembership.channelId].user_ids = editedArray; 
-            return newState; 
-        case REMOVE_CHANNEL:
-            delete newState[action.channelId]; 
+        case RECEIVE_DIRECT_MESSAGES: 
+            debugger
+            return action.directMessages; 
+        case RECEIVE_USERS_DIRECT_MESSAGES:
+            debugger
+            return action.directMessages; 
+        case RECEIVE_DIRECT_MESSAGE:
+            return Object.assign(newState, {[directMessage.id]: action.directMessage}); 
+        case REMOVE_DIRECT_MESSAGE:
+            delete newState[action.directMessageId]; 
             return newState;
         default:
             return state;
     }
 }
 
-export default ChannelReducer; 
+export default DMReducer; 

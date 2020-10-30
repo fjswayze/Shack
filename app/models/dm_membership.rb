@@ -9,3 +9,4 @@ class DMMembership < ActiveRecord::Base
         class_name: :DirectMessage 
         
 end
+

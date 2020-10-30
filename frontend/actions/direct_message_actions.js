@@ -1,7 +1,8 @@
 import * as APIUtil from '../util/direct_message_api_util';
 export const RECEIVE_DIRECT_MESSAGE = 'RECEIVE_DIRECT_MESSAGE';
 export const RECEIVE_DIRECT_MESSAGES = 'RECEIVE_DIRECT_MESSAGES'
-export const REMOVE_DIRECT_MESSAGE = 'REMOVE_DIRECT_MESSSAGE'
+export const REMOVE_DIRECT_MESSAGE = 'REMOVE_DIRECT_MESSSAGE'; 
+export const RECEIVE_USERS_DIRECT_MESSAGES = 'RECEIVE_USERS_DIRECT_MESSAGES'; 
 
 
 const receiveDirectMessages = directMessages => ({
@@ -19,6 +20,12 @@ const removeDirectMessage = directMessageId => ({
     directMessageId
 })
 
+const receiveUsersDirectMessages = (userId, directMessages) => ({
+    type: RECEIVE_USERS_DIRECT_MESSAGES,
+    directMessages, 
+    userId
+})
+
 
 export const fetchDirectMessages = () => dispatch => (
     APIUtil.fetchDirectMessages()
@@ -27,7 +34,7 @@ export const fetchDirectMessages = () => dispatch => (
 
 export const fetchUserDirectMessages = (userId) => dispatch => (
     APIUtil.fetchUserDirectMessages(userId)
-        .then(directMessages => dispatch(receiveDirectMessages(directMessages)))
+        .then(directMessages => dispatch(receiveUsersDirectMessages(userId, directMessages)))
 )
 
 export const fetchDirectMessage = directMessageId => dispatch => (

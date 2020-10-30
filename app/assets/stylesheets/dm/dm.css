@@ -1,0 +1,81 @@
+.DMI-button-title{
+    display: flex;
+    font-family: sans-serif;
+    color: #bbbbbb;
+    align-items: center;
+}
+
+.DMI-button-title button{
+    margin-left: 10px;
+}
+
+.DMI-title{
+    font-size: 15px;
+    margin-left: 11px;
+}
+
+.udmi-li-ele{
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    height: 10px;
+    overflow: hidden;
+    color: #bbbbbb;
+}
+
+.caret-down{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 8px;
+    padding-left: 8px; 
+    margin-left: 10px;
+    border-radius: 3px;
+}
+
+.caret-down:hover, .caret-right:hover{
+    background-color: #96939369;
+}
+
+.caret-right{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 11px;
+    padding-left: 8px; 
+    border-radius: 3px;
+     margin-left: 10px;
+}
+
+.user-dms-index-button{
+    background-color: transparent;
+    border: none;
+    font-family: sans-serif;
+    color: #bbbbbb;
+   
+    
+}
+
+
+.margin-left-div{
+    margin: 10px;
+}
+.user-dms-index-button:hover{
+     
+    cursor: pointer;
+}
+
+.direct-message-button{
+    background-color: transparent;
+    border: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #bbbbbb;
+    outline: none;
+    padding-left: 2px;
+}
+
+.direct-message-button:hover{
+    cursor: pointer;
+}

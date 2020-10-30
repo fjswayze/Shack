@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import UCIDropdownContainer from './UCI_dropdown_container'; 
+import UserDmsContainer from '../user_dms_index/user_dms_container'
 
 class UserChannelsIndex extends React.Component{
     constructor(props){
@@ -43,9 +44,13 @@ class UserChannelsIndex extends React.Component{
         
         if(!this.props.user.username) return null; 
         let caret = this.state.show ? (
+            <div className='caret-down2'>
             <i className="fas fa-caret-down"></i>
+            </div>
         ) : (
+            <div className='caret-right2'>
                 <i id="caret-right" class="fas fa-caret-right"></i>
+            </div>
         )
         const onlyUnique = (value, index, self) => {
             return self.indexOf(value) === index 
@@ -76,7 +81,7 @@ class UserChannelsIndex extends React.Component{
                     <div className='title-and-info-link'>
                        
                         <button
-                            className="show-channels"
+                            className="user-dms-index-button"
                             style={{ position: 'relative' }}
                             onClick={this.handleClick}
                         >
@@ -84,7 +89,14 @@ class UserChannelsIndex extends React.Component{
 
                             {caret}
 
-
+                        </button>
+                        <button
+                        className='direct-message-button'
+                        onClick={this.handleClick}
+                        >
+                        
+                            <a>Channels</a>
+                        </button>
                             {this.state.show ? (
 
                                 <ul
@@ -113,7 +125,7 @@ class UserChannelsIndex extends React.Component{
 
                             }
 
-                        </button>
+                        
                         <div className='channels-title-uci'>Channels</div>
                     </div>
                     <div className="fake-button">
@@ -154,7 +166,7 @@ class UserChannelsIndex extends React.Component{
     
                 <div className='title-and-info-link'>
                     <button
-                    className="show-channels"
+                    className="show-channels2"
                     style={{position: 'relative'}}
                     onClick={this.handleClick}
                     > 
@@ -171,7 +183,7 @@ class UserChannelsIndex extends React.Component{
                                 style={{position: 'absolute'}}
                                 >
                                 {channelsArray}   
-                             
+                                    <UserDmsContainer /> 
                                  </ul>
                          
                         ): 
@@ -184,7 +196,7 @@ class UserChannelsIndex extends React.Component{
                                     style={{ position: 'absolute' }}
                                 >
                                     <li id={selectedChannel.id} className="uci-li-ele selected-channel" onClick={() => this.handleChannelClick(selectedChannel.id)} ><Link key={selectedChannel.id} className="ui-channel-link" to={`/channels/${selectedChannel.id}`}>{selectedChannel.innerText}</Link></li>
-                            
+                                    <UserDmsContainer /> 
                                 </ul>
                           
                         
@@ -199,7 +211,7 @@ class UserChannelsIndex extends React.Component{
                             <UCIDropdownContainer />
                         </div>
 
-                
+               
                 
            
                 </div>

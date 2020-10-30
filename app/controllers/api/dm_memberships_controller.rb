@@ -9,9 +9,10 @@ class Api::ChannelMembershipsController < ApplicationController
 
 
     def create 
-        
-        @channel_membership = DMMembership.new(dm_membership_params)
-        if @channel_membership.save 
+        @dm_membership = DMMembership.new(dm_membership_params)
+        if @dm_membership.save 
+            @user = User.find(@dm_membership.user_id) 
+            @user.direct_messages_ids.push(@dm_membership.id)
             render :show
         else
             render json: @channel.errors.full_messages, status: 422

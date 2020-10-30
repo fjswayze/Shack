@@ -1,5 +1,5 @@
 class DirectMessage < ApplicationRecord
-     
+      
     has_many :dm_memberships, 
         foreign_key: :DM_id, 
         class_name: :DMMembership 

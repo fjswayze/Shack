@@ -3,8 +3,7 @@ class Api::DirectMessagesController < ApplicationController
         skip_before_action :verify_authenticity_token 
      
     
-    def index  
-
+    def index   
         if params[:user_id]
             @direct_messages = current_user.direct_messages 
             render :index 
