@@ -60,6 +60,7 @@
 }
 
 .user-dms-index-button{
+    padding-left: 15px;
     background-color: transparent;
     border: none;
     font-family: sans-serif;

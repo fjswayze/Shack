@@ -57,7 +57,7 @@ class UserDMsIndex extends React.Component{
          
         
         let selectedDm = document.getElementsByClassName('active-dm')[0]; 
-        debugger
+        
         if(!this.props.dm.id) return(
             <div>
                 <div>

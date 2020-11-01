@@ -43,6 +43,18 @@ class UserChannelsIndex extends React.Component{
     render(){
         
         if(!this.props.user.username) return null; 
+        let channelBrowser; 
+        if(this.props.channelId === 'index'){
+            channelBrowser = 
+            
+                <div className='channels-browser'>
+                    <div className='channels-browser-inner'>
+                    Channel Browser
+                    </div>
+                    </div>
+        } else{
+            <a></a>
+        }
         let caret = this.state.show ? (
             <div className='caret-down2'>
             <i className="fas fa-caret-down"></i>
@@ -76,8 +88,9 @@ class UserChannelsIndex extends React.Component{
         if(!this.props.channel.id) return(
 
             <div className="master-div">
+                {channelBrowser}
                 <div className="channels-index">
-
+                   
                     <div className='title-and-info-link'>
                         <button
                             className="show-channels2"
