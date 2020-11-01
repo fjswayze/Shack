@@ -15,7 +15,11 @@ class MessageForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault(); 
-        App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, user_id: this.props.user.id, username: this.props.user.username, messageable_id: this.props.channel.id, messageable_type: 'Channel'})
+        if(this.props.pageType === 'DM'){
+            App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, user_id: this.props.user.id, username: this.props.user.username, messageable_id: this.props.page.id, messageable_type: 'DM' })
+        } else{
+            App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, user_id: this.props.user.id, username: this.props.user.username, messageable_id: this.props.page.id, messageable_type: 'Channel' })
+        }
         this.setState({body: ""}); 
     }
 
@@ -28,7 +32,7 @@ class MessageForm extends React.Component{
     }
 
     render(){
-        if(!this.props.channel) return null; 
+        if(!this.props.page) return null; 
         const messageFormBtn = this.state.body === '' ? (
             <button className="message-form-btn-inactive" type="submit"><i class="far fa-paper-plane"></i></button>
         ) : (<button className="message-form-btn-active" type="submit"><i class="far fa-paper-plane"></i></button>)
@@ -41,7 +45,7 @@ class MessageForm extends React.Component{
                     className="message-form-input"
                     value={this.state.body}
                     onChange={this.update('body')}
-                    placeholder={`Message ${this.props.channel.name} here`}
+                    placeholder={`Message ${this.props.page.name} here`}
                     />
                 </div>
                     <div className="message-form-btn-container">

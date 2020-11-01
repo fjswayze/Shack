@@ -5,6 +5,11 @@ export const fetchChannelMessages = (channelId) => {
     })
 }
 
+export const fetchDMMessages = dmId => {
+    return $.ajax({
+        url: `api/direct_messages/${dmId}/messages`
+    })
+}
 
 
 export const createMessage = (message) => (

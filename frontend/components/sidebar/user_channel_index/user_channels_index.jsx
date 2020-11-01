@@ -105,7 +105,7 @@ class UserChannelsIndex extends React.Component{
                                     style={{ position: 'absolute' }}
                                 >
                                     {altArray}
-
+                                <UserDmsContainer /> 
                                 </ul>
 
                             ) :

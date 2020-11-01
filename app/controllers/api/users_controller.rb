@@ -20,8 +20,11 @@ class Api::UsersController < ApplicationController
             @users = @channel.users
             render :index 
         elsif params[:direct_message_id] 
+            
             @direct_message = DirectMessage.find(params[:direct_message_id])
-            @user = @direct_message.users 
+             
+            @users = @direct_message.users 
+         
             render :index 
         else 
             @users = User.all

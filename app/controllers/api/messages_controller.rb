@@ -3,9 +3,13 @@ class Api::MessagesController < ApplicationController
 
     def index 
         
-       
+        if params[:channel_id]
             @channel = Channel.find(params[:channel_id])
             @messages = @channel.messages 
+        else 
+            @dm = DirectMessage.find(params[:direct_message_id])
+            @messages = @dm.messages 
+        end
            
     end
     

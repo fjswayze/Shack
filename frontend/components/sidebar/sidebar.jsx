@@ -8,6 +8,7 @@ const Sidebar = () => (
         <Switch>
 
             <ChannelRoute exact path="/channels/:channelId" component={UserChannelIndexContainer} /> 
+            <ChannelRoute exact path="/dms/:dmId" component={UserChannelIndexContainer}/>
             <ChannelRoute exact path="/channels/:channelId/edit" component={UserChannelIndexContainer} /> 
             <ChannelRoute exact path="/channels/index" component={UserChannelIndexContainer} /> 
             <ChannelRoute path="/" component={UserChannelIndexContainer} /> 

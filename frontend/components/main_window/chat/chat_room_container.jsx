@@ -8,8 +8,9 @@ import ChatRoom from './ChatRoom.jsx';
 
 const mSTP = (state, ownProps) => {
     return {
-    channelId: ownProps.match.params.channelId,
-    channel: state.entities.channels[ownProps.match.params.channelId] || {},
+    pageType: 'Channel', 
+    pageId: ownProps.match.params.channelId,
+    page: state.entities.channels[ownProps.match.params.channelId] || {},
     user: state.entities.users[state.session.id],
     users: state.entities.users, 
     messages: Object.values(state.entities.messages) || [1, 2]
@@ -17,11 +18,11 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => ({
-    fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
-    fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)), 
-    fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)), 
+    fetchPage: (channelId) => dispatch(fetchChannel(channelId)),
+    fetchPageUsers: (channelId) => dispatch(fetchChannelUsers(channelId)), 
+    fetchPageMessages: channelId => dispatch(fetchChannelMessages(channelId)), 
     receiveMessage: message => dispatch(receiveMessage(message)), 
-    createChannelMembership: data => dispatch(createChannelMembership(data)),
+    createPageMembership: data => dispatch(createChannelMembership(data)),
     deleteMessage: messageId => dispatch(deleteMessage(messageId)),
     updateMessage: message => dispatch(updateMessage(message))
 })

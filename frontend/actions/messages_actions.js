@@ -29,6 +29,11 @@ export const fetchChannelMessages = (channelId) => dispatch => {
         .then(messages => dispatch(receiveMessages(messages)))
 }
 
+export const fetchDMMessages = dmId => dispatch => {
+    return MessageUtil.fetchDMMessages(dmId)
+        .then(messages => dispatch(receiveMessages(messages)))
+}
+
 export const createMessage = message => dispatch => (
     MessageUtil.createMessage(message)
         .then(createdMessage => dispatch(receiveMessage(createdMessage)))

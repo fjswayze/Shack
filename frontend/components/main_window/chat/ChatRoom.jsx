@@ -13,7 +13,18 @@ class ChatRoom extends React.Component {
     }
 
     handleJoin(data){
-        this.props.createChannelMembership(data)
+
+        if(this.props.pageType === 'DM'){
+            this.props.createPageMembership({
+                channel_id: data.pageId, 
+                user_id: data.user_id
+            })} else {
+            this.props.createPageMembership({
+                dm_id: data.pageId, 
+                user_id: data.user_id
+            })
+        }
+       
     }
 
     handleEdit(id){
@@ -45,31 +56,48 @@ class ChatRoom extends React.Component {
 
 
     componentDidMount(){
-            this.props.fetchChannelMessages(this.props.channelId); 
-            this.props.fetchChannelUsers(this.props.channelId)
+            this.props.fetchPageMessages(this.props.pageId); 
+            this.props.fetchPageUsers(this.props.pageId)
     
+        if(this.props.pageType === 'DM'){
+            App.cable.subscriptions.create(
+                {
+                    channel: 'ChatChannel',
+                    dm_id: this.props.pageId
+                },
+                {
+                    received: data => {
 
-
-        App.cable.subscriptions.create(
-            {
-        channel: 'ChatChannel',
-        channel_id: this.props.channelId }, 
-            {
-                received: data => {
-                    
-                    this.props.receiveMessage(data.message);  
-                }, 
-                speak: function(data){
-                    return this.perform('speak', data)
+                        this.props.receiveMessage(data.message);
+                    },
+                    speak: function (data) {
+                        return this.perform('speak', data)
+                    }
                 }
-            }
-        ); 
+            ); 
+        } else{
+            App.cable.subscriptions.create(
+                {
+                    channel: 'ChatChannel',
+                    channel_id: this.props.pageId
+                },
+                {
+                    received: data => {
+
+                        this.props.receiveMessage(data.message);
+                    },
+                    speak: function (data) {
+                        return this.perform('speak', data)
+                    }
+                }
+            ); 
+        }
     }
 
 
     componentDidUpdate(prevProps){
-        if(this.props.channelId !== prevProps.channelId){
-            this.props.fetchChannelMessages(this.props.channelId)
+        if(this.props.pageId !== prevProps.pageId){
+            this.props.fetchPageMessages(this.props.pageId)
         }
         if(this.bottom.current != null){
             let ele = document.getElementById('scroll-here')
@@ -79,35 +107,37 @@ class ChatRoom extends React.Component {
 
     render(){
         if(!this.props.user) return <div></div>
-        if(!this.props.channelId) return <div></div>
-        if(!this.props.channel.user_ids) return <div></div>
+        if(!this.props.pageId) return <div></div>
+        if (!this.props.page) return <div></div>
+        if(!this.props.page.user_ids) return <div></div>
         
-        if (Object.values(this.props.users).length < this.props.channel.user_ids.length - 1) return <div></div>
+        if (Object.values(this.props.users).length < this.props.page.user_ids.length - 1) return <div></div>
     
          
         let messageInput = 
         
         <div className='message-input-join'>
             <div>
-                    <div className='you-are-viewing'>You are viewing <a className='messages-channel-name'>{this.props.channel.name}</a></div>
+                    <div className='you-are-viewing'>You are viewing <a className='messages-channel-name'>{this.props.page.name}</a></div>
                     <button className='channels-index-join-btn'
                     onClick={() => this.handleJoin({
-                        channel_id: this.props.channelId, 
+                        page_id: this.props.pageId, 
                         user_id: this.props.user.id
                     })}
                     >Join Channel</button>
             </div>
         </div>; 
         
-       for(let i = 0; i < this.props.channel.user_ids.length; i++){
-           if (this.props.channel.user_ids[i] === parseInt(this.props.user.id)) {messageInput = <MessageForm
-               channel={this.props.channel}
+       for(let i = 0; i < this.props.page.user_ids.length; i++){
+           if (this.props.page.user_ids[i] === parseInt(this.props.user.id)) {messageInput = <MessageForm
+               page={this.props.page}
                user={this.props.user}
+               type={this.props.pageType}
            />
            }
        }
         
-        const filteredMessages = this.props.messages.filter(message => message.messageable_id === parseInt(this.props.channelId))
+        const filteredMessages = this.props.messages.filter(message => message.messageable_id === parseInt(this.props.pageId))
         
         const messageList = filteredMessages.map((message) => {
             return(

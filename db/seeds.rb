@@ -23,10 +23,15 @@ shaq = User.create(email: 'shaq@hotmail.com', password:'lakersbaby')
 norwegian_channel = Channel.create(name: 'Norweigian Shacks', admin_id: ed.id)
 london_channel = Channel.create(name: 'London Shacks', admin_id: bigshack.id)
 los_angeles_shacks = Channel.create(name: 'Shacks of LA', admin_id: shaq.id)
-DM1 = DirectMessage.create(admin_id: testuser.id)
 
+DM1 = DirectMessage.create(admin_id: testuser.id)
+DM2 = DirectMessage.create(admin_id: testuser.id)
  
-DM1_joins = DMMembership.create(user_id: testuser.id, DM_id: DM1.id)
+DM1_joins1 = DMMembership.create(user_id: testuser.id, DM_id: DM1.id)
+DM1_joins2 = DMMembership.create(user_id: shaq.id, DM_id: DM1.id)
+
+DM2_joins1 = DMMembership.create(user_id: testuser.id, DM_id: DM2.id)
+DM2_joins2 = DMMembership.create(user_id: bigshack.id, DM_id: DM2.id)
 
 
 shack_joins = ChannelMembership.create(user_id: testuser.id, channel_id: testchannel1.id)
