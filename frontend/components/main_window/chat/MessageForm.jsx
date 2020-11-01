@@ -23,6 +23,28 @@ class MessageForm extends React.Component{
         this.setState({body: ""}); 
     }
 
+    generateUserNames(){
+        let userNameArray = [];
+
+        this.props.page.user_ids.map(id => {
+            if (this.props.users[id]) {
+                userNameArray.push(this.props.users[id].username)
+            }
+
+        })
+
+        let newString = '';
+        for (let i = 0; i < userNameArray.length; i++) {
+            if (i !== userNameArray.length - 1) { newString += userNameArray[i] + ', ' } else {
+                newString += userNameArray[i]
+            }
+        }
+
+        return newString;
+    }
+        
+    
+
     submitOnEnter(e) {
         
         if (e.which === 13) {
@@ -33,6 +55,15 @@ class MessageForm extends React.Component{
 
     render(){
         if(!this.props.page) return null; 
+        let placeholder; 
+        if(this.props.page.user_ids.length > Object.values(this.props.users).length) return null; 
+        
+        if(this.props.type === 'DM'){
+            placeholder = `Message ${this.generateUserNames()}`
+        } else {
+           placeholder = `Message ${this.props.page.name} `
+        }; 
+        
         const messageFormBtn = this.state.body === '' ? (
             <button className="message-form-btn-inactive" type="submit"><i class="far fa-paper-plane"></i></button>
         ) : (<button className="message-form-btn-active" type="submit"><i class="far fa-paper-plane"></i></button>)
@@ -45,7 +76,7 @@ class MessageForm extends React.Component{
                     className="message-form-input"
                     value={this.state.body}
                     onChange={this.update('body')}
-                    placeholder={`Message ${this.props.page.name} here`}
+                    placeholder={placeholder}
                     />
                 </div>
                     <div className="message-form-btn-container">

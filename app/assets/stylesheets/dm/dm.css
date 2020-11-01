@@ -13,14 +13,25 @@
     font-size: 15px;
     margin-left: 11px;
 }
+.udmi-li-wrapper{
+    list-style: none;
+    padding-bottom: 5px;
+    width: 100%;
+    
+}
 
+.udmi-li-wrapper:hover{
+   background-color: #2d092d;
+}
 .udmi-li-ele{
+    text-decoration: none; 
     list-style: none;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 10px;
+    padding-left: 58px;
     padding-right: 10px;
     font-size: 14px;
+    font-family: sans-serif;
     height: 10px;
     overflow: hidden;
     color: #bbbbbb;
@@ -59,7 +70,7 @@
 
 
 .margin-left-div{
-    margin: 10px;
+    margin: 0px;
 }
 .user-dms-index-button:hover{
      
@@ -78,4 +89,18 @@
 
 .direct-message-button:hover{
     cursor: pointer;
+}
+
+.udmi-ul{
+    padding-left: 0px;
+    width: 100%;
+}
+
+.active-dm{
+    background-color: #0c63ad;
+    color: white;
+}
+
+.active-dm a {
+    color: white;
 }

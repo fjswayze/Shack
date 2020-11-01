@@ -74,29 +74,21 @@ class UserChannelsIndex extends React.Component{
 
         
         if(!this.props.channel.id) return(
+
             <div className="master-div">
-                <div className='channels-browser'>Channel Browser</div>
                 <div className="channels-index">
 
                     <div className='title-and-info-link'>
-                       
                         <button
-                            className="user-dms-index-button"
+                            className="show-channels2"
                             style={{ position: 'relative' }}
                             onClick={this.handleClick}
                         >
-                            
+
 
                             {caret}
 
-                        </button>
-                        <button
-                        className='direct-message-button'
-                        onClick={this.handleClick}
-                        >
-                        
-                            <a>Channels</a>
-                        </button>
+
                             {this.state.show ? (
 
                                 <ul
@@ -105,7 +97,7 @@ class UserChannelsIndex extends React.Component{
                                     style={{ position: 'absolute' }}
                                 >
                                     {altArray}
-                                <UserDmsContainer /> 
+                                    <UserDmsContainer />
                                 </ul>
 
                             ) :
@@ -117,7 +109,7 @@ class UserChannelsIndex extends React.Component{
                                     onClick={e => e.stopPropagation()}
                                     style={{ position: 'absolute' }}
                                 >
-
+                                    <UserDmsContainer />
                                 </ul>
 
 
@@ -125,7 +117,7 @@ class UserChannelsIndex extends React.Component{
 
                             }
 
-                        
+                        </button>
                         <div className='channels-title-uci'>Channels</div>
                     </div>
                     <div className="fake-button">
@@ -137,7 +129,7 @@ class UserChannelsIndex extends React.Component{
 
                 </div>
             </div>
-
+            
 
         ); 
 

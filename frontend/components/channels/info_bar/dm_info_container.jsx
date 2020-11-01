@@ -6,7 +6,7 @@ import {fetchDirectMessage} from '../../../actions/direct_message_actions'
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         dm: state.entities.dms[ownProps.match.params.dmId] || {},
         dmId: ownProps.match.params.dmId,

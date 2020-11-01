@@ -25,7 +25,7 @@ class UserDMsIndex extends React.Component{
     handleDMClick(dmNumber){
         
         let activeDM = document.getElementsByClassName('active-dm');
-        activeDM[0].className = activeDM[0].className.replace(' active-dm', "")
+        if(activeDM[0]) activeDM[0].className = activeDM[0].className.replace(' active-dm', ""); 
         document.getElementById('dm' + `${dmNumber}`).className += " active-dm"; 
         this.props.history.push(`/dms/${dmNumber}`)
     }
@@ -57,8 +57,8 @@ class UserDMsIndex extends React.Component{
          
         
         let selectedDm = document.getElementsByClassName('active-dm')[0]; 
-        
-        return(
+        debugger
+        if(!this.props.dm.id) return(
             <div>
                 <div>
                     <div className='margin-left-div'>
@@ -75,14 +75,14 @@ class UserDMsIndex extends React.Component{
                             Direct messages 
                         </button>
                         {this.state.show ? (
-                            <ul>
+                            <ul className='udmi-ul'>
                                { dmsArray.map((dm) => {
-                                   
-                                   return <DMItem
+                            
+                                   return <li id={'dm' + ' ' + `${dm.id}`} className='udmi-li-wrapper' onClick={() => this.handleDMClick(dm.id)}><DMItem
                                         dm={dm}
                                         users={this.props.users}
                                         fetchDMUsers ={this.props.fetchDMUsers}
-                                    />
+                                    /></li>
 
                                
                                 })
@@ -100,6 +100,61 @@ class UserDMsIndex extends React.Component{
 
                     </div>
                    
+                </div>
+            </div>
+        )
+
+        return(
+            <div>
+                <div>
+                    <div className='margin-left-div'>
+                        <button
+                            className='user-dms-index-button'
+                            style={{ position: 'relative' }}
+                            onClick={this.handleClick}
+                        >
+                            {caret}
+                        </button>
+                        <button
+                            className='direct-message-button'
+                            onClick={this.handleClick}>
+                            Direct messages
+                        </button>
+                        {this.state.show ? (
+                            <ul className='udmi-ul'>
+                                { dmsArray.map((dm) => {
+                                    if(this.props.dm.id === dm.id){
+                                        return <li id={'dm' + ' ' +`${dm.id}`} className='udmi-li-wrapper active-dm' onClick={() => this.handleDMClick(dm.id)}><DMItem
+                                            dm={dm}
+                                            users={this.props.users}
+                                            fetchDMUsers={this.props.fetchDMUsers}/></li>
+                                    } else{
+
+                                    
+                                        return <li id={'dm' + ' ' + `${dm.id}`} className='udmi-li-wrapper' onClick={() => this.handleDMClick(dm.id)}><DMItem
+                                        dm={dm}
+                                        users={this.props.users}
+                                        fetchDMUsers={this.props.fetchDMUsers}
+                                    /></li>
+                                    }
+
+                                })
+                                }
+                            </ul>
+                        ) :
+                            <ul className='udmi-ul'>
+                                <li id={selectedDm.id} className='udmi-li-wrapper active-dm' onClick={() => this.handleDMClick(parseInt(selectedDm.id.split(" ")[1]))}><DMItem
+                                    dm={this.props.dms[parseInt(selectedDm.id.split(" ")[1])]}
+                                    users={this.props.users}
+                                    fetchDMUsers={this.props.fetchDMUsers} /></li>
+                            </ul>
+
+                        }
+
+
+
+                    </div>
+
                 </div>
             </div>
         )

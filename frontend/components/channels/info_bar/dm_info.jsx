@@ -46,7 +46,9 @@ class DMInfo extends React.Component{
                        
                     </div>
                     <div className="right-info">
+                    <div className='dm-user-names-info'>
                     {this.generateUserNames()}
+                        </div>
                     </div>
                 </div>
             </div>

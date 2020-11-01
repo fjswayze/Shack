@@ -21,6 +21,15 @@
    
 }
 
+.dm-user-names-info{
+display: flex;
+align-items: center;
+font-family: sans-serif;
+padding: 10px;
+font-weight: bold;
+color: #636363;
+}
+
 .revised-outer-div{
      height: 25px;
     width: 25px;

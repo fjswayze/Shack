@@ -4,9 +4,10 @@ import {fetchDirectMessage, fetchUserDirectMessages} from '../../../actions/dire
 import {withRouter} from 'react-router-dom'; 
 import {fetchDMUsers} from '../../../actions/user_actions'
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     return {
         user: state.entities.users[state.session.id],
+        dm: state.entities.dms[ownProps.match.params.dmId] || {},
         users: state.entities.users, 
         dms: state.entities.dms || [1]
     }

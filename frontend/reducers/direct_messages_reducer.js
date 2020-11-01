@@ -11,7 +11,7 @@ const DMReducer = (state = {}, action) => {
         case RECEIVE_USERS_DIRECT_MESSAGES:
             return action.directMessages; 
         case RECEIVE_DIRECT_MESSAGE:
-            debugger
+            
             return Object.assign(newState, {[action.directMessage.id]: action.directMessage}); 
         case REMOVE_DIRECT_MESSAGE:
             delete newState[action.directMessageId]; 

@@ -132,6 +132,7 @@ class ChatRoom extends React.Component {
            if (this.props.page.user_ids[i] === parseInt(this.props.user.id)) {messageInput = <MessageForm
                page={this.props.page}
                user={this.props.user}
+               users={this.props.users}
                type={this.props.pageType}
            />
            }
