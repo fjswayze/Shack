@@ -3,6 +3,7 @@ import CreateChannelContainer from '../main_window/channel_forms/create_channel_
 import UsersIndex from './users_index/users_index'; 
 import ChannelMembersIndex from './users_index/channel_members_index'; 
 import ChannelForm from '../main_window/channel_forms/channel_form'; 
+import DMForm from './create_dm/DM_Form'; 
 
 function Modal(props){
     if(!props.modal){
@@ -15,6 +16,16 @@ function Modal(props){
     switch(props.modal){
         case 'create': 
         component = <CreateChannelContainer/>; 
+        break; 
+        case 'create-DM':
+            component= <DMForm
+                createDirectMessage={props.createDirectMessage}
+                createDMMembership={props.createDMMembership}
+                fetchUsers={props.fetchUsers}
+                closeModal={props.closeModal}
+                user={props.user}
+                users={props.users}
+             />; 
         break; 
         case 'users index': 
             component = <UsersIndex 
@@ -42,6 +53,7 @@ function Modal(props){
         case 'edit channel':
             component = <ChannelForm 
                         channel={props.channel}
+    
                         /> 
     default:
         return null; 

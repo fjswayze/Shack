@@ -65,8 +65,8 @@ class MessageForm extends React.Component{
         }; 
         
         const messageFormBtn = this.state.body === '' ? (
-            <button className="message-form-btn-inactive" type="submit"><i class="far fa-paper-plane"></i></button>
-        ) : (<button className="message-form-btn-active" type="submit"><i class="far fa-paper-plane"></i></button>)
+            <button className="message-form-btn-inactive" type="submit"><i className="far fa-paper-plane"></i></button>
+        ) : (<button className="message-form-btn-active" type="submit"><i className="far fa-paper-plane"></i></button>)
         return(
             <div className="message-form-container">
                 <form className="message-form" onSubmit={this.handleSubmit}>

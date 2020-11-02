@@ -61,7 +61,7 @@ class UserChannelsIndex extends React.Component{
             </div>
         ) : (
             <div className='caret-right2'>
-                <i id="caret-right" class="fas fa-caret-right"></i>
+                <i id="caret-right" className="fas fa-caret-right"></i>
             </div>
         )
         const onlyUnique = (value, index, self) => {
@@ -80,7 +80,7 @@ class UserChannelsIndex extends React.Component{
         }
         altArray = altArray.map((channel) => {
             
-                return (<li id={'channel' + `${channel.id}`} className="uci-li-ele" onClick={() => this.handleSelectedClick(channel.id)} ><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>)
+                return (<li key={channel.id} id={'channel' + `${channel.id}`} className="uci-li-ele" onClick={() => this.handleSelectedClick(channel.id)} ><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>)
         })
 
 
@@ -154,9 +154,9 @@ class UserChannelsIndex extends React.Component{
             channelsArray.push(this.props.channels[uniqueChannels[i]]); 
         }
         channelsArray = channelsArray.map((channel) => {
-        if (channel.id === this.props.channel.id) {return <li id={'channel' + `${channel.id}`} className="uci-li-ele active-channel" onClick={() => this.handleChannelClick(channel.id)}><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>}
+        if (channel.id === this.props.channel.id) {return <li key={channel.id} id={'channel' + `${channel.id}`} className="uci-li-ele active-channel" onClick={() => this.handleChannelClick(channel.id)}><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>}
         else {
-            return <li id={'channel' + `${channel.id}`} className="uci-li-ele" onClick={() => this.handleChannelClick(channel.id)} ><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>
+            return <li key={channel.id} id={'channel' + `${channel.id}`} className="uci-li-ele" onClick={() => this.handleChannelClick(channel.id)} ><Link key={channel.id} className="ui-channel-link" to={`/channels/${channel.id}`}>{channel.name}</Link></li>
         }; 
         })
 
@@ -200,7 +200,7 @@ class UserChannelsIndex extends React.Component{
                                     onClick={e => e.stopPropagation()}
                                     style={{ position: 'absolute' }}
                                 >
-                                    <li id={selectedChannel.id} className="uci-li-ele selected-channel" onClick={() => this.handleChannelClick(selectedChannel.id)} ><Link key={selectedChannel.id} className="ui-channel-link" to={`/channels/${selectedChannel.id}`}>{selectedChannel.innerText}</Link></li>
+                                    <li key={selectedChannel.id} id={selectedChannel.id} className="uci-li-ele selected-channel" onClick={() => this.handleChannelClick(selectedChannel.id)} ><Link key={selectedChannel.id} className="ui-channel-link" to={`/channels/${selectedChannel.id}`}>{selectedChannel.innerText}</Link></li>
                                     <UserDmsContainer /> 
                                 </ul>
                           

@@ -4,6 +4,9 @@ import {fetchUsers} from '../../actions/user_actions';
 import Modal from './modal';
 import { fetchChannel } from '../../actions/channel_actions';
 import {createChannelMembership, deleteChannelMembership} from '../../actions/channel_membership_actions';
+import {createDirectMessage} from '../../actions/direct_message_actions'
+import {createDMMembership} from '../../actions/dm_membership_actions'; 
+
 const mSTP = (state, ownProps) => ({
     modal: state.ui.modal,
     users: state.entities.users || {}, 
@@ -18,7 +21,9 @@ const mDTP = dispatch => {
         fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
         openAddModal: () => dispatch(openModal('users index')),
         deleteChannelMembership: (channelId, userId) => dispatch(deleteChannelMembership(channelId, userId)),
-        createChannelMembership: (channelMembership) => dispatch(createChannelMembership(channelMembership))
+        createChannelMembership: (channelMembership) => dispatch(createChannelMembership(channelMembership)),
+        createDirectMessage: (directMessage) => dispatch(createDirectMessage(directMessage)),
+        createDMMembership: (dmId, userId) => dispatch(createDMMembership(dmId, userId))
     }
 }
 

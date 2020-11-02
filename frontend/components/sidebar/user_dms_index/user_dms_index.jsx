@@ -1,5 +1,6 @@
 import React from 'react'; 
 import DMItem from './dm_item.jsx'; 
+import UDIDropdown from './UDI_dropdown_container.jsx'; 
 
 class UserDMsIndex extends React.Component{
     constructor(props){
@@ -25,7 +26,9 @@ class UserDMsIndex extends React.Component{
     handleDMClick(dmNumber){
         
         let activeDM = document.getElementsByClassName('active-dm');
+        
         if(activeDM[0]) activeDM[0].className = activeDM[0].className.replace(' active-dm', ""); 
+        
         document.getElementById('dm' + `${dmNumber}`).className += " active-dm"; 
         this.props.history.push(`/dms/${dmNumber}`)
     }
@@ -45,7 +48,7 @@ class UserDMsIndex extends React.Component{
             </div>
         ) : (
             <div className='caret-right'>
-                <i id="caret-right" class="fas fa-caret-right"></i>
+                <i id="caret-right" className="fas fa-caret-right"></i>
             </div>
             )
 
@@ -99,7 +102,9 @@ class UserDMsIndex extends React.Component{
 
 
                     </div>
-                   
+                    <div className='UDMI-dropdown-container'>
+                        <UDIDropdown/> 
+                        </div>
                 </div>
             </div>
         )
@@ -154,7 +159,9 @@ class UserDMsIndex extends React.Component{
 
 
                     </div>
-
+                        <div className='UDMI-dropdown-container'>
+                                <UDIDropdown/> 
+                        </div>
                 </div>
             </div>
         )

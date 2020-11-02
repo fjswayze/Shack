@@ -17,15 +17,17 @@ export const fetchDirectMessage= directMessageId => {
     })
 }
 
-export const createDirectMessage = directMessage => {
+export const createDirectMessage = direct_message => {
+    debugger
     return $.ajax({
         url: 'api/direct_messages',
         method: 'POST',
-        data: { directMessage }
+        data: { direct_message }
     })
 }
 
 export const deleteDirectMessage = directMessageId => {
+    
     return $.ajax({
         url: `api/direct_messages/${directMessageId}`,
         method: 'DELETE'

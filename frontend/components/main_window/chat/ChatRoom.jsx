@@ -177,11 +177,11 @@ class ChatRoom extends React.Component {
                             {message.user_id === this.props.user.id ?
                                 <div id={'message-actions-div' + `${message.id}`} className='message-actions-div'>
                                 <button onClick={() => this.props.deleteMessage(message.id)} className='delete-tool-tip'>
-                                    <i class="far fa-trash-alt"></i>
+                                    <i className="far fa-trash-alt"></i>
                                     <span className='tooltiptext'>Delete Message</span>
                                 </button>
                                 <button onClick={() => this.handleEdit(message.id)} className='update-tool-tip'>
-                                    <i class="far fa-edit"></i>
+                                    <i className="far fa-edit"></i>
                                     <span  className='tooltiptextedit'>Edit Message</span>
                                 </button>
                                 </div>

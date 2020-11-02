@@ -42,10 +42,11 @@ export const fetchDirectMessage = directMessageId => dispatch => (
         .then(directMessage => dispatch(receiveDirectMessage(directMessage)))
 )
 
-export const createDirectMessage = directMessage => dispatch => (
-    APIUtil.createDirectMessage(directMessage)
+export const createDirectMessage = directMessage => dispatch => {
+    
+   return APIUtil.createDirectMessage(directMessage)
         .then(createdDirectMessage => dispatch(receiveDirectMessage(createdDirectMessage)))
-)
+}
 
 export const updateDirectMessage = directMessage => dispatch => (
     APIUtil.updateDirectMessage(directMessage)

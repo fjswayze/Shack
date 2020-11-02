@@ -16,6 +16,7 @@ import DMInfo from './channels/info_bar/dm_info';
 const App = () => (
     <div>
         <ModalContainer/> 
+        <Route path='/dms/:dmId' component={UsersIndexModalContainer} /> 
         <Route path='/channels/:channelId' component={UsersIndexModalContainer}/> 
         <AuthRoute exact path="/signin" component={SigninFormContainer}/>
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
