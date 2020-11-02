@@ -15,7 +15,6 @@ class MessageForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault(); 
-        console.log(this.props.type)
         if(this.props.type === 'DM'){
             App.cable.subscriptions.subscriptions[0].speak({ body: this.state.body, user_id: this.props.user.id, username: this.props.user.username, messageable_id: this.props.page.id, messageable_type: 'DirectMessage' })
         } else{

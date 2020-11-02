@@ -5,7 +5,6 @@ import {fetchDirectMessage} from '../../../actions/direct_message_actions';
 import {withRouter} from 'react-router-dom'
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
         channelId: ownProps.match.params.channelId,
         user: state.entities.users[state.session.id],

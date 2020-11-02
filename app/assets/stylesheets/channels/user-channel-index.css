@@ -11,6 +11,9 @@
     display: flex;
 }
 
+.fake-button{
+    margin-bottom: 5px;
+}
 
 
 .fake-button:hover{
@@ -84,7 +87,7 @@
     color: #bbbbbb; 
     text-decoration: none;
     font-size: 14px;
-    padding-left: 9px; 
+    padding-left: 20px; 
 
 }
 
@@ -139,6 +142,7 @@
     width: 233px;
     transform: translateX(-10%);
     cursor: pointer;
+    margin-top: 5px;
 }
 
 
