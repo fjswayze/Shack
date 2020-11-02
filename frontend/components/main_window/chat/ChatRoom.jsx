@@ -193,6 +193,8 @@ class ChatRoom extends React.Component {
                 </li> 
             ); 
         }); 
+
+        
         return (
        
             <div>

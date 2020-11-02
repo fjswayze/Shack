@@ -27,7 +27,23 @@ class ChannelIndex extends React.Component{
                 
                 <div className="all-channels-index">
                     <div className='num-of-channels'>{channelIndexArray.length} channels</div>
-                    {channelIndexArray.map(channel => (
+                    {channelIndexArray.map((channel, idx) => {
+                        debugger
+                    if(idx === 0 ){
+                        return(
+                            <div id='first-channel-index-item'>
+                            <ChannelIndexItem
+                                key={channel.id}
+                                channel={channel}
+                                user={this.props.user}
+                                joinable={!this.props.user.channel_ids.includes(channel.id)}
+                                createChannelMembership={this.props.createChannelMembership}
+                                deleteChannelMembership={this.props.deleteChannelMembership}
+                            />
+                        </div>
+                        )
+                    } else{
+                    return(
                      <ChannelIndexItem 
                     key={channel.id}
                     channel={channel}
@@ -35,8 +51,8 @@ class ChannelIndex extends React.Component{
                     joinable={!this.props.user.channel_ids.includes(channel.id)}
                     createChannelMembership={this.props.createChannelMembership}
                     deleteChannelMembership={this.props.deleteChannelMembership}
-                    />
-                    ))}
+                    />)
+     } })}
                 </div>
             </div>
           

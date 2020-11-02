@@ -18,7 +18,7 @@ export const fetchDirectMessage= directMessageId => {
 }
 
 export const createDirectMessage = direct_message => {
-    debugger
+    
     return $.ajax({
         url: 'api/direct_messages',
         method: 'POST',

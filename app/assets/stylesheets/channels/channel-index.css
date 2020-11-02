@@ -20,9 +20,10 @@
     color: black;
 }
 
-.chanels-index-item:first-child{
+#first-channel-index-item{
     border-top: 1px solid lightgray;
 }
+
 
 .chanels-index-item:hover{
     background-color: #eaecec45; 
@@ -116,7 +117,6 @@ border: none;
     margin-left: 10px;
     padding-bottom: 15px;
     padding-top: 15px;
-    border-bottom: 1px solid lightgray;
     font-weight: bold;
 }
 

@@ -21,9 +21,9 @@ class Api::DirectMessagesController < ApplicationController
 
     def create 
         @direct_message = DirectMessage.new(direct_message_params)
-        debugger
+        
         if @direct_message.save   
-            debugger
+            
             params[:direct_message][:user_ids].each do |id| 
                  @membership = DMMembership.new({DM_id: @direct_message.id, user_id: id}) 
                  @membership.save 
@@ -56,7 +56,7 @@ class Api::DirectMessagesController < ApplicationController
     private 
 
     def direct_message_params
-        debugger
+        
         params.require(:direct_message).permit(:admin_id, :user_ids)
     end
 end

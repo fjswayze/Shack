@@ -110,4 +110,14 @@
     top: 77px;
     right: 10px;
 }
-    
+
+#ready-btn{
+background-color: #30806a;
+color: white;  
+border: none;
+cursor: pointer;
+}
+
+#ready-btn:hover{
+ background-color: #3c9e83;
+}

@@ -32,8 +32,8 @@ class ChannelMembersIndex extends React.Component{
               {channelMembersLength}
                 <p onClick={this.props.openModal}>Add people</p>
               
-                    {selectedUsers.map(user => (
-                        <div className="channel_members_index_ele">
+                    {selectedUsers.map(user => {
+                    return(   <div className="channel_members_index_ele">
                             <div className="channel-members-index-profile-username-div">
                                 <img className="channel_members_index_profile" src={window.profileURL} />
                                 <div>{user.username}</div>
@@ -43,8 +43,8 @@ class ChannelMembersIndex extends React.Component{
                             
                         <button onClick={() => this.handleClick(this.props.channel.id, user.id)}>Remove</button>
                          
-                        </div>
-                    ))}
+                        </div> )
+            })}
               
             </div>
         )

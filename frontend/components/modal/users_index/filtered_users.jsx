@@ -11,12 +11,14 @@ class FilteredUsers extends React.Component{
     render(){
         return (
     <div>
-        {this.props.users.map(person => (
+        {this.props.users.map(person => {
+            if(this.props.user.id !== person.id){
+           return(
             <div onClick={() => this.handleClick({channel_id: this.props.channel.id, user_id: person.id})} className="filtered-users-ele" id={'filtered_users' + `${person.id}`}>
                 <img className="profile" src={window.profileURL} />
                 <div>{person.name}</div>
-            </div>
-        ))}
+            </div>)}
+     })}
     </div>)
     }
 }

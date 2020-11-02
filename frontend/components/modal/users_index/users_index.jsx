@@ -55,6 +55,7 @@ class UsersIndex extends React.Component{
                        handleChange={e => this.handleChange(e.target.value)}
                        />
                        <FilteredUsers
+                       user={this.props.user}
                        users={this.state.word.length < 1 ? [] : this.state.filterDisplay}
                        channel={this.props.channel}
                        createChannelMembership={this.props.createChannelMembership}
