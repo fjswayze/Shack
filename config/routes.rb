@@ -26,7 +26,8 @@ Rails.application.routes.draw do
       
 
       get 'channel_memberships/:channel_id/:user_id/', to: 'channel_memberships#hack_destroy'
-      get 'dm_memberships/:dm_id/:user_id/', to: 'dm_memberships#hack_destroy'
+
+      delete 'dm_memberships/:dm_id/:user_id/', to: 'dm_memberships#hack_destroy'
 
 
 
