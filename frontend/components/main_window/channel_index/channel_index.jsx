@@ -28,7 +28,7 @@ class ChannelIndex extends React.Component{
                 <div className="all-channels-index">
                     <div className='num-of-channels'>{channelIndexArray.length} channels</div>
                     {channelIndexArray.map((channel, idx) => {
-                        debugger
+                        
                     if(idx === 0 ){
                         return(
                             <div id='first-channel-index-item'>

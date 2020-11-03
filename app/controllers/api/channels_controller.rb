@@ -55,7 +55,7 @@ class Api::ChannelsController < ApplicationController
     private 
 
     def channel_params
-        debugger 
+         
         params.require(:channel).permit(:name, :description, :admin_id, :private, :user_ids)
     end
 end
