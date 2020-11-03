@@ -34,7 +34,7 @@ class UCIDropdown extends React.Component {
         return (
             <div >
                 <button
-                    className='info-click-dropdown-button'
+                    className='dm-index-dropdown-button'
                     style={{ position: 'relative' }}
                     onBlur={this.handleBlur}
                     onClick={this.handleClick}
@@ -47,10 +47,10 @@ class UCIDropdown extends React.Component {
                                 onClick={e => e.stopPropagation()}
                                 style={{ position: "absolute", top: '100%' }}
                             >
-                                <div className="create-channel" onClick={this.handleSpecialClick}>Open a direct message</div>
+                                <div className="create-channel" onClick={this.handleSpecialClick}>Create direct message</div>
                             </ul>
                         </div>
-                    ) : null}
+                     ) : null} 
 
                 </button>
             </div>

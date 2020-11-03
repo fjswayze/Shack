@@ -15,9 +15,9 @@
 
 .revised-outer-div:hover{
    
-    border-radius: 5px;
-  background-color: lightgray   ;
-  cursor: pointer;
+border-radius: 5px;
+background-color: lightgray   ;
+cursor: pointer;
    
 }
 
@@ -35,6 +35,10 @@ font-weight: bold;
     width: 25px;
     background-color: transparent;
     border: none;
+}
+
+.revised-outer-div:focus{
+    outline: none;
 }
 
 .channels-title-uci{
@@ -231,6 +235,9 @@ font-weight: bold;
     background-color: #1e9cf7;
 }
 
+.fa-info-circle:focus{
+    outline: none;
+}
 
 .revised-info-click-dropdown{
       background-color: #f7f7f7;
@@ -246,13 +253,15 @@ font-weight: bold;
     left: 50%;
     transform: translateX(-80%);
     z-index: 10;
-    width: 200px;
+    width: 100px;
     
     padding-bottom: 10px;
     padding-top: 10px;
     border: 1px solid lightgray; 
     box-shadow: 3px 3px#d3d3d34f;
 }
+
+
 
 .revised-info-click-dropdown a{
   padding-right: 31px;
@@ -264,7 +273,7 @@ font-weight: bold;
 }
 
 .revised-info-click-dropdown div {
-    font-size: 15px;
+    font-size: 12px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;

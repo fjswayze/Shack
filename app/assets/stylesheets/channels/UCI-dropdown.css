@@ -39,7 +39,7 @@ font-size: 13px;
     transform-origin: 10px;
     left: 50%;
     transform: translateX(-10%);
-    z-index: 10;
+    z-index: 5;
     width: 130px;
     height: 45px;
     padding-top: 10px;

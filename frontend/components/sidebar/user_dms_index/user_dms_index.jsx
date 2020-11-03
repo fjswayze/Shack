@@ -65,18 +65,22 @@ class UserDMsIndex extends React.Component{
             <div>
                 <div>
                     <div className='margin-left-div'>
-                        <button
-                            className='user-dms-index-button'
-                            style={{ position: 'relative' }}
-                            onClick={this.handleClick}
-                        >
-                            {caret}
-                        </button>
+                        
+                    <div className='dm-flex'> 
+                            <button
+                                className='user-dms-index-button'
+                                style={{ position: 'relative' }}
+                                onClick={this.handleClick}
+                            >
+                                {caret}
+                            </button>
                         <button 
                         className='direct-message-button'
                         onClick={this.handleClick}>
-                            Direct messages 
+                            Direct messages     
                         </button>
+                    <UDIDropdown />
+                    </div>
                         {this.state.show ? (
                             <ul className='udmi-ul'>
                                { dmsArray.map((dm) => {
@@ -102,9 +106,9 @@ class UserDMsIndex extends React.Component{
 
 
                     </div>
-                    <div className='UDMI-dropdown-container'>
+                    {/* <div className='UDMI-dropdown-container'>
                         <UDIDropdown/> 
-                        </div>
+                        </div> */}
                 </div>
             </div>
         )
@@ -123,7 +127,7 @@ class UserDMsIndex extends React.Component{
                         <button
                             className='direct-message-button'
                             onClick={this.handleClick}>
-                            Direct messages
+                            Direct messages   <UDIDropdown /> 
                         </button>
                         {this.state.show ? (
                             <ul className='udmi-ul'>
@@ -159,9 +163,9 @@ class UserDMsIndex extends React.Component{
 
 
                     </div>
-                        <div className='UDMI-dropdown-container'>
+                        {/* <div className='UDMI-dropdown-container'>
                                 <UDIDropdown/> 
-                        </div>
+                        </div> */}
                 </div>
             </div>
         )

@@ -5,6 +5,7 @@
     width: 100%;
 }
 .sidebar{
+    z-index: 3;
     min-width: 220px;
    
     position: absolute;

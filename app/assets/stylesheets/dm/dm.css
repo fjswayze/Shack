@@ -121,3 +121,29 @@ cursor: pointer;
 #ready-btn:hover{
  background-color: #3c9e83;
 }
+
+.dm-flex{
+    display: flex;
+    align-items: center;
+   
+}
+
+.dm-index-dropdown-button{
+   color: lightgray;
+   font-size: 26px;
+   font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-weight:200;
+   margin-bottom: 5px;
+    margin-left: 20px;
+   background-color: transparent;
+   border: none;
+}
+
+.dm-index-dropdown-button:focus{
+    outline: 0;
+}
+
+.dm-index-dropdown-button:hover{
+   background-color: #d3d3d326;
+   cursor: pointer; 
+}
