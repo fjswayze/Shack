@@ -9,7 +9,7 @@ import ChatRoom from './ChatRoom.jsx';
 const mSTP = (state, ownProps) => {
     return {
     pageType: 'Channel', 
-    pageId: ownProps.match.params.channelId,
+    pageId: parseInt(ownProps.match.params.channelId),
     page: state.entities.channels[ownProps.match.params.channelId] || {},
     user: state.entities.users[state.session.id],
     users: state.entities.users, 

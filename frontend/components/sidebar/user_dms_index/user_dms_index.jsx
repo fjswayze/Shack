@@ -39,7 +39,7 @@ class UserDMsIndex extends React.Component{
 
     render(){
         
-        if(this.props.user.direct_messages_ids.length === 0) return null; 
+        // if(this.props.user.direct_messages_ids.length === 0) return null; 
         
 
         let caret = this.state.show ? (
