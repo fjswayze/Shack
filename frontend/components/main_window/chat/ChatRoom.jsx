@@ -15,7 +15,7 @@ class ChatRoom extends React.Component {
     handleJoin(data){
 
         if(this.props.pageType === 'Channel'){
-            debugger
+            
             this.props.createPageMembership({
                 channel_id: data.page_id, 
                 user_id: data.user_id

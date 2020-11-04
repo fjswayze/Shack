@@ -7,7 +7,7 @@ export const fetchChannelMemberships = () => {
 
 
 export const createChannelMembership = channel_membership => {
-    debugger
+    
     return $.ajax({
         url: 'api/channel_memberships',
         method: 'POST',

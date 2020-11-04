@@ -9,7 +9,7 @@ class Api::ChannelMembershipsController < ApplicationController
 
 
     def create 
-        debugger 
+         
         @channel_membership = ChannelMembership.new(channel_membership_params)
         if @channel_membership.save 
             render :show
@@ -34,7 +34,7 @@ class Api::ChannelMembershipsController < ApplicationController
     private 
 
     def channel_membership_params
-        debugger
+        
         params.require(:channel_membership).permit(:user_id, :channel_id)
     end
 end
