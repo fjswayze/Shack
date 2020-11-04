@@ -87,6 +87,7 @@ class UserDMsIndex extends React.Component{
                             
                                    return <li id={'dm' + ' ' + `${dm.id}`} className='udmi-li-wrapper' onClick={() => this.handleDMClick(dm.id)}><DMItem
                                         dm={dm}
+                                        user={this.props.user}
                                         users={this.props.users}
                                         fetchDMUsers ={this.props.fetchDMUsers}
                                     /></li>
@@ -136,6 +137,7 @@ class UserDMsIndex extends React.Component{
                                     if(this.props.dm.id === dm.id){
                                         return <li id={'dm' + ' ' +`${dm.id}`} className='udmi-li-wrapper active-dm' onClick={() => this.handleDMClick(dm.id)}><DMItem
                                             dm={dm}
+                                            user={this.props.user}
                                             users={this.props.users}
                                             fetchDMUsers={this.props.fetchDMUsers}/></li>
                                     } else{
@@ -143,6 +145,7 @@ class UserDMsIndex extends React.Component{
                                     
                                         return <li id={'dm' + ' ' + `${dm.id}`} className='udmi-li-wrapper' onClick={() => this.handleDMClick(dm.id)}><DMItem
                                         dm={dm}
+                                        user={this.props.user}
                                         users={this.props.users}
                                         fetchDMUsers={this.props.fetchDMUsers}
                                     /></li>
@@ -155,6 +158,7 @@ class UserDMsIndex extends React.Component{
                             <ul className='udmi-ul'>
                                 <li id={selectedDm.id} className='udmi-li-wrapper active-dm' onClick={() => this.handleDMClick(parseInt(selectedDm.id.split(" ")[1]))}><DMItem
                                     dm={this.props.dms[parseInt(selectedDm.id.split(" ")[1])]}
+                                    user={this.props.user}
                                     users={this.props.users}
                                     fetchDMUsers={this.props.fetchDMUsers} /></li>
                             </ul>

@@ -14,6 +14,7 @@
     margin-left: 11px;
 }
 .udmi-li-wrapper{
+    white-space: nowrap;
     list-style: none;
     padding-bottom: 5px;
     width: 100%;
