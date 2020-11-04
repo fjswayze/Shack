@@ -28,8 +28,9 @@ class UserDMsIndex extends React.Component{
         let activeDM = document.getElementsByClassName('active-dm');
         
         if(activeDM[0]) activeDM[0].className = activeDM[0].className.replace(' active-dm', ""); 
-        
-        document.getElementById('dm' + `${dmNumber}`).className += " active-dm"; 
+        if(document.getElementById('dm' + `${dmNumber}`)){
+            document.getElementById('dm' + `${dmNumber}`).className += " active-dm"; 
+        }
         this.props.history.push(`/dms/${dmNumber}`)
     }
 

@@ -29,6 +29,7 @@ class Info extends React.Component{
     handleDelete() {
         let redirect = this.props.user.channel_ids[0];
         if (redirect = this.props.channel.id) redirect = this.props.user.channel_ids[1];
+        debugger
         this.props.deleteChannel(this.props.channel.id).then(this.props.history.push(`/channels/${redirect}`))
     }
 
@@ -86,7 +87,7 @@ class Info extends React.Component{
                                             >
                                                 <div className='revised-info-click-dropdown-link' onClick={() => this.handleEditClick(this.props.channel.id)}>Edit Channel</div>
 
-                                                <div className='revised-info-click-dropdown-inner-div' onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</div>
+                                                <div className='revised-info-click-dropdown-inner-div' onClick={() => this.handleDelete(this.props.channel.id)}>Delete Channel</div>
                                             </ul>
                                         </div>
                                     ) : null}
