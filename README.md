@@ -13,6 +13,24 @@ Shack's backend uses Ruby on Rails and PostgreSQL, it's front-end uses JavaScrip
 ![auth](https://media.giphy.com/media/oKsXJSIvxCzXmTL1iW/giphy.gif)
 To ensure user's safety, Shack's authentication system uses BCRYPT to hash and salt sensitive information. Users can only view, update, create, or delete channels once they are logged in.  
 
+# Channels 
+
+![channels](https://media.giphy.com/media/1UMGa0gzMJvZmEt1QD/giphy.gif)
+  
+Users can belong to many diffrent channels, which in turn have many diffrent users. Channels are essentially chat rooms that are organized around a specific topic (e.g. Norwegian Shacks). Users have the ability to create channels, join channels, and edit/delete channels that they are the admin of. 
+ 
+# Live-Chat
+
+![Live-Chat](https://media.giphy.com/media/9m4cR9ExcuPIwSHPrq/giphy.gif)
+
+Shack's most intresting technical feature is live messaging between multiple users. This is acomplished by utilizing Rails’ Action Cable and Redis to manage web-socket connections. Users are able to edit and delete previously sent messages. 
+
+# Direct Messaging 
+
+![Direct Messaging](https://media.giphy.com/media/aSm34qbV0dSduYXCe0/giphy.gif)
+
+Users can open direct message conversation between one or multiple other users. Unlike channels, a user can not join a DM conversation they are not already apart of. 
+
 # Live-Updates
 
 ![shack](https://media.giphy.com/media/VzSx8FGq00P8otc21f/giphy.gif)
@@ -65,16 +83,7 @@ return(
 ```
 
 
-# Channels 
 
-![channels](https://media.giphy.com/media/1UMGa0gzMJvZmEt1QD/giphy.gif)
-
-# Live-Chat
-
-![Live-Chat](https://media.giphy.com/media/9m4cR9ExcuPIwSHPrq/giphy.gif)
-
-# Direct Messaging 
-![Direct Messaging](https://media.giphy.com/media/aSm34qbV0dSduYXCe0/giphy.gif)
 
 
        
