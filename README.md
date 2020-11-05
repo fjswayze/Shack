@@ -3,14 +3,13 @@
 Shack is a clone of the messaging service Slack. In it's current stage, Shack features full user auth and channel funtionality.  Users can join, create, edit, and delete channels about various topics. 
 [Visit Shack](https://shack-aa.herokuapp.com/#/).
 
-
-
 # Technologies Used 
 
 Shack's backend uses Ruby on Rails and PostgreSQL, it's front-end uses JavaScript, React.js, and Redux.js. I used CSS and HTLM5 to style the site and am in the process of implementing live chat with Action Cable/WebSocket. 
 
 # Authentication 
 ![auth](https://media.giphy.com/media/oKsXJSIvxCzXmTL1iW/giphy.gif)
+
 To ensure user's safety, Shack's authentication system uses BCRYPT to hash and salt sensitive information. Users can only view, update, create, or delete channels once they are logged in.  
 
 # Channels 
@@ -38,7 +37,7 @@ Users can open direct message conversation between one or multiple other users. 
 
 Developing Shack gave me a greater understanding of the data flow in a redux application. One challenge Shack presented was making sure that all the disperate parts of the application were responsive to one another. For example, users have a sidebar that displays the channels they belong to. I wanted to make sure that as soon as a user created, joined, or left a channel that the sidebar reflected this change instantaneously. To do this, I made my UsersReducer responsive to changes in channel memberships: 
   
- ```js 
+ ``` js 
 const UsersReducer = (state = {}, action) => {
 
     Object.freeze(state);
@@ -64,7 +63,7 @@ const UsersReducer = (state = {}, action) => {
 Additionaly, I wanted the user experience joining and leaving channels in Shack to replicate Slack. In Shack, when a user is browsing channels, the 'Join' button only shows up when the users mouse is hovering over the channel. As soon as they join the channel, the button changes into a 'Leave' which allows them to quickly leave the channel. To achieve this effect, the return function in my Channel Browser compoment utilizes a ternerary: 
   
   
-```html
+``` html
 return(
                     <div 
                     onMouseLeave={this.handleMouseLeave}
