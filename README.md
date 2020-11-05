@@ -10,6 +10,7 @@ Shack is a clone of the messaging service Slack. In it's current stage, Shack fe
 Shack's backend uses Ruby on Rails and PostgreSQL, it's front-end uses JavaScript, React.js, and Redux.js. I used CSS and HTLM5 to style the site and am in the process of implementing live chat with Action Cable/WebSocket. 
 
 # Authentication 
+![auth](https://media.giphy.com/media/oKsXJSIvxCzXmTL1iW/giphy.gif)
 To ensure user's safety, Shack's authentication system uses BCRYPT to hash and salt sensitive information. Users can only view, update, create, or delete channels once they are logged in.  
 
 # Live-Updates
@@ -64,7 +65,16 @@ return(
 ```
 
 
+# Channels 
 
+![channels](https://media.giphy.com/media/1UMGa0gzMJvZmEt1QD/giphy.gif)
+
+# Live-Chat
+
+![Live-Chat](https://media.giphy.com/media/9m4cR9ExcuPIwSHPrq/giphy.gif)
+
+# Direct Messaging 
+![Direct Messaging](https://media.giphy.com/media/aSm34qbV0dSduYXCe0/giphy.gif)
 
 
        
