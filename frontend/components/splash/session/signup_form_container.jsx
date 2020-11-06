@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { signupAction, clearErrors } from "../../../actions/session_actions";
+import { signupAction, clearErrors, loginAction } from "../../../actions/session_actions";
 import SessionForm from './session_form';
 import {withRouter} from 'react-router'; 
 
@@ -10,6 +10,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => {
    return( {
+    demo: user => dispatch(loginAction(user)),
     processForm: user => dispatch(signupAction(user)),
     clearErrors: () => dispatch(clearErrors())
    }); 

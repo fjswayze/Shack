@@ -22,13 +22,13 @@ class SplashFooter extends React.Component{
                 </div>
                 <div className="footer-col-2">
                     <h3>LINKS</h3>
-                    <a className="personal-links" href="https://github.com/fjswayze">GitHub</a>
+                    <a className="personal-links" target="_blank" href="https://github.com/fjswayze">GitHub</a>
                     <br></br>
-                    <a className="personal-links" href="https://www.linkedin.com/in/francis-swayze-729159133/">LinkedIn</a>
+                    <a className="personal-links" target="_blank" href="https://www.linkedin.com/in/francis-swayze-729159133/">LinkedIn</a>
                     <br></br>
-                    <a className='personal-links' href='https://angel.co/u/francis-swayze'>AngelList</a>
+                    <a className='personal-links' target="_blank" href='https://angel.co/u/francis-swayze'>AngelList</a>
                     <br></br>
-                    <a className='personal-links' href='https://fjswayze.github.io/'>Personal Site</a>
+                    <a className='personal-links' target="_blank" href='https://fjswayze.github.io/'>Personal Site</a>
                 </div>
                 <div className="footer-col-1">
                     <h3>SKILLS</h3>

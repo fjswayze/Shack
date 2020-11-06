@@ -91,5 +91,22 @@ padding-top: 20px;
      background-color: #2d092d;
  }
  
+ #session-demo-button{
+    background-color:#561163;
+    font-weight: bold;
+    width: 398px;
+    margin-top: 20px;
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    height: 42px; 
+    cursor: pointer;
+    
+    font-size: 16px;
+ }
+
+ #session-demo-button:hover{
+     background-color: #2d092d;
+ }
 
  
