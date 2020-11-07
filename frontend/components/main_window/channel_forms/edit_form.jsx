@@ -36,7 +36,7 @@ class EditForm extends React.Component {
         return (
 
 
-            <div className="form">
+            <div className="create-channel-form">
                 <h3>{form}</h3>
                 <p>{description}
                 </p>

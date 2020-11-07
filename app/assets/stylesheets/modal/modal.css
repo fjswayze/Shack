@@ -15,4 +15,6 @@
     left: 50%;
     border-radius: 5px;
     transform: translate(-50%, -50%); 
+    height: 516px;
+    width: 520px;
 }

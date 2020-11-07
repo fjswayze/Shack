@@ -1,25 +1,51 @@
-.form{
+.create-channel-form{
     position: relative;
     left: 0%; 
     font-family: sans-serif;
     padding: 30px; 
 }
 
-.form p{
+.create-channel-form p{
   color: gray;  
 }
 
 
-.form label{
+.create-channel-form label{
     font-weight: bold;
     font-size: 14px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.form input{
-    width: 500px;
-    height: 35px;
+.create-channel-form-button{
+  margin-top: 100px;
+    margin-left: 84%;
+    color: white;
+    background-color: #007a5a;
+    outline: none;
+    border: 0px;
+    height: 37px;
+    width: 80px;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.create-channel-form-button:hover{
+  background-color: #01a77b;
+  box-shadow: 1px 1px 10px 1px gray;
+}
+
+.create-channel-form input{
+    width: 380px;
+    height: 34px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 36px;
+    padding-right: 46px;
     margin-top: 10px;
     margin-bottom: 10px;
 } 
@@ -132,11 +158,11 @@ input:checked + .slider:before {
 }
 
 .edit-button{
-    color: #4e4b4b;
-    background-color: #80808057;
+    color: white;
+    background-color: #007a5a;
     outline: none;
     border: 0px;
-    margin-left: 450px;
+    margin-left: 410px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 15px;
@@ -149,6 +175,6 @@ input:checked + .slider:before {
 
 
 .edit-button:hover{
-  background-color: #777676;
-  color: white;
+ background-color: #01a77b;
+  box-shadow: 1px 1px 10px 1px gray;
 }

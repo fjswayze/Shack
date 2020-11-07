@@ -16,6 +16,7 @@ class ChannelForm extends React.Component{
       
     }
 
+
     update(field){
         return e => this.setState({[field]: e.currentTarget.value})
     }
@@ -31,7 +32,7 @@ class ChannelForm extends React.Component{
         return(
          
 
-                <div className="form">
+                <div className="create-channel-form">
                     <h3>{form}</h3>
                     <p>{description}
                     </p>
@@ -39,6 +40,7 @@ class ChannelForm extends React.Component{
                         <label>Name 
                             <br></br>
                             <input
+                            
                             type="text"
                             value={this.state.name}
                             onChange={this.update('name')}
@@ -58,7 +60,7 @@ class ChannelForm extends React.Component{
                    
                         <br></br>
                     
-                        <button className='channel-form-button' type="submit">{form.split(" ")[0]}</button>
+                        <button className='create-channel-form-button' type="submit">{form.split(" ")[0]}</button>
                 
                     </form>
 

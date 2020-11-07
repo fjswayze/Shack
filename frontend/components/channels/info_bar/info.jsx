@@ -64,7 +64,10 @@ class Info extends React.Component{
                         <img className="pencil" src={window.pencil_iconURL} />
                 </div>
                 <div className="right-info">
-                    <h3 className="channel-name">{this.props.channel.name}</h3> 
+                    <div className='name-description-container'>
+                         <div className="channel-name">{this.props.channel.name}</div> 
+                        <div className="channel-description">{this.props.channel.description}</div>
+                    </div>
                     <div className='sub-right-info'>
                             {membersCount}
                            { UsersIndex}
