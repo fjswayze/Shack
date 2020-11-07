@@ -29,7 +29,7 @@ class Info extends React.Component{
     handleDelete() {
         let redirect = this.props.user.channel_ids[0];
         if (redirect = this.props.channel.id) redirect = this.props.user.channel_ids[1];
-        debugger
+        
         this.props.deleteChannel(this.props.channel.id).then(this.props.history.push(`/channels/${redirect}`))
     }
 
