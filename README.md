@@ -1,6 +1,6 @@
 # SHACK 
 
-Shack is a clone of the messaging service Slack. In it's current stage, Shack features full user auth and channel funtionality.  Users can join, create, edit, and delete channels about various topics. 
+Shack is a clone of the messaging service Slack. Shack features full user auth and channel funtionality.  Users can join, create, edit, and delete channels about various topics. 
 [Visit Shack](https://shack-aa.herokuapp.com/#/).
 
 # Technologies Used 
