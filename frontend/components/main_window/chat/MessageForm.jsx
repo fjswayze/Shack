@@ -27,7 +27,7 @@ class MessageForm extends React.Component{
         let userNameArray = [];
 
         this.props.page.user_ids.map(id => {
-            if (this.props.users[id]) {
+            if (this.props.users[id] && id !== this.props.user.id) {
                 userNameArray.push(this.props.users[id].username)
             }
 
