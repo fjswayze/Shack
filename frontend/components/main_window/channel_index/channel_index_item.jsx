@@ -56,8 +56,9 @@ class ChannelIndexItem extends React.Component{
                     to={`/channels/${this.props.channel.id}`}
                     >
                         <div>
-                        <p className="chanels-index-item-name">{this.props.channel.name} {this.props.channel.description}</p>
-                    <p className="chanels-index-item-members">{length} members</p>
+                        <p className="chanels-index-item-name">{this.props.channel.name} </p>
+                    
+                        <p className="chanels-index-item-members">{length} members • {this.props.channel.description}</p>
                     </div>
                     </Link>  
                       
