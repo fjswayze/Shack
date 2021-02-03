@@ -1,11 +1,11 @@
 # SHACK 
 
-Shack is a clone of the messaging service Slack. Shack features full user auth and channel funtionality.  Users can join, create, edit, and delete channels about various topics. 
+Shack is a clone of the messaging service Slack. Users can sign up for an account, join channels, and send/receive messages. 
 [Visit Shack](https://shack-aa.herokuapp.com/#/).
 
 # Technologies Used 
 
-Shack's backend uses Ruby on Rails and PostgreSQL, it's front-end uses JavaScript, React.js, and Redux.js. I used CSS and HTLM5 to style the site and am in the process of implementing live chat with Action Cable/WebSocket. 
+Shack's backend uses Ruby on Rails and PostgreSQL, it's front-end uses JavaScript, React.js, and Redux.js. I used CSS and HTLM5 to style the site and implemented live chat with Action Cable/WebSocket. 
 
 # Authentication 
 ![auth](https://media.giphy.com/media/oKsXJSIvxCzXmTL1iW/giphy.gif)
